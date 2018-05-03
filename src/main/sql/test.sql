@@ -25,4 +25,28 @@ create table `user` (
   DEFAULT CHARSET = utf8
   COMMENT = '用户信息表';
 
+DROP TABLE if exists `field`
+create table `field`(
+`id` int(10) not null AUTO_INCREMENT,
+`areas` int(10) not null COMMENT '面积',
+`crops` varchar(500) COMMENT '种植作物',
+primary key (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8
+  COMMENT = '菜地信息表';
+
+
+drop table if exists 'crops'
+create table `crops`(
+`id` int(10) not null AUTO_INCREMENT,
+`name` varchar(20) not null COMMENT '作物名称',
+`area` int(10) not null COMMENT '每棵所需面积',
+`profit` int(10) not null COMMENT '每棵的净收益',
+`time` int(10) not null COMMENT '种植时间',
+primary key (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8
+  COMMENT = '农作物信息表';
 -- 手写ddl，记录每次sql修改
