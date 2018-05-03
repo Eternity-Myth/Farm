@@ -17,10 +17,12 @@
 （5）（可选）为每块菜地推荐种植方案，使收益最大
 
 
+
 IDE:JetBrains-Intellij Idea Ultimate
 
-jdk1.8+Apache Tomcat9+Mysql,Spring+SpringMVC+Mybatis,Maven,Bootstrap
+基本开发环境：JDK 1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server
 
-Index+Register+Login
+使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）
 
-TODO:修改美化首页，增加跳转
+逆向工程：MyBatis-Generator
+
