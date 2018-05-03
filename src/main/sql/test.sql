@@ -28,7 +28,7 @@ create table `user` (
 DROP TABLE if exists `field`
 create table `field`(
 `id` int(10) not null AUTO_INCREMENT,
-`areas` int(10) not null COMMENT '面积',
+`area` int(10) not null COMMENT '面积',
 `crops` varchar(500) COMMENT '种植作物',
 primary key (`id`)
 )
