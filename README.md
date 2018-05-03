@@ -18,6 +18,8 @@
 
 
 
+操作系统：Microsoft Windows 10、Red Hat CentOS7
+
 IDE:JetBrains-Intellij Idea Ultimate
 
 基本开发环境：JDK 1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server
