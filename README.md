@@ -1,7 +1,7 @@
 # Farm
 IDE:Intellij Idea
 
-Spring+SpringMVC+Mybatis,Maven,Bootstrap
+jdk1.8+Apache Tomcat9+Mysql,Spring+SpringMVC+Mybatis,Maven,Bootstrap
 
 Index+Register+Login
 
