@@ -13,4 +13,7 @@
         <!-- ¿ªÆôÍÕ·åÃüÃû×ª»»£ºTable(create_time) -> Entity(createTime)-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
 </configuration>

@@ -44,6 +44,6 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>sign-in.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 </web-app>
