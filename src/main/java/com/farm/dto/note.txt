@@ -1,0 +1,4 @@
+数据传输对象包：存放业务逻辑层返回到试图层的数据，用于返回可读性强的数据实体到视图层
+@author Guan WenCong
+@version 1.0
+@email 530711667@qq.com

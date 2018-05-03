@@ -1,0 +1,49 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         metadata-complete="true">
+    <!-- 修改maven生成的servlet版本，使用3.0 -->
+
+    <!-- 配置DispatcherServlet -->
+    <servlet>
+        <servlet-name>ssm-dispatcher-servlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 配置SpringMVC需要加载的配置文件
+            spring-dao，spring-service，spring-web
+            Mybatis -> Spring -> SpringMVC
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/spring-*.xml</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ssm-dispatcher-servlet</servlet-name>
+        <!-- 配置过滤所有请求，符合SpringMVC对Restful的支持 -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- encodeing -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>gbk</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>sign-in.html</welcome-file>
+    </welcome-file-list>
+</web-app>

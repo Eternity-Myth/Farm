@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/dto/CheckResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignInResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignUpResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/enums/AccountStatusEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/enums/SexEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataExistException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataInsertException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataMatchException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/exception/SystemException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignInForm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignUpForm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/database.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/spring" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/sql/test.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/fonts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/lib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-in.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-up.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sql" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="gbk"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置整合mybatis过程 -->
+    <!-- 1：配置数据库相关参数properties的属性：${url}-->
+    <context:property-placeholder location="classpath:database.properties"/>
+
+    <!-- 2:数据库连接池-->
+    <!-- 更多连接池的配置请参看Druid的官方配置
+            地址：https://github.com/alibaba/druid/wiki/常见问题
+        -->
+    <!--设置为close使Spring容器关闭同时数据源能够正常关闭，以免造成连接泄露  -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <!-- 2.1 配置连接池基本属性-->
+        <!-- 基本属性 driverClassName，url、username、password -->
+        <!-- 驱动类名 -->
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <!-- url -->
+        <property name="url" value="${jdbc.url}"/>
+        <!-- 用户名 -->
+        <property name="username" value="${jdbc.username}"/>
+        <!-- 用户密码 -->
+        <property name="password" value="${jdbc.password}"/>
+
+        <!-- 2.2 配置连接池的私有属性 -->
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${jdbc.initialSize}"/>
+        <property name="minIdle" value="${jdbc.minIdle}"/>
+        <property name="maxActive" value="${jdbc.maxActive}"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${jdbc.maxWait}"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}"/>
+    </bean>
+
+    <!-- **约定大于配置** -->
+    <!-- 3:配置SQLSessionFactory对象 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 配置Mybatis全局配置文件-->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <!-- 扫描entity包 使用别名;多个包的使用;分开即可-->
+        <property name="typeAliasesPackage" value="com.farm.entity"/>
+        <!-- 扫描sql配置文件，mapper需要的xml文件-->
+        <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
+    </bean>
+
+    <!-- 4:配置扫描DAO接口包，动态实现DAO接口，注入到spring容器中 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 注入SQLSessionFactory 使用sqlSessionFactoryBeanName防止这里提前初始化sqlSessionFactory -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!-- 给出需要扫描的DAO接口包 -->
+        <property name="basePackage" value="com.farm.dao"/>
+    </bean>
+
+
+
+
+    <!-- 用于DAO层测试，配置事务管理器，让操作回滚 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+</beans>
