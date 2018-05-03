@@ -1,0 +1,4 @@
+异常包：存放自定义的用于系统的异常
+@author Guan WenCong
+@version 1.0
+@email 530711667@qq.com

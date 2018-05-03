@@ -1,0 +1,4 @@
+业务逻辑层接口包：存放业务逻辑接口
+@author Guan WenCong
+@version 1.0
+@email 530711667@qq.com

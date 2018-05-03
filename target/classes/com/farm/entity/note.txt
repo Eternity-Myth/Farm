@@ -1,0 +1,4 @@
+实体包：存放数据库表对应的Java实体，用于DAO层对数据库的操作
+@author Guan WenCong
+@version 1.0
+@email 530711667@qq.com

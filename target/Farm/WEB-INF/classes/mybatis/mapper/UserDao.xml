@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.UserDao">
+    <insert id="insert" keyProperty="id" parameterType="User">
+        INSERT INTO user(user_name,user_pass,user_email,status)
+        VALUES (#{userName},#{userPass},#{userEmail},#{status})
+    </insert>
+    <update id="updateBaseInfoById" parameterType="User">
+        UPDATE user
+        SET
+          nick_name=#{nickName}
+          ,sex=#{sex}
+          ,birth=#{birth}
+          ,profile=#{profile}
+        WHERE id=#{id}
+    </update>
+    <select id="selectById" resultType="User">
+        SELECT *
+        FROM user
+        WHERE id=#{id}
+    </select>
+    <select id="selectByUserName" resultType="User">
+        SELECT *
+        FROM user
+        WHERE user_name=#{userName}
+    </select>
+    <select id="selectByUserEmail" resultType="User">
+        SELECT *
+        FROM user
+        WHERE user_email=#{userEmail}
+    </select>
+</mapper>

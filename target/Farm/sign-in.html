@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="GBK">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="注册">
+    <meta name="author" content="关文聪">
+    <title>登录</title>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <!-- Custom styles for this template -->
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form id="signInForm" name="form"
+              class="form-horizontal col-sm-6 col-sm-offset-3"
+              onsubmit="form.$valid && signIn()" role="form">
+            <h2 style="text-align: center">登录</h2>
+            <br/>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">用户名</label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="userName" required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">密码</label>
+
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" name="userPass" required/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <button type="submit" name="submit" class="btn btn-md btn-primary btn-block">登录</button>
+                </div>
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <p>没有账号，前往 <a href="sign-up.html">注册</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- /container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/jquery-1.12.3.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/bootstrapValidator.min.js"></script>
+<script src="js/sign.js"></script>
+</body>
+</html>
