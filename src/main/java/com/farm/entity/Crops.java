@@ -3,9 +3,9 @@ package com.farm.entity;
 public class Crops {
     private int id;
     private String cropsName;
-    private int area;
-    private int profit;
-    private int cropsTime;
+    private Integer area;
+    private Integer profit;
+    private Integer cropsTime;
 
     public Crops() {
 
@@ -37,7 +37,7 @@ public class Crops {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(Integer area) {
         this.area = area;
     }
 
@@ -45,7 +45,7 @@ public class Crops {
         return profit;
     }
 
-    public void setProfit(int profit) {
+    public void setProfit(Integer profit) {
         this.profit = profit;
     }
 
@@ -53,7 +53,7 @@ public class Crops {
         return cropsTime;
     }
 
-    public void setCropsTime(int cropsTime) {
+    public void setCropsTime(Integer cropsTime) {
         this.cropsTime = cropsTime;
     }
 }

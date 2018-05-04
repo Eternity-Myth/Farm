@@ -14,5 +14,5 @@ public interface FieldDao {
 
     int updateBaseInfoById(Field field);
 
-    Field selectById(int fieldId);
+    Field selectById(Integer fieldId);
 }

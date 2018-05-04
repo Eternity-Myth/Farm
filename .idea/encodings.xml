@@ -23,12 +23,12 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/fonts" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/lib" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-in.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-up.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/views/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/views/sign-in.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/views/sign-up.html" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

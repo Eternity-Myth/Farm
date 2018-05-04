@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.CropsDao">
+    <insert id="insert" keyProperty="id" parameterType="Crops">
+        insert into crops(cropsName,area,profit,cropsTime)
+        value(#{cropsName},#{area},#{profit},#{cropsTime})
+    </insert>
+    <select id="selectById" parameterType="Crops">
+        select * from crops where id=#{id}
+    </select>
+    <select id="selectByCropsName" parameterType="Crops">
+        select * from crops where cropsName=#{cropsName}
+    </select>
+    <update id="updateBaseInfoById" parameterType="Crops">
+        update crops
+        set area=#{area},
+        profit=#{profit},
+        cropsTime=#{cropsTime}
+        where id=#{id}
+    </update>
+</mapper>

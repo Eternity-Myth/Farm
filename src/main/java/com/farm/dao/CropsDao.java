@@ -13,7 +13,7 @@ public interface CropsDao {
 
     int updateBaseInfoById(Crops crops);
 
-    Crops selectById(int cropsId);
+    Crops selectById(Integer cropsId);
 
     Crops selectByCropsName(String cropsName);
 

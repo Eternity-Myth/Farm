@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.annotation.Rollback;
 
 import javax.annotation.Resource;
+import java.util.Random;
 
 public class FieldDaoTest extends BaseDaoTest {
     @Resource
@@ -17,11 +18,14 @@ public class FieldDaoTest extends BaseDaoTest {
     @Rollback(value = false)
     @Test
     public void testInsert() throws Exception {
-        Field field = new Field();
-        field.setArea(666);
-        int insertCount = fieldDao.insert(field);
-        logger.info("insertCount=" + insertCount);
-        logger.info("insertField=" + field);
+        for (int i = 0; i < 100; i++) {
+            Field field = new Field();
+            Random random=new Random();
+            field.setArea(random.nextInt(500));
+            int insertCount = fieldDao.insert(field);
+            logger.info("insertCount=" + insertCount);
+            logger.info("insertField=" + field);
+        }
     }
 
     @Test

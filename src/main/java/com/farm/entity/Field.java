@@ -1,15 +1,15 @@
 package com.farm.entity;
 
 public class Field {
-    private int id;
-    private int area;
+    private Integer id;
+    private Integer area;
     private String crops;
 
     public Field() {
 
     }
 
-    public Field(int id, int area) {
+    public Field(Integer id, Integer area) {
         this.id = id;
         this.area = area;
     }
@@ -18,7 +18,7 @@ public class Field {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -26,7 +26,7 @@ public class Field {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(Integer area) {
         this.area = area;
     }
 
