@@ -3,7 +3,7 @@ package com.farm.entity;
 public class Field {
     private int id;
     private int area;
-    private String[] crops;
+    private String crops;
 
     public Field() {
 
@@ -29,4 +29,13 @@ public class Field {
     public void setArea(int area) {
         this.area = area;
     }
+
+    public String getCrops() {
+        return crops;
+    }
+
+    public void setCrops(String crops) {
+        this.crops = crops;
+    }
+
 }

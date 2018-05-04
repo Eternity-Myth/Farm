@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.FieldDao">
+    <insert id="insert" keyProperty="id" parameterType="Field">
+        insert into field(area)
+        value(#{area})
+    </insert>
+    <select id="selectById" resultType="Field">
+        select * from field where id=#{id}
+    </select>
+    <update id="updateBaseInfoById" parameterType="Field">
+        update field
+        set area=#{area},crops=#{crops}
+        where id=#{id}
+    </update>
+
+</mapper>

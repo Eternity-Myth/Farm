@@ -2,18 +2,18 @@ package com.farm.entity;
 
 public class Crops {
     private int id;
-    private String name;
+    private String cropsName;
     private int area;
     private int profit;
-    private int time;
+    private int cropsTime;
 
     public Crops() {
 
     }
 
-    public Crops(int id, String name) {
+    public Crops(int id, String cropsName) {
         this.id = id;
-        this.name = name;
+        this.cropsName = cropsName;
     }
 
     public int getId() {
@@ -24,12 +24,12 @@ public class Crops {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCropsName() {
+        return cropsName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCropsName(String cropsName) {
+        this.cropsName = cropsName;
     }
 
 
@@ -49,11 +49,11 @@ public class Crops {
         this.profit = profit;
     }
 
-    public int getTime() {
-        return time;
+    public int getCropsTime() {
+        return cropsTime;
     }
 
-    public void setTime(int time) {
-        this.time = time;
+    public void setCropsTime(int cropsTime) {
+        this.cropsTime = cropsTime;
     }
 }

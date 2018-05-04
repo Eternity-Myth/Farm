@@ -19,14 +19,14 @@ public class UserServiceTest extends BaseServiceTest {
 
     @Test
     public void testSignUp() throws Exception {
-        UserSignUpForm userSignUpForm= new UserSignUpForm("fireoct","123456","123456@qq.com");
+        UserSignUpForm userSignUpForm= new UserSignUpForm("Eternity-Myth","123456","530711667@qq.com");
         UserSignUpResult userSignUpResult = userService.signUp(userSignUpForm);
         logger.info("userSignUpResult={}",userSignUpResult);
     }
 
     @Test
     public void testSignIn() throws Exception {
-        UserSignInForm userSignInForm = new UserSignInForm("fireoct","123456");
+        UserSignInForm userSignInForm = new UserSignInForm("Eternity-Myth","123456");
         UserSignInResult userSignInResult = userService.signIn(userSignInForm);
         logger.info("userSignInResult={}",userSignInResult);
     }

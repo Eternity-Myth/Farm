@@ -40,10 +40,10 @@ primary key (`id`)
 drop table if exists 'crops'
 create table `crops`(
 `id` int(10) not null AUTO_INCREMENT,
-`name` varchar(20) not null COMMENT '作物名称',
+`cropsName` varchar(200) not null COMMENT '作物名称',
 `area` int(10) not null COMMENT '每棵所需面积',
 `profit` int(10) not null COMMENT '每棵的净收益',
-`time` int(10) not null COMMENT '种植时间',
+`cropsTime` int(10) not null COMMENT '种植时间',
 primary key (`id`)
 )
   ENGINE = InnoDB
