@@ -27,15 +27,15 @@ public class FieldDaoTest extends BaseDaoTest {
             logger.info("insertField=" + field);
         }
     }
-
-    @Test
-    public void testSelectById() throws Exception {
-        Field field = new Field();
-        field = fieldDao.selectById(1);
-        System.out.println(field.getId());
-        System.out.println(field.getArea());
-        System.out.println(field.getCrops());
-    }
+//
+//    @Test
+//    public void testSelectById() throws Exception {
+//        Field field = new Field();
+//        field = fieldDao.selectById(1);
+//        System.out.println(field.getId());
+//        System.out.println(field.getArea());
+//        System.out.println(field.getCrops());
+//    }
 
 //    @Test
 //    public void testUpdateBaseInfoById() throws Exception {

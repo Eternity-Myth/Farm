@@ -1,6 +1,10 @@
 package com.farm.dao;
 
+import java.util.List;
+
 import com.farm.entity.Field;
+import com.farm.entity.FieldExample;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 测试案例：Field的数据访问接口
@@ -9,10 +13,19 @@ import com.farm.entity.Field;
  * @version 1.0
  * @email 530711667@qq.com
  */
+
 public interface FieldDao {
-    int insert(Field field);
+    long countByExample(FieldExample example);
 
-    int updateBaseInfoById(Field field);
+    int deleteByExample(FieldExample example);
 
-    Field selectById(Integer fieldId);
+    int insert(Field record);
+
+    int insertSelective(Field record);
+
+    List<Field> selectByExample(FieldExample example);
+
+    int updateByExampleSelective(@Param("record") Field record, @Param("example") FieldExample example);
+
+    int updateByExample(@Param("record") Field record, @Param("example") FieldExample example);
 }

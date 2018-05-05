@@ -2,19 +2,12 @@ package com.farm.entity;
 
 public class Field {
     private Integer id;
+
     private Integer area;
+
     private String crops;
 
-    public Field() {
-
-    }
-
-    public Field(Integer id, Integer area) {
-        this.id = id;
-        this.area = area;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -22,7 +15,7 @@ public class Field {
         this.id = id;
     }
 
-    public int getArea() {
+    public Integer getArea() {
         return area;
     }
 
@@ -35,7 +28,6 @@ public class Field {
     }
 
     public void setCrops(String crops) {
-        this.crops = crops;
+        this.crops = crops == null ? null : crops.trim();
     }
-
 }

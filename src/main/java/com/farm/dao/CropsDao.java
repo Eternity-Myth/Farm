@@ -1,20 +1,33 @@
 package com.farm.dao;
 
+import java.util.List;
+
 import com.farm.entity.Crops;
+import com.farm.entity.CropsExample;
+import org.apache.ibatis.annotations.Param;
+
 
 /**
  * 测试案例：Crops的数据访问接口
+ *
  * @author Guan Wencong
  * @version 1.0
  * @email 530711667@qq.com
  */
+
+
 public interface CropsDao {
-    int insert(Crops crops);
+    long countByExample(CropsExample example);
 
-    int updateBaseInfoById(Crops crops);
+    int deleteByExample(CropsExample example);
 
-    Crops selectById(Integer cropsId);
+    int insert(Crops record);
 
-    Crops selectByCropsName(String cropsName);
+    int insertSelective(Crops record);
 
+    List<Crops> selectByExample(CropsExample example);
+
+    int updateByExampleSelective(@Param("record") Crops record, @Param("example") CropsExample example);
+
+    int updateByExample(@Param("record") Crops record, @Param("example") CropsExample example);
 }

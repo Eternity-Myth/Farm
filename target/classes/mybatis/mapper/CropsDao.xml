@@ -1,21 +1,177 @@
 <?xml version="1.0" encoding="gbk"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.farm.dao.CropsDao">
-    <insert id="insert" keyProperty="id" parameterType="Crops">
-        insert into crops(cropsName,area,profit,cropsTime)
-        value(#{cropsName},#{area},#{profit},#{cropsTime})
+    <resultMap id="BaseResultMap" type="com.farm.entity.Crops">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="cropsName" jdbcType="VARCHAR" property="cropsname"/>
+        <result column="area" jdbcType="INTEGER" property="area"/>
+        <result column="profit" jdbcType="INTEGER" property="profit"/>
+        <result column="cropsTime" jdbcType="INTEGER" property="cropstime"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    id, cropsName, area, profit, cropsTime
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.CropsExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from crops
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <delete id="deleteByExample" parameterType="com.farm.entity.CropsExample">
+        delete from crops
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.Crops">
+    insert into crops (id, cropsName, area,
+      profit, cropsTime)
+    values (#{id,jdbcType=INTEGER}, #{cropsname,jdbcType=VARCHAR}, #{area,jdbcType=INTEGER},
+      #{profit,jdbcType=INTEGER}, #{cropstime,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.Crops">
+        insert into crops
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="cropsname != null">
+                cropsName,
+            </if>
+            <if test="area != null">
+                area,
+            </if>
+            <if test="profit != null">
+                profit,
+            </if>
+            <if test="cropstime != null">
+                cropsTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="cropsname != null">
+                #{cropsname,jdbcType=VARCHAR},
+            </if>
+            <if test="area != null">
+                #{area,jdbcType=INTEGER},
+            </if>
+            <if test="profit != null">
+                #{profit,jdbcType=INTEGER},
+            </if>
+            <if test="cropstime != null">
+                #{cropstime,jdbcType=INTEGER},
+            </if>
+        </trim>
     </insert>
-    <select id="selectById" parameterType="Crops">
-        select * from crops where id=#{id}
+    <select id="countByExample" parameterType="com.farm.entity.CropsExample" resultType="java.lang.Long">
+        select count(*) from crops
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
     </select>
-    <select id="selectByCropsName" parameterType="Crops">
-        select * from crops where cropsName=#{cropsName}
-    </select>
-    <update id="updateBaseInfoById" parameterType="Crops">
+    <update id="updateByExampleSelective" parameterType="map">
         update crops
-        set area=#{area},
-        profit=#{profit},
-        cropsTime=#{cropsTime}
-        where id=#{id}
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.cropsname != null">
+                cropsName = #{record.cropsname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.area != null">
+                area = #{record.area,jdbcType=INTEGER},
+            </if>
+            <if test="record.profit != null">
+                profit = #{record.profit,jdbcType=INTEGER},
+            </if>
+            <if test="record.cropstime != null">
+                cropsTime = #{record.cropstime,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update crops
+        set id = #{record.id,jdbcType=INTEGER},
+        cropsName = #{record.cropsname,jdbcType=VARCHAR},
+        area = #{record.area,jdbcType=INTEGER},
+        profit = #{record.profit,jdbcType=INTEGER},
+        cropsTime = #{record.cropstime,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
     </update>
 </mapper>

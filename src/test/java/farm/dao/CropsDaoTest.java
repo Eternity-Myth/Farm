@@ -16,20 +16,20 @@ public class CropsDaoTest extends BaseDaoTest {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Rollback(value = false)
-    @Test
-    public void testInsert() throws Exception {
-        for (int i = 0; i < 100; i++) {
-            Crops crops = new Crops();
-            crops.setCropsName("test");
-            Random random = new Random();
-            crops.setArea(random.nextInt(200));
-            crops.setProfit(random.nextInt(1000));
-            crops.setCropsTime(random.nextInt(365));
-            int insertCount = cropsDao.insert(crops);
-            logger.info("insertCount=" + insertCount);
-            logger.info("insertUser=" + crops);
-        }
-    }
+//    @Test
+//    public void testInsert() throws Exception {
+//        for (int i = 0; i < 100; i++) {
+//            Crops crops = new Crops();
+//            crops.setCropsName("test");
+//            Random random = new Random();
+//            crops.setArea(random.nextInt(200));
+//            crops.setProfit(random.nextInt(1000));
+//            crops.setCropsTime(random.nextInt(365));
+//            int insertCount = cropsDao.insert(crops);
+//            logger.info("insertCount=" + insertCount);
+//            logger.info("insertUser=" + crops);
+//        }
+//    }
 
     @Test
     public void testSelectById() throws Exception {

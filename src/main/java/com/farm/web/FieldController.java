@@ -18,16 +18,19 @@ import java.util.List;
  * @author 关文聪
  */
 @Controller
-@RequestMapping(value = "/field")
 public class FieldController {
     @Autowired
     FieldService fieldService;
 
-//    public String getFields(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
-//        PageHelper.startPage(pn, 10);
-//        List<Field> fields = fieldService.getAll();
-//        PageInfo page = new PageInfo(fields,5);
-//        model.addAttribute("pageinfo", page);
-//        return "field-list";
-//    }
+    @RequestMapping("/field-list")
+    //pn:pagenumber，即当前页数
+    public String getFields(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
+        //pageSize：10，指每页显示的数据数
+        PageHelper.startPage(pn, 10);
+        List<Field> fields = fieldService.getAll();
+        //navigatePages：5，指在页面需要连续显示的页码数
+        PageInfo page = new PageInfo(fields, 5);
+        model.addAttribute("pageInfo", page);
+        return "field-list";
+    }
 }

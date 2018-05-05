@@ -9,11 +9,7 @@ public class User {
     private String userPass;
     private String userEmail;
     private Date registerTime;
-    private String nickName;
     private byte status;
-    private byte sex;
-    private Date birth;
-    private String profile;
 
 
     public User() {
@@ -39,11 +35,7 @@ public class User {
                 ", userPass='" + userPass + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", registerTime=" + registerTime +
-                ", nickName='" + nickName + '\'' +
                 ", status=" + status +
-                ", sex=" + sex +
-                ", birth=" + birth +
-                ", profile='" + profile + '\'' +
                 '}';
     }
 
@@ -88,13 +80,6 @@ public class User {
         this.registerTime = registerTime;
     }
 
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
 
     public byte getStatus() {
         return status;
@@ -104,28 +89,6 @@ public class User {
         this.status = status;
     }
 
-    public byte getSex() {
-        return sex;
-    }
 
-    public void setSex(byte sex) {
-        this.sex = sex;
-    }
-
-    public Date getBirth() {
-        return birth;
-    }
-
-    public void setBirth(Date birth) {
-        this.birth = birth;
-    }
-
-    public String getProfile() {
-        return profile;
-    }
-
-    public void setProfile(String profile) {
-        this.profile = profile;
-    }
 }
 

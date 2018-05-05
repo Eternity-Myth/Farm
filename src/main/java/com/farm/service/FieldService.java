@@ -12,7 +12,8 @@ public class FieldService {
     @Autowired
     FieldDao fieldDao;
 
-//    public List<Field> getAll() {
-//        return fieldDao.selectById(null);
-//    }
+    //查询所有菜地信息
+    public List<Field> getAll() {
+        return fieldDao.selectByExample(null);
+    }
 }
