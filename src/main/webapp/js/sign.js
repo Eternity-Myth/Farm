@@ -58,7 +58,7 @@ $(document).ready(function () {
                 if (!responseData.success) {
                     alert(responseData.errorMsg);
                 } else {
-                    location.href = "index.html"
+                    location.href = "views/index.html"
                 }
             }
         });

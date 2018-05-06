@@ -9,7 +9,6 @@
 <jsp:forward page="/field-list"></jsp:forward>
 <%--<html>--%>
 <%--<head>--%>
-    <%--<title>菜地信息一览</title>--%>
 <%--</head>--%>
 <%--<body>--%>
 <%--</body>--%>

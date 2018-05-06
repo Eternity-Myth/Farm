@@ -31,6 +31,6 @@ public class FieldController {
         //navigatePages：5，指在页面需要连续显示的页码数
         PageInfo page = new PageInfo(fields, 5);
         model.addAttribute("pageInfo", page);
-        return "field-list";
+        return "/field-list";
     }
 }
