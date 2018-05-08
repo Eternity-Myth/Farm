@@ -21,13 +21,21 @@ public interface CropsDao {
 
     int deleteByExample(CropsExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
     int insert(Crops record);
 
     int insertSelective(Crops record);
 
     List<Crops> selectByExample(CropsExample example);
 
+    Crops selectByPrimaryKey(Integer id);
+
     int updateByExampleSelective(@Param("record") Crops record, @Param("example") CropsExample example);
 
     int updateByExample(@Param("record") Crops record, @Param("example") CropsExample example);
+
+    int updateByPrimaryKeySelective(Crops record);
+
+    int updateByPrimaryKey(Crops record);
 }

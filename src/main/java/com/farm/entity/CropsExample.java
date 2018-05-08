@@ -3,6 +3,9 @@ package com.farm.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CropsExample {
     protected String orderByClause;
 

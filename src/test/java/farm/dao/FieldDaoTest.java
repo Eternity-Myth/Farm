@@ -22,7 +22,7 @@ public class FieldDaoTest extends BaseDaoTest {
             Field field = new Field();
             Random random=new Random();
             field.setArea(random.nextInt(500));
-            int insertCount = fieldDao.insert(field);
+            int insertCount = fieldDao.insertSelective(field);
             logger.info("insertCount=" + insertCount);
             logger.info("insertField=" + field);
         }
