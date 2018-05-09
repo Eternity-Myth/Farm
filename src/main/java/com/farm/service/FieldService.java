@@ -28,6 +28,11 @@ public class FieldService {
         fieldDao.deleteByPrimaryKey(id);
     }
 
+    //菜地更新
+    public void updateField(Field field) {
+        fieldDao.updateByPrimaryKeySelective(field);
+    }
+
     public void deleteBatch(List<Integer> ids) {
         FieldExample example = new FieldExample();
         FieldExample.Criteria criteria = example.createCriteria();

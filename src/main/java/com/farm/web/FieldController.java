@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,12 +44,14 @@ public class FieldController {
         return Msg.success();
     }
 
-//    @RequestMapping(value = "/field/{id}", method = RequestMethod.DELETE)
-//    @ResponseBody
-//    public Msg deleteFieldById(@PathVariable("id") Integer id) {
-//        fieldService.deleteField(id);
-//        return Msg.success();
-//    }
+    //菜地更新
+    @ResponseBody
+    @RequestMapping(value = "/field/{id}", method = RequestMethod.PUT)
+    public Msg saveEmp(Field field, HttpServletRequest request) {
+        fieldService.updateField(field);
+        return Msg.success();
+    }
+
 
     /**
      * 单个批量删除二合一

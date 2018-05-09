@@ -36,13 +36,15 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">菜地面积</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="fieldArea_add_input" placeholder="Area">
+                            <input type="number" name="area" class="form-control" id="fieldArea_add_input"
+                                   placeholder="Area">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">菜地作物</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="fieldCrops_add_input" placeholder="Crops">
+                            <input type="text" name="crops" class="form-control" id="fieldCrops_add_input"
+                                   placeholder="Crops">
                         </div>
                     </div>
                 </form>
@@ -50,6 +52,40 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-primary" id="field_save_btn">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 菜地修改的模态框 -->
+<div class="modal fade" id="fieldUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">菜地修改</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Area</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="area" class="form-control" id="area_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Crops</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="crops" class="form-control" id="crops_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="field_update_btn">更新</button>
             </div>
         </div>
     </div>
@@ -100,7 +136,7 @@
 </div>
 <script type="text/javascript">
 
-    var totalRecord, currentPage;
+    var totalPages, currentPage;
     //1、页面加载完成以后，直接去发送ajax请求,要到分页数据
     $(function () {
         //去首页
@@ -157,7 +193,7 @@
         $("#page_info_area").append("当前第" + result.extend.pageInfo.pageNum + "页,总" +
             result.extend.pageInfo.pages + "页,总" +
             result.extend.pageInfo.total + "条记录");
-        totalRecord = result.extend.pageInfo.total;
+        totalPages = result.extend.pageInfo.pages;
         currentPage = result.extend.pageInfo.pageNum;
     }
 
@@ -226,24 +262,24 @@
         });
     });
 
-    // $("#field_save_btn").click(function () {
-    //1、模态框中填写的表单数据提交给服务器进行保存
-    //2、发送ajax请求保存菜地信息
-    // alert($("#fieldAddModal form").serialize())
-    <%--$.ajax({--%>
-    <%--url: "${APP_PATH}/field",--%>
-    <%--type: "POST",--%>
-    <%--data: $("#fieldAddModal form").serialize(),--%>
-    <%--success: function (result) {--%>
-    <%--//菜地信息保存成功--%>
-    <%--//1、关闭模态框--%>
-    <%--$("#fieldAddModal").modal.hide();--%>
-    <%--//2、来到最后一页，显示刚才保存的数据--%>
-    <%--//发送ajax请求显示最后一页数据即可--%>
-    <%--to_page(totalRecord);--%>
-    <%--}--%>
-    <%--});--%>
-    // });
+    $("#field_save_btn").click(function () {
+        // 1、模态框中填写的表单数据提交给服务器进行保存
+        // 2、发送ajax请求保存菜地信息
+        // alert($("#fieldAddModal form").serialize())
+        $.ajax({
+            url: "${APP_PATH}/field",
+            type: "POST",
+            data: $("#fieldAddModal form").serialize(),
+            success: function (result) {
+                //菜地信息保存成功
+                //1、关闭模态框
+                $("#fieldAddModal").modal('hide');
+                //2、来到最后一页，显示刚才保存的数据
+                //发送ajax请求显示最后一页数据即可
+                to_page(totalPages);
+            }
+        });
+    });
 
     //单个删除
     $(document).on("click", ".delete_btn", function () {
@@ -300,6 +336,32 @@
                 }
             });
         }
+    });
+    //1、我们是按钮创建之前就绑定了click，所以绑定不上。
+    //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
+    //jquery新版没有live，使用on进行替代
+    $(document).on("click", ".edit_btn", function () {
+        // alert("edit");
+        //3、把员工的id传递给模态框的更新按钮
+        $("#field_update_btn").attr("edit-id", $(this).attr("edit-id"));
+        $("#fieldUpdateModal").modal({
+            backdrop: "static"
+        });
+        $("#field_update_btn").click(function () {
+            //发送ajax请求保存更新的菜地数据
+            $.ajax({
+                url: "${APP_PATH}/field/" + $(this).attr("edit-id"),
+                type: "PUT",
+                data: $("#fieldUpdateModal form").serialize(),
+                success: function (result) {
+                    //alert(result.msg);
+                    //1、关闭对话框
+                    $("#fieldUpdateModal").modal("hide");
+                    //2、回到本页面
+                    to_page(currentPage);
+                }
+            });
+        });
     });
 </script>
 </body>
