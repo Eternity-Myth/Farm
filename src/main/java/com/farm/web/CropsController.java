@@ -1,8 +1,8 @@
 package com.farm.web;
 
-import com.farm.entity.Field;
+import com.farm.entity.Crops;
 import com.farm.entity.Msg;
-import com.farm.service.impl.FieldServiceImpl;
+import com.farm.service.impl.CropsServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,53 +14,47 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 处理菜地CRUD请求
- *
- * @author 关文聪
- */
 @Controller
-public class FieldController {
+public class CropsController {
     @Autowired
-    FieldServiceImpl fieldServiceImpl;
+    CropsServiceImpl cropsServiceImpl;
 
-    @RequestMapping("/field-list")
+    @RequestMapping("/crops-list")
     @ResponseBody
     //pn:pagenumber，即当前页数
-    public Msg getFieldsWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
+    public Msg getCropsWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
         //pageSize：10，指每页显示的数据数
         PageHelper.startPage(pn, 10);
-        List<Field> fields = fieldServiceImpl.getAll();
+        List<Crops> crops = cropsServiceImpl.getAll();
         //navigatePages：5，指在页面需要连续显示的页码数
-        PageInfo page = new PageInfo(fields, 5);
+        PageInfo page = new PageInfo(crops, 5);
         return Msg.success().add("pageInfo", page);
     }
 
-    //菜地保存
-    @RequestMapping(value = "/field", method = RequestMethod.POST)
+    //农作物保存
+    @RequestMapping(value = "/crops", method = RequestMethod.POST)
     @ResponseBody
-    public Msg saveField(Field field) {
-        fieldServiceImpl.saveField(field);
+    public Msg saveCrops(Crops crops) {
+        cropsServiceImpl.saveCrops(crops);
         return Msg.success();
     }
 
-    //菜地更新
+    //农作物更新
+    @RequestMapping(value = "/crops/{id}", method = RequestMethod.PUT)
     @ResponseBody
-    @RequestMapping(value = "/field/{id}", method = RequestMethod.PUT)
-    public Msg updateField(Field field, HttpServletRequest request) {
-        fieldServiceImpl.updateField(field);
+    public Msg updateCrops(Crops crops, HttpServletRequest request) {
+        cropsServiceImpl.updateCrops(crops);
         return Msg.success();
     }
-
 
     /**
      * 单个批量删除二合一
      * 批量删除：1-2-3
      * 单个删除：1
      */
+    @RequestMapping(value = "/crops/{ids}", method = RequestMethod.DELETE)
     @ResponseBody
-    @RequestMapping(value = "/field/{ids}", method = RequestMethod.DELETE)
-    public Msg deleteField(@PathVariable("ids") String ids) {
+    public Msg deleteCrops(@PathVariable("ids") String ids) {
         //批量删除
         if (ids.contains("-")) {
             List<Integer> del_ids = new ArrayList<>();
@@ -69,10 +63,10 @@ public class FieldController {
             for (String string : str_ids) {
                 del_ids.add(Integer.parseInt(string));
             }
-            fieldServiceImpl.deleteBatch(del_ids);
+            cropsServiceImpl.deleteBatch(del_ids);
         } else {
             Integer id = Integer.parseInt(ids);
-            fieldServiceImpl.deleteField(id);
+            cropsServiceImpl.deleteCrops(id);
         }
         return Msg.success();
     }

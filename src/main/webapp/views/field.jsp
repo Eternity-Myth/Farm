@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Area</label>
                         <div class="col-sm-10">
-                            <input type="text" name="area" class="form-control" id="area_update_input">
+                            <input type="number" name="area" class="form-control" id="area_update_input">
                             <span class="help-block"></span>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                         <input type="checkbox" id="check_all"/>
                     </th>
                     <th>#ID</th>
-                    <th>Area</th>
+                    <th>Area/亩</th>
                     <th>Crops</th>
                     <th>操作</th>
                 </tr>
@@ -265,7 +265,6 @@
     $("#field_save_btn").click(function () {
         // 1、模态框中填写的表单数据提交给服务器进行保存
         // 2、发送ajax请求保存菜地信息
-        // alert($("#fieldAddModal form").serialize())
         $.ajax({
             url: "${APP_PATH}/field",
             type: "POST",
@@ -341,8 +340,7 @@
     //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
     //jquery新版没有live，使用on进行替代
     $(document).on("click", ".edit_btn", function () {
-        // alert("edit");
-        //3、把员工的id传递给模态框的更新按钮
+        //3、把菜地的id传递给模态框的更新按钮
         $("#field_update_btn").attr("edit-id", $(this).attr("edit-id"));
         $("#fieldUpdateModal").modal({
             backdrop: "static"
