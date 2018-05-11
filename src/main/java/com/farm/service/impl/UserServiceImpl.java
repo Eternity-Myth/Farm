@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 /**
  * 测试案例：User的业务逻辑实现类
  *
@@ -33,7 +34,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public UserSignUpResult signUp(UserSignUpForm userSignUpForm)
+    public UserSignUpResult signUp(UserSignUpForm userSignUpForm, String codeSession)
             throws SystemException {
 
         // 检查用户账户名和邮箱是否已存在
@@ -42,21 +43,28 @@ public class UserServiceImpl implements UserService {
         }
         if (checkUserIsExistByEmail(userSignUpForm.getUserEmail())) {
             throw new DataExistException("邮箱" + CommonValue.CANNT_USE);
-        }
-        User user = new User(
-                userSignUpForm.getUserName(),
-                userSignUpForm.getUserPass(),
-                userSignUpForm.getUserEmail());
-        try {
-            int insertCount = userDao.insert(user);
-            if (insertCount > 0) {
-                return new UserSignUpResult(true, userSignUpForm.getUserName());
+        } else {
+            if (!codeSession.equalsIgnoreCase(userSignUpForm.getCode())) {
+//将存储的验证码和用户输入的验证码进行比较，错误则抛出异常
+                throw new DataMatchException("验证码错误");
             } else {
-                throw new DataInsertException();
+                User user = new User(
+                        userSignUpForm.getUserName(),
+                        userSignUpForm.getUserPass(),
+                        userSignUpForm.getUserEmail());
+
+                try {
+                    int insertCount = userDao.insert(user);
+                    if (insertCount > 0) {
+                        return new UserSignUpResult(true, userSignUpForm.getUserName());
+                    } else {
+                        throw new DataInsertException();
+                    }
+                } catch (Exception e) {
+                    logger.error(e.getMessage(), e);
+                    throw new DataInsertException();
+                }
             }
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-            throw new DataInsertException();
         }
     }
 
@@ -97,8 +105,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserSignInResult signIn(UserSignInForm userSignInForm) {
+    public UserSignInResult signIn(UserSignInForm userSignInForm, String codeSession) {
         // TODO 密码加密解密处理
+
 
         User user = userDao.selectByUserName(userSignInForm.getUserName());
         if (user == null) {
@@ -107,8 +116,15 @@ public class UserServiceImpl implements UserService {
         if (!user.getUserPass().equals(userSignInForm.getUserPass())) {
             throw new DataMatchException("用户名或密码错误");
         } else {
-            // PS 用户登录状态保存处理操作在Controller中
-            return new UserSignInResult(true, userSignInForm.getUserName());
+            //校验验证码,无视大小写
+            if (!codeSession.equalsIgnoreCase(userSignInForm.getCode())) {
+
+                //将存储的验证码和用户输入的验证码进行比较，错误则抛出异常
+                throw new DataMatchException("验证码错误");
+            } else {
+                // PS 用户登录状态保存处理操作在Controller中
+                return new UserSignInResult(true, userSignInForm.getUserName());
+            }
         }
     }
 

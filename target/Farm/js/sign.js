@@ -46,7 +46,9 @@ $(document).ready(function () {
         var validator = $form.data('bootstrapValidator');
         var user = {
             userName: validator.getFieldElements('userName').val(),
-            userPass: validator.getFieldElements('userPass').val()
+            userPass: validator.getFieldElements('userPass').val(),
+            code: validator.getFieldElements('code').val()
+            //    获取验证码
         };
         console.info(user);
         $.ajax({
@@ -57,8 +59,10 @@ $(document).ready(function () {
                 console.log(responseData);
                 if (!responseData.success) {
                     alert(responseData.errorMsg);
+                    //点击确定以后刷新页面
+                    location.reload()
                 } else {
-                    location.href = "views/index.html"
+                    location.href = "views/index.jsp"
                 }
             }
         });
@@ -139,7 +143,9 @@ $(document).ready(function () {
         var user = {
             userName: validator.getFieldElements('userName').val(),
             userPass: validator.getFieldElements('userPass').val(),
-            userEmail: validator.getFieldElements('userEmail').val()
+            userEmail: validator.getFieldElements('userEmail').val(),
+            //获取验证码
+            code: validator.getFieldElements('code').val()
         };
         console.info(user);
         $.ajax({
@@ -150,8 +156,11 @@ $(document).ready(function () {
                 console.log(responseData);
                 if (!responseData.success) {
                     alert(responseData.errorMsg);
+                    //点击确定以后刷新页面
+                    location.reload()
+
                 } else {
-                    location.href = "sign-in.html"
+                    location.href = "sign-in.jsp"
                 }
             }
         });

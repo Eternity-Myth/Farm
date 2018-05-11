@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="gbk" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
-        <!-- Ê¹ÓÃjdbcµÄgetGeneratedKeys »ñÈ¡Êý¾Ý¿â×ÔÔöÖ÷¼üÖµ-->
+        <!-- ä½¿ç”¨jdbcçš„getGeneratedKeys èŽ·å–æ•°æ®åº“è‡ªå¢žä¸»é”®å€¼-->
         <setting name="useGeneratedKeys" value="true"/>
-        <!-- Ê¹ÓÃ±ðÃûÌæ»»ÁÐÃû Ä¬ÈÏtrue
+        <!-- ä½¿ç”¨åˆ«åæ›¿æ¢åˆ—å é»˜è®¤true
             select name as title from table
         -->
         <setting name="useColumnLabel" value="true"/>
-        <!-- ¿ªÆôÍÕ·åÃüÃû×ª»»£ºTable(create_time) -> Entity(createTime)-->
+        <!-- å¼€å¯é©¼å³°å‘½åè½¬æ¢ï¼šTable(create_time) -> Entity(createTime)-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <plugins>
-        <!--ÒýÈëPageHelper-->
+        <!--å¼•å…¥PageHelper-->
         <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
     </plugins>
 </configuration>

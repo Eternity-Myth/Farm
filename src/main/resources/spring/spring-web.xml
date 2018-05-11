@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="gbk"?>
+<?xml version="1.0" encoding="utf-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- ÅäÖÃSpringMVC-->
-    <!-- 1£º¿ªÆôSpringMVC×¢½âÄ£Ê½-->
-    <!-- ¼ò»¯ÅäÖÃ£º
-        £¨1£©×Ô¶¯×¢²áDefaultAnnotationHandlerMapping£¬AnnotationMethodHandlerAdapter
-        £¨2£©Ìá¹©Ò»ÏµÁÐ£ºÊý¾Ý°ó¶¨£¬Êý×ÖºÍÈÕÆÚµÄformat @NumberFormat£¬@DataTimeFormat£¬
-            xml,jsonÄ¬ÈÏ¶ÁÐ´Ö§³Ö
+    <!-- é…ç½®SpringMVC-->
+    <!-- 1ï¼šå¼€å¯SpringMVCæ³¨è§£æ¨¡å¼-->
+    <!-- ç®€åŒ–é…ç½®ï¼š
+        ï¼ˆ1ï¼‰è‡ªåŠ¨æ³¨å†ŒDefaultAnnotationHandlerMappingï¼ŒAnnotationMethodHandlerAdapter
+        ï¼ˆ2ï¼‰æä¾›ä¸€ç³»åˆ—ï¼šæ•°æ®ç»‘å®šï¼Œæ•°å­—å’Œæ—¥æœŸçš„format @NumberFormatï¼Œ@DataTimeFormatï¼Œ
+            xml,jsoné»˜è®¤è¯»å†™æ”¯æŒ
     -->
     <mvc:annotation-driven/>
 
-    <!-- servlet-mapping Ó³ÉäÂ·¾¶£º"/" -->
-    <!-- 2£º¾²Ì¬×ÊÔ´Ä¬ÈÏservletÅäÖÃ
-        £¨1£©¼ÓÈë¶Ô¾²Ì¬×ÊÔ´µÄ´¦Àí£ºjs£¬css£¬pngµÈµÈ
-        £¨2£©ÔÊÐíÊ¹ÓÃ"/"×öÕûÌåÓ³Éä
+    <!-- servlet-mapping æ˜ å°„è·¯å¾„ï¼š"/" -->
+    <!-- 2ï¼šé™æ€èµ„æºé»˜è®¤servleté…ç½®
+        ï¼ˆ1ï¼‰åŠ å…¥å¯¹é™æ€èµ„æºçš„å¤„ç†ï¼šjsï¼Œcssï¼Œpngç­‰ç­‰
+        ï¼ˆ2ï¼‰å…è®¸ä½¿ç”¨"/"åšæ•´ä½“æ˜ å°„
     -->
     <mvc:default-servlet-handler/>
 
-    <!-- 3£º ÅäÖÃjspÏÔÊ¾ViewResolver-->
+    <!-- 3ï¼š é…ç½®jspæ˜¾ç¤ºViewResolver-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- 4:É¨ÃèwebÏà¹ØµÄBean -->
+    <!-- 4:æ‰«æwebç›¸å…³çš„Bean -->
     <context:component-scan base-package="com.farm.web"/>
 
-    <!--SpringMVCµÄÅäÖÃÎÄ¼þ£¬°üº¬ÍøÕ¾Ìø×ªÂß¼­µÄ¿ØÖÆ£¬ÅäÖÃ  -->
+    <!--SpringMVCçš„é…ç½®æ–‡ä»¶ï¼ŒåŒ…å«ç½‘ç«™è·³è½¬é€»è¾‘çš„æŽ§åˆ¶ï¼Œé…ç½®  -->
     <context:component-scan base-package="com.farm" use-default-filters="false">
-        <!--Ö»É¨Ãè¿ØÖÆÆ÷¡£  -->
+        <!--åªæ‰«ææŽ§åˆ¶å™¨ã€‚  -->
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <!-- 5£ºMVCÀ¹½ØÆ÷£¬¸ù¾ÝÐèÒªÅäÖÃ -->
+    <!-- 5ï¼šMVCæ‹¦æˆªå™¨ï¼Œæ ¹æ®éœ€è¦é…ç½® -->
 </beans>

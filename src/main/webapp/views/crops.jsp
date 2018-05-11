@@ -5,10 +5,10 @@
   Time: 23:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=gbk" language="java" %>
+<%@ page contentType="text/html;charset=utf-8" language="java" %>
 <html>
 <head>
-    <title>Å©×÷ÎïĞÅÏ¢Ò»ÀÀ</title>
+    <title>å†œä½œç‰©ä¿¡æ¯ä¸€è§ˆ</title>
     <%
         pageContext.setAttribute("APP_PATH", request.getContextPath());
     %>
@@ -21,40 +21,40 @@
             src="${APP_PATH}/js/bootstrap.min.js"></script>
 </head>
 <body>
-<!-- Å©×÷ÎïÌí¼ÓµÄÄ£Ì¬¿ò -->
+<!-- å†œä½œç‰©æ·»åŠ çš„æ¨¡æ€æ¡† -->
 <div class="modal fade" id="cropsAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Å©×÷ÎïÌí¼Ó</h4>
+                <h4 class="modal-title" id="myModalLabel">å†œä½œç‰©æ·»åŠ </h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Å©×÷ÎïÃû</label>
+                        <label class="col-sm-2 control-label">å†œä½œç‰©å</label>
                         <div class="col-sm-10">
                             <input type="text" name="cropsname" class="form-control" id="cropsName_add_input"
                                    placeholder="Name">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Õ¼ÓÃÃæ»ı</label>
+                        <label class="col-sm-2 control-label">å ç”¨é¢ç§¯</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="corpsArea_add_input"
                                    placeholder="Area">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">ÀûÈó</label>
+                        <label class="col-sm-2 control-label">åˆ©æ¶¦</label>
                         <div class="col-sm-10">
                             <input type="number" name="profit" class="form-control" id="cropsProfit_add_input"
                                    placeholder="Profit">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">ÖÖÖ²Ê±¼ä</label>
+                        <label class="col-sm-2 control-label">ç§æ¤æ—¶é—´</label>
                         <div class="col-sm-10">
                             <input type="number" name="cropstime" class="form-control" id="cropsTime_add_input"
                                    placeholder="Time">
@@ -63,20 +63,20 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">¹Ø±Õ</button>
-                <button type="button" class="btn btn-primary" id="crops_save_btn">±£´æ</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">å…³é—­</button>
+                <button type="button" class="btn btn-primary" id="crops_save_btn">ä¿å­˜</button>
             </div>
         </div>
     </div>
 </div>
-<!-- Å©×÷ÎïĞŞ¸ÄµÄÄ£Ì¬¿ò -->
+<!-- å†œä½œç‰©ä¿®æ”¹çš„æ¨¡æ€æ¡† -->
 <div class="modal fade" id="cropsUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Å©×÷ÎïĞÅÏ¢ĞŞ¸Ä</h4>
+                <h4 class="modal-title">å†œä½œç‰©ä¿¡æ¯ä¿®æ”¹</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
@@ -104,28 +104,28 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">¹Ø±Õ</button>
-                <button type="button" class="btn btn-primary" id="crops_update_btn">¸üĞÂ</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">å…³é—­</button>
+                <button type="button" class="btn btn-primary" id="crops_update_btn">æ›´æ–°</button>
             </div>
         </div>
     </div>
 </div>
-<%--´î½¨ÏÔÊ¾Ò³Ãæ--%>
+<%--æ­å»ºæ˜¾ç¤ºé¡µé¢--%>
 <div class="container">
-    <%--±êÌâ--%>
+    <%--æ ‡é¢˜--%>
     <div class="row">
         <div class="col-md-12">
-            <h2>Å©×÷ÎïĞÅÏ¢Ò»ÀÀ</h2>
+            <h2>å†œä½œç‰©ä¿¡æ¯ä¸€è§ˆ</h2>
         </div>
     </div>
-    <%--°´Å¥--%>
+    <%--æŒ‰é’®--%>
     <div class="row">
         <div class="col-md-4 col-md-offset-8">
-            <button class="btn btn-primary" id="crops_add_modal_btn">ĞÂÔö</button>
-            <button class="btn btn-danger" id="crops_delete_all_btn">É¾³ı</button>
+            <button class="btn btn-primary" id="crops_add_modal_btn">æ–°å¢</button>
+            <button class="btn btn-danger" id="crops_delete_all_btn">åˆ é™¤</button>
         </div>
     </div>
-    <%--ÏÔÊ¾±í¸ñÊı¾İ--%>
+    <%--æ˜¾ç¤ºè¡¨æ ¼æ•°æ®--%>
     <div class="row">
         <div class="col-md-12">
             <table class="table table-hover" id="crops_table">
@@ -136,10 +136,10 @@
                     </th>
                     <th>#ID</th>
                     <th>Name</th>
-                    <th>Area£¨Öê/Ä¶£©</th>
-                    <th>Profit£¨Ôª/Ä¶£©</th>
-                    <th>Time£¨ÔÂ£©</th>
-                    <th>²Ù×÷</th>
+                    <th>Areaï¼ˆæ ª/äº©ï¼‰</th>
+                    <th>Profitï¼ˆå…ƒ/äº©ï¼‰</th>
+                    <th>Timeï¼ˆæœˆï¼‰</th>
+                    <th>æ“ä½œ</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -147,11 +147,11 @@
             </table>
         </div>
     </div>
-    <!-- ÏÔÊ¾·ÖÒ³ĞÅÏ¢ -->
+    <!-- æ˜¾ç¤ºåˆ†é¡µä¿¡æ¯ -->
     <div class="row">
-        <!--·ÖÒ³ÎÄ×ÖĞÅÏ¢  -->
+        <!--åˆ†é¡µæ–‡å­—ä¿¡æ¯  -->
         <div class="col-md-6" id="page_info_area"></div>
-        <!-- ·ÖÒ³ÌõĞÅÏ¢ -->
+        <!-- åˆ†é¡µæ¡ä¿¡æ¯ -->
         <div class="col-md-6" id="page_nav_area">
         </div>
     </div>
@@ -159,9 +159,9 @@
 <script type="text/javascript">
 
     var totalPages, currentPage;
-    //1¡¢Ò³Ãæ¼ÓÔØÍê³ÉÒÔºó£¬Ö±½ÓÈ¥·¢ËÍajaxÇëÇó,Òªµ½·ÖÒ³Êı¾İ
+    //1ã€é¡µé¢åŠ è½½å®Œæˆä»¥åï¼Œç›´æ¥å»å‘é€ajaxè¯·æ±‚,è¦åˆ°åˆ†é¡µæ•°æ®
     $(function () {
-        //È¥Ê×Ò³
+        //å»é¦–é¡µ
         to_page(1);
     });
 
@@ -171,18 +171,18 @@
             data: "pn=" + pn,
             type: "GET",
             success: function (result) {
-                //1¡¢½âÎö²¢ÏÔÊ¾Å©×÷ÎïÊı¾İ
+                //1ã€è§£æå¹¶æ˜¾ç¤ºå†œä½œç‰©æ•°æ®
                 build_crops_table(result);
-                //2¡¢½âÎö²¢ÏÔÊ¾·ÖÒ³ĞÅÏ¢
+                //2ã€è§£æå¹¶æ˜¾ç¤ºåˆ†é¡µä¿¡æ¯
                 build_page_info(result);
-                //3¡¢½âÎöÏÔÊ¾·ÖÒ³ÌõÊı¾İ
+                //3ã€è§£ææ˜¾ç¤ºåˆ†é¡µæ¡æ•°æ®
                 build_page_nav(result);
             }
         });
     }
 
     function build_crops_table(result) {
-        //Çå¿Õtable±í¸ñ
+        //æ¸…ç©ºtableè¡¨æ ¼
         $("#crops_table tbody").empty();
         var crops = result.extend.pageInfo.list;
         $.each(crops, function (index, item) {
@@ -193,15 +193,15 @@
             var cropsProfitTd = $("<td></td>").append(item.profit);
             var cropsTimeTd = $("<td></td>").append(item.cropstime);
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("±à¼­");
-            //Îª±à¼­°´Å¥Ìí¼ÓÒ»¸ö×Ô¶¨ÒåµÄÊôĞÔ£¬À´±íÊ¾µ±Ç°Å©×÷Îïid
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("ç¼–è¾‘");
+            //ä¸ºç¼–è¾‘æŒ‰é’®æ·»åŠ ä¸€ä¸ªè‡ªå®šä¹‰çš„å±æ€§ï¼Œæ¥è¡¨ç¤ºå½“å‰å†œä½œç‰©id
             editBtn.attr("edit-id", item.id);
             var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("É¾³ı");
-            //ÎªÉ¾³ı°´Å¥Ìí¼ÓÒ»¸ö×Ô¶¨ÒåµÄÊôĞÔÀ´±íÊ¾µ±Ç°É¾³ıµÄÅ©×÷Îïid
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("åˆ é™¤");
+            //ä¸ºåˆ é™¤æŒ‰é’®æ·»åŠ ä¸€ä¸ªè‡ªå®šä¹‰çš„å±æ€§æ¥è¡¨ç¤ºå½“å‰åˆ é™¤çš„å†œä½œç‰©id
             delBtn.attr("del-id", item.id);
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
-            //append·½·¨Ö´ĞĞÍê³ÉÒÔºó»¹ÊÇ·µ»ØÔ­À´µÄÔªËØ
+            //appendæ–¹æ³•æ‰§è¡Œå®Œæˆä»¥åè¿˜æ˜¯è¿”å›åŸæ¥çš„å…ƒç´ 
             $("<tr></tr>").append(checkBoxTd)
                 .append(cropsIdTd)
                 .append(cropsNameTd)
@@ -213,30 +213,30 @@
         });
     }
 
-    //½âÎöÏÔÊ¾·ÖÒ³ĞÅÏ¢
+    //è§£ææ˜¾ç¤ºåˆ†é¡µä¿¡æ¯
     function build_page_info(result) {
         $("#page_info_area").empty();
-        $("#page_info_area").append("µ±Ç°" + result.extend.pageInfo.pageNum + "Ò³,×Ü" +
-            result.extend.pageInfo.pages + "Ò³,×Ü" +
-            result.extend.pageInfo.total + "Ìõ¼ÇÂ¼");
+        $("#page_info_area").append("å½“å‰" + result.extend.pageInfo.pageNum + "é¡µ,æ€»" +
+            result.extend.pageInfo.pages + "é¡µ,æ€»" +
+            result.extend.pageInfo.total + "æ¡è®°å½•");
         totalPages = result.extend.pageInfo.pages;
         currentPage = result.extend.pageInfo.pageNum;
     }
 
-    //½âÎöÏÔÊ¾·ÖÒ³Ìõ£¬µã»÷·ÖÒ³ÒªÄÜÈ¥ÏÂÒ»Ò³....
+    //è§£ææ˜¾ç¤ºåˆ†é¡µæ¡ï¼Œç‚¹å‡»åˆ†é¡µè¦èƒ½å»ä¸‹ä¸€é¡µ....
     function build_page_nav(result) {
         //page_nav_area
         $("#page_nav_area").empty();
         var ul = $("<ul></ul>").addClass("pagination");
 
-        //¹¹½¨ÔªËØ
-        var firstPageLi = $("<li></li>").append($("<a></a>").append("Ê×Ò³").attr("href", "#"));
+        //æ„å»ºå…ƒç´ 
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("é¦–é¡µ").attr("href", "#"));
         var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
         if (result.extend.pageInfo.hasPreviousPage == false) {
             firstPageLi.addClass("disabled");
             prePageLi.addClass("disabled");
         } else {
-            //ÎªÔªËØÌí¼Óµã»÷·­Ò³µÄÊÂ¼ş
+            //ä¸ºå…ƒç´ æ·»åŠ ç‚¹å‡»ç¿»é¡µçš„äº‹ä»¶
             firstPageLi.click(function () {
                 to_page(1);
             });
@@ -245,7 +245,7 @@
             });
         }
         var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
-        var lastPageLi = $("<li></li>").append($("<a></a>").append("Ä©Ò³").attr("href", "#"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("æœ«é¡µ").attr("href", "#"));
         if (result.extend.pageInfo.hasNextPage == false) {
             nextPageLi.addClass("disabled");
             lastPageLi.addClass("disabled");
@@ -259,9 +259,9 @@
         }
 
 
-        //Ìí¼ÓÊ×Ò³ºÍÇ°Ò»Ò³ µÄÌáÊ¾
+        //æ·»åŠ é¦–é¡µå’Œå‰ä¸€é¡µ çš„æç¤º
         ul.append(firstPageLi).append(prePageLi);
-        //1,2£¬3±éÀú¸øulÖĞÌí¼ÓÒ³ÂëÌáÊ¾
+        //1,2ï¼Œ3éå†ç»™ulä¸­æ·»åŠ é¡µç æç¤º
         $.each(result.extend.pageInfo.navigatepageNums, function (index, item) {
 
             var numLi = $("<li></li>").append($("<a></a>").append(item));
@@ -273,10 +273,10 @@
             });
             ul.append(numLi);
         });
-        //Ìí¼ÓÏÂÒ»Ò³ºÍÄ©Ò³ µÄÌáÊ¾
+        //æ·»åŠ ä¸‹ä¸€é¡µå’Œæœ«é¡µ çš„æç¤º
         ul.append(nextPageLi).append(lastPageLi);
 
-        //°Ñul¼ÓÈëµ½nav
+        //æŠŠulåŠ å…¥åˆ°nav
         var navEle = $("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
     }
@@ -288,100 +288,100 @@
     });
 
     $("#crops_save_btn").click(function () {
-        // 1¡¢Ä£Ì¬¿òÖĞÌîĞ´µÄ±íµ¥Êı¾İÌá½»¸ø·şÎñÆ÷½øĞĞ±£´æ
-        // 2¡¢·¢ËÍajaxÇëÇó±£´æÅ©×÷ÎïĞÅÏ¢
+        // 1ã€æ¨¡æ€æ¡†ä¸­å¡«å†™çš„è¡¨å•æ•°æ®æäº¤ç»™æœåŠ¡å™¨è¿›è¡Œä¿å­˜
+        // 2ã€å‘é€ajaxè¯·æ±‚ä¿å­˜å†œä½œç‰©ä¿¡æ¯
         $.ajax({
             url: "${APP_PATH}/crops",
             type: "POST",
             data: $("#cropsAddModal form").serialize(),
             success: function (result) {
-                //Å©×÷ÎïĞÅÏ¢±£´æ³É¹¦
-                //1¡¢¹Ø±ÕÄ£Ì¬¿ò
+                //å†œä½œç‰©ä¿¡æ¯ä¿å­˜æˆåŠŸ
+                //1ã€å…³é—­æ¨¡æ€æ¡†
                 $("#cropsAddModal").modal('hide');
-                //2¡¢À´µ½×îºóÒ»Ò³£¬ÏÔÊ¾¸Õ²Å±£´æµÄÊı¾İ
-                //·¢ËÍajaxÇëÇóÏÔÊ¾×îºóÒ»Ò³Êı¾İ¼´¿É
+                //2ã€æ¥åˆ°æœ€åä¸€é¡µï¼Œæ˜¾ç¤ºåˆšæ‰ä¿å­˜çš„æ•°æ®
+                //å‘é€ajaxè¯·æ±‚æ˜¾ç¤ºæœ€åä¸€é¡µæ•°æ®å³å¯
                 to_page(totalPages);
             }
         });
     });
 
-    //µ¥¸öÉ¾³ı
+    //å•ä¸ªåˆ é™¤
     $(document).on("click", ".delete_btn", function () {
-        //1¡¢µ¯³öÊÇ·ñÈ·ÈÏÉ¾³ı¶Ô»°¿ò
+        //1ã€å¼¹å‡ºæ˜¯å¦ç¡®è®¤åˆ é™¤å¯¹è¯æ¡†
         var cropsId = $(this).attr("del-id");
-        if (confirm("È·ÈÏÉ¾³ıÂğ£¿")) {
-            //È·ÈÏ£¬·¢ËÍajaxÇëÇóÉ¾³ı¼´¿É
+        if (confirm("ç¡®è®¤åˆ é™¤å—ï¼Ÿ")) {
+            //ç¡®è®¤ï¼Œå‘é€ajaxè¯·æ±‚åˆ é™¤å³å¯
             $.ajax({
                 url: "${APP_PATH}/crops/" + cropsId,
                 type: "DELETE",
                 success: function (result) {
                     alert(result.msg);
-                    //»Øµ½±¾Ò³
+                    //å›åˆ°æœ¬é¡µ
                     to_page(currentPage);
                 }
             });
         }
     });
 
-    //Íê³ÉÈ«Ñ¡/È«²»Ñ¡¹¦ÄÜ
+    //å®Œæˆå…¨é€‰/å…¨ä¸é€‰åŠŸèƒ½
     $("#check_all").click(function () {
-        //attr»ñÈ¡checkedÊÇundefined;
-        //ÎÒÃÇÕâĞ©domÔ­ÉúµÄÊôĞÔ£»attr»ñÈ¡×Ô¶¨ÒåÊôĞÔµÄÖµ£»
-        //propĞŞ¸ÄºÍ¶ÁÈ¡domÔ­ÉúÊôĞÔµÄÖµ
+        //attrè·å–checkedæ˜¯undefined;
+        //æˆ‘ä»¬è¿™äº›domåŸç”Ÿçš„å±æ€§ï¼›attrè·å–è‡ªå®šä¹‰å±æ€§çš„å€¼ï¼›
+        //propä¿®æ”¹å’Œè¯»å–domåŸç”Ÿå±æ€§çš„å€¼
         $(".check_item").prop("checked", $(this).prop("checked"));
     });
 
     //check_item
     $(document).on("click", ".check_item", function () {
-        //ÅĞ¶Ïµ±Ç°Ñ¡ÔñÖĞµÄÔªËØÊÇ·ñ¸ÃÒ³ËùÓĞÔªËØ
+        //åˆ¤æ–­å½“å‰é€‰æ‹©ä¸­çš„å…ƒç´ æ˜¯å¦è¯¥é¡µæ‰€æœ‰å…ƒç´ 
         var flag = $(".check_item:checked").length == $(".check_item").length;
         $("#check_all").prop("checked", flag);
     });
 
-    //µã»÷È«²¿É¾³ı£¬¾ÍÅúÁ¿É¾³ı
+    //ç‚¹å‡»å…¨éƒ¨åˆ é™¤ï¼Œå°±æ‰¹é‡åˆ é™¤
     $("#crops_delete_all_btn").click(function () {
         //
         var del_idstr = "";
         $.each($(".check_item:checked"), function () {
-            //×é×°²ËµØid×Ö·û´®
+            //ç»„è£…èœåœ°idå­—ç¬¦ä¸²
             del_idstr += $(this).parents("tr").find("td:eq(1)").text() + "-";
         });
-        //È¥³ıÉ¾³ıµÄid¶àÓàµÄ-
+        //å»é™¤åˆ é™¤çš„idå¤šä½™çš„-
         del_idstr = del_idstr.substring(0, del_idstr.length - 1);
-        if (confirm("È·ÈÏÉ¾³ıÂğ£¿")) {
-            //·¢ËÍajaxÇëÇóÉ¾³ı
+        if (confirm("ç¡®è®¤åˆ é™¤å—ï¼Ÿ")) {
+            //å‘é€ajaxè¯·æ±‚åˆ é™¤
             $.ajax({
                 url: "${APP_PATH}/crops/" + del_idstr,
                 type: "DELETE",
                 success: function (result) {
                     alert(result.msg);
-                    //»Øµ½µ±Ç°Ò³Ãæ
+                    //å›åˆ°å½“å‰é¡µé¢
                     to_page(currentPage);
                 }
             });
         }
     });
 
-    //1¡¢ÎÒÃÇÊÇ°´Å¥´´½¨Ö®Ç°¾Í°ó¶¨ÁËclick£¬ËùÒÔ°ó¶¨²»ÉÏ¡£
-    //1£©¡¢¿ÉÒÔÔÚ´´½¨°´Å¥µÄÊ±ºò°ó¶¨¡£    2£©¡¢°ó¶¨µã»÷.live()
-    //jqueryĞÂ°æÃ»ÓĞlive£¬Ê¹ÓÃon½øĞĞÌæ´ú
+    //1ã€æˆ‘ä»¬æ˜¯æŒ‰é’®åˆ›å»ºä¹‹å‰å°±ç»‘å®šäº†clickï¼Œæ‰€ä»¥ç»‘å®šä¸ä¸Šã€‚
+    //1ï¼‰ã€å¯ä»¥åœ¨åˆ›å»ºæŒ‰é’®çš„æ—¶å€™ç»‘å®šã€‚    2ï¼‰ã€ç»‘å®šç‚¹å‡».live()
+    //jqueryæ–°ç‰ˆæ²¡æœ‰liveï¼Œä½¿ç”¨onè¿›è¡Œæ›¿ä»£
     $(document).on("click", ".edit_btn", function () {
-        //3¡¢°Ñ²ËµØµÄid´«µİ¸øÄ£Ì¬¿òµÄ¸üĞÂ°´Å¥
+        //3ã€æŠŠèœåœ°çš„idä¼ é€’ç»™æ¨¡æ€æ¡†çš„æ›´æ–°æŒ‰é’®
         $("#crops_update_btn").attr("edit-id", $(this).attr("edit-id"));
         $("#cropsUpdateModal").modal({
             backdrop: "static"
         });
         $("#crops_update_btn").click(function () {
-            //·¢ËÍajaxÇëÇó±£´æ¸üĞÂµÄ²ËµØÊı¾İ
+            //å‘é€ajaxè¯·æ±‚ä¿å­˜æ›´æ–°çš„èœåœ°æ•°æ®
             $.ajax({
                 url: "${APP_PATH}/crops/" + $(this).attr("edit-id"),
                 type: "PUT",
                 data: $("#cropsUpdateModal form").serialize(),
                 success: function (result) {
                     //alert(result.msg);
-                    //1¡¢¹Ø±Õ¶Ô»°¿ò
+                    //1ã€å…³é—­å¯¹è¯æ¡†
                     $("#cropsUpdateModal").modal("hide");
-                    //2¡¢»Øµ½±¾Ò³Ãæ
+                    //2ã€å›åˆ°æœ¬é¡µé¢
                     to_page(currentPage);
                 }
             });

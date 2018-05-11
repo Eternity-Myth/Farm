@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: Eternity-Myth
+  Date: 2018/5/11
+  Time: 19:27
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=gbk" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="zh-CN">
 <head>
     <meta charset="GBK">
@@ -8,6 +16,7 @@
     <meta name="description" content="注册">
     <meta name="author" content="关文聪">
     <title>登录</title>
+
 
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -41,12 +50,34 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-3 control-label">密码</label>
+                <label class="col-sm-3 control-label">密 码</label>
 
                 <div class="col-sm-9">
                     <input type="password" class="form-control" name="userPass" required/>
                 </div>
             </div>
+
+
+            <!--  验证码-->
+
+            <%--<div class="form-group">--%>
+            <%--<div class="col-sm-9" align="middle">--%>
+            <%--<input type="text" class="form-control" name="code" size="8" ,maxlength="4" placeholder="请输入验证码"/>--%>
+            <%--<img id="validateCodeImg" src="/user/validateCode" />--%>
+            <%--<a href="" onclick="javascript:reloadValidateCode();"> 看不清,换一个</a>--%>
+            <%--</div>--%>
+            <%--</div>--%>
+            <div class="form-group">
+                <div class="col-sm-3 ">
+                    <input type="text" class="form-control" name="code" size="8" ,maxlength="4" placeholder="请输入验证码"/>
+                </div>
+                <div class="col-sm-8 col-sm-offset-1">
+                    <img id="validateCodeImg" src="/user/validateCode"/>
+                    <a href="" onclick="javascript:reloadValidateCode();"> 看不清,换一个</a>
+                </div>
+
+            </div>
+
 
             <div class="row">
                 <div class="col-sm-9 col-sm-offset-3">
@@ -57,7 +88,7 @@
 
             <div class="row">
                 <div class="col-sm-9 col-sm-offset-3">
-                    <p>没有账号，前往 <a href="sign-up.html">注册</a></p>
+                    <p>没有账号，前往 <a href="sign-up.jsp">注册</a></p>
                 </div>
             </div>
         </form>
@@ -71,5 +102,11 @@
 <script src="lib/bootstrap.min.js"></script>
 <script src="lib/bootstrapValidator.min.js"></script>
 <script src="js/sign.js"></script>
+<%--刷新的函数--%>
+<script>
+    function reloadValidateCode() {
+        $("#validateCodeImg").attr("src", "/user/validateCode" + new Date() + Math.floor(Math.random() * 24));
+    }
+</script>
 </body>
 </html>

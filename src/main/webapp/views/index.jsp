@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: Eternity-Myth
+  Date: 2018/5/11
+  Time: 21:03
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=gbk" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="zh">
 <head>
     <meta charset="GBK">
@@ -13,6 +21,7 @@
     body {
         padding: 10px 60px;
     }
+
     .author {
         background-color: #F3F3F3;
         width: 600px;
@@ -30,12 +39,13 @@
 
 <div class="author">
     关文聪 <br/><br/>
-    网站：<a href="https://github.com/Eternity-Myth/Farm" target="_blank">https://github.com/Eternity-Myth/Farm</a> <br/><br/>
+    网站：<a href="https://github.com/Eternity-Myth/Farm" target="_blank">https://github.com/Eternity-Myth/Farm</a>
+    <br/><br/>
     邮箱：530711667@qq.com <br/><br/>
     QQ ：530711667 <br/>
 </div>
-<a href="../sign-in.html">登录</a>
-<a href="../sign-up.html">注册</a>
+<a href="../sign-in.jsp">登录</a>
+<a href="../sign-up.jsp">注册</a>
 <a href="/views/field.jsp">查看所有菜地信息</a>
 <a href="/views/crops.jsp">查看所有农作物信息</a>
 </body>

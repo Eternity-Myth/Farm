@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="gbk"?>
+<?xml version="1.0" encoding="utf-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -10,59 +10,59 @@
         <context:exclude-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-    <!-- ÅäÖÃÕûºÏmybatis¹ý³Ì -->
-    <!-- 1£ºÅäÖÃÊý¾Ý¿âÏà¹Ø²ÎÊýpropertiesµÄÊôÐÔ£º${url}-->
+    <!-- é…ç½®æ•´åˆmybatisè¿‡ç¨‹ -->
+    <!-- 1ï¼šé…ç½®æ•°æ®åº“ç›¸å…³å‚æ•°propertiesçš„å±žæ€§ï¼š${url}-->
     <context:property-placeholder location="classpath:database.properties"/>
 
-    <!-- 2:Êý¾Ý¿âÁ¬½Ó³Ø-->
-    <!-- ¸ü¶àÁ¬½Ó³ØµÄÅäÖÃÇë²Î¿´DruidµÄ¹Ù·½ÅäÖÃ
-            µØÖ·£ºhttps://github.com/alibaba/druid/wiki/³£¼ûÎÊÌâ
+    <!-- 2:æ•°æ®åº“è¿žæŽ¥æ± -->
+    <!-- æ›´å¤šè¿žæŽ¥æ± çš„é…ç½®è¯·å‚çœ‹Druidçš„å®˜æ–¹é…ç½®
+            åœ°å€ï¼šhttps://github.com/alibaba/druid/wiki/å¸¸è§é—®é¢˜
         -->
-    <!--ÉèÖÃÎªcloseÊ¹SpringÈÝÆ÷¹Ø±ÕÍ¬Ê±Êý¾ÝÔ´ÄÜ¹»Õý³£¹Ø±Õ£¬ÒÔÃâÔì³ÉÁ¬½ÓÐ¹Â¶  -->
+    <!--è®¾ç½®ä¸ºcloseä½¿Springå®¹å™¨å…³é—­åŒæ—¶æ•°æ®æºèƒ½å¤Ÿæ­£å¸¸å…³é—­ï¼Œä»¥å…é€ æˆè¿žæŽ¥æ³„éœ²  -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
-        <!-- 2.1 ÅäÖÃÁ¬½Ó³Ø»ù±¾ÊôÐÔ-->
-        <!-- »ù±¾ÊôÐÔ driverClassName£¬url¡¢username¡¢password -->
-        <!-- Çý¶¯ÀàÃû -->
+        <!-- 2.1 é…ç½®è¿žæŽ¥æ± åŸºæœ¬å±žæ€§-->
+        <!-- åŸºæœ¬å±žæ€§ driverClassNameï¼Œurlã€usernameã€password -->
+        <!-- é©±åŠ¨ç±»å -->
         <property name="driverClassName" value="${jdbc.driverClassName}"/>
         <!-- url -->
         <property name="url" value="${jdbc.url}"/>
-        <!-- ÓÃ»§Ãû -->
+        <!-- ç”¨æˆ·å -->
         <property name="username" value="${jdbc.username}"/>
-        <!-- ÓÃ»§ÃÜÂë -->
+        <!-- ç”¨æˆ·å¯†ç  -->
         <property name="password" value="${jdbc.password}"/>
 
-        <!-- 2.2 ÅäÖÃÁ¬½Ó³ØµÄË½ÓÐÊôÐÔ -->
-        <!-- ÅäÖÃ³õÊ¼»¯´óÐ¡¡¢×îÐ¡¡¢×î´ó -->
+        <!-- 2.2 é…ç½®è¿žæŽ¥æ± çš„ç§æœ‰å±žæ€§ -->
+        <!-- é…ç½®åˆå§‹åŒ–å¤§å°ã€æœ€å°ã€æœ€å¤§ -->
         <property name="initialSize" value="${jdbc.initialSize}"/>
         <property name="minIdle" value="${jdbc.minIdle}"/>
         <property name="maxActive" value="${jdbc.maxActive}"/>
-        <!-- ÅäÖÃ»ñÈ¡Á¬½ÓµÈ´ý³¬Ê±µÄÊ±¼ä -->
+        <!-- é…ç½®èŽ·å–è¿žæŽ¥ç­‰å¾…è¶…æ—¶çš„æ—¶é—´ -->
         <property name="maxWait" value="${jdbc.maxWait}"/>
-        <!-- ÅäÖÃ¼ä¸ô¶à¾Ã²Å½øÐÐÒ»´Î¼ì²â£¬¼ì²âÐèÒª¹Ø±ÕµÄ¿ÕÏÐÁ¬½Ó£¬µ¥Î»ÊÇºÁÃë -->
+        <!-- é…ç½®é—´éš”å¤šä¹…æ‰è¿›è¡Œä¸€æ¬¡æ£€æµ‹ï¼Œæ£€æµ‹éœ€è¦å…³é—­çš„ç©ºé—²è¿žæŽ¥ï¼Œå•ä½æ˜¯æ¯«ç§’ -->
         <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}"/>
-        <!-- ÅäÖÃÒ»¸öÁ¬½ÓÔÚ³ØÖÐ×îÐ¡Éú´æµÄÊ±¼ä£¬µ¥Î»ÊÇºÁÃë -->
+        <!-- é…ç½®ä¸€ä¸ªè¿žæŽ¥åœ¨æ± ä¸­æœ€å°ç”Ÿå­˜çš„æ—¶é—´ï¼Œå•ä½æ˜¯æ¯«ç§’ -->
         <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}"/>
     </bean>
 
-    <!-- **Ô¼¶¨´óÓÚÅäÖÃ** -->
-    <!-- 3:ÅäÖÃSQLSessionFactory¶ÔÏó -->
+    <!-- **çº¦å®šå¤§äºŽé…ç½®** -->
+    <!-- 3:é…ç½®SQLSessionFactoryå¯¹è±¡ -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <!-- ×¢ÈëÊý¾Ý¿âÁ¬½Ó³Ø-->
+        <!-- æ³¨å…¥æ•°æ®åº“è¿žæŽ¥æ± -->
         <property name="dataSource" ref="dataSource"/>
-        <!-- ÅäÖÃMybatisÈ«¾ÖÅäÖÃÎÄ¼þ-->
+        <!-- é…ç½®Mybatiså…¨å±€é…ç½®æ–‡ä»¶-->
         <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
-        <!-- É¨Ãèentity°ü Ê¹ÓÃ±ðÃû;¶à¸ö°üµÄÊ¹ÓÃ;·Ö¿ª¼´¿É-->
+        <!-- æ‰«æentityåŒ… ä½¿ç”¨åˆ«å;å¤šä¸ªåŒ…çš„ä½¿ç”¨;åˆ†å¼€å³å¯-->
         <property name="typeAliasesPackage" value="com.farm.entity"/>
-        <!-- É¨ÃèsqlÅäÖÃÎÄ¼þ£¬mapperÐèÒªµÄxmlÎÄ¼þ-->
+        <!-- æ‰«æsqlé…ç½®æ–‡ä»¶ï¼Œmapperéœ€è¦çš„xmlæ–‡ä»¶-->
         <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
     </bean>
 
-    <!-- 4:ÅäÖÃÉ¨ÃèDAO½Ó¿Ú°ü£¬¶¯Ì¬ÊµÏÖDAO½Ó¿Ú£¬×¢Èëµ½springÈÝÆ÷ÖÐ -->
+    <!-- 4:é…ç½®æ‰«æDAOæŽ¥å£åŒ…ï¼ŒåŠ¨æ€å®žçŽ°DAOæŽ¥å£ï¼Œæ³¨å…¥åˆ°springå®¹å™¨ä¸­ -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <!-- ×¢ÈëSQLSessionFactory Ê¹ÓÃsqlSessionFactoryBeanName·ÀÖ¹ÕâÀïÌáÇ°³õÊ¼»¯sqlSessionFactory -->
+        <!-- æ³¨å…¥SQLSessionFactory ä½¿ç”¨sqlSessionFactoryBeanNameé˜²æ­¢è¿™é‡Œæå‰åˆå§‹åŒ–sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <!-- ¸ø³öÐèÒªÉ¨ÃèµÄDAO½Ó¿Ú°ü -->
+        <!-- ç»™å‡ºéœ€è¦æ‰«æçš„DAOæŽ¥å£åŒ… -->
         <property name="basePackage" value="com.farm.dao"/>
     </bean>
 </beans>

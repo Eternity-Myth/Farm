@@ -27,7 +27,7 @@ public class UserServiceTest extends BaseServiceTest {
     @Test
     public void testSignIn() throws Exception {
         UserSignInForm userSignInForm = new UserSignInForm("123456","123456");
-        UserSignInResult userSignInResult = userService.signIn(userSignInForm);
+        UserSignInResult userSignInResult = userService.signIn(userSignInForm,"abcd");
         logger.info("userSignInResult={}",userSignInResult);
     }
 

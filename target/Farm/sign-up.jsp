@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: Eternity-Myth
+  Date: 2018/5/11
+  Time: 19:28
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=gbk" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="zh-CN">
 <head>
     <meta charset="GBK">
@@ -46,7 +54,9 @@
                     <input type="email" name="userEmail" maxlength="20" id="inputEmail"
                            class="form-control" required
                            autofocus>
-                    <small id="userEmailMsg" class="help-block" data-bv-for="userEmail" data-bv-result="INVALID" style="display: none">邮箱已被使用</small>
+                    <small id="userEmailMsg" class="help-block" data-bv-for="userEmail" data-bv-result="INVALID"
+                           style="display: none">邮箱已被使用
+                    </small>
                 </div>
             </div>
 
@@ -69,6 +79,17 @@
                            required>
                 </div>
             </div>
+
+            <!--  验证码-->
+
+            <div class="form-group">
+                <div class="col-sm-9" align="middle">
+                    <input type="text" class="form-control" name="code" size="8" ,maxlength="4" placeholder="请输入验证码"/>
+                    <img id="validateCodeImg" src="/user/validateCode"/>
+                    <a href="" onclick="javascript:reloadValidateCode();"> 看不清,换一个</a>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-2">
                     <button class="btn btn-md btn-primary btn-block" type="submit">注册</button>
@@ -77,7 +98,7 @@
             <br/>
             <div class="row">
                 <div class="col-sm-9 col-sm-offset-3">
-                    <p>已有账号，前往 <a href="sign-in.html">登录</a></p>
+                    <p>已有账号，前往 <a href="sign-in.jsp">登录</a></p>
                 </div>
             </div>
         </form>
@@ -94,9 +115,14 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
-
     });
     ;
+</script>
+<%--刷新的函数--%>
+<script>
+    function reloadValidateCode() {
+        $("#validateCodeImg").attr("src", "/user/validateCode" + new Date() + Math.floor(Math.random() * 24));
+    }
 </script>
 
 </html>

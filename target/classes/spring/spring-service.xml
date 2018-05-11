@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="gbk"?>
+<?xml version="1.0" encoding="utf-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -10,15 +10,15 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- 扫描service包下面所有使用注解的类型-->
+    <!-- 鎵弿service鍖呬笅闈㈡墍鏈変娇鐢ㄦ敞瑙ｇ殑绫诲瀷-->
     <context:component-scan base-package="com.farm.service"/>
 
-    <!-- 配置事务管理器 -->
+    <!-- 閰嶇疆浜嬪姟绠＄悊鍣� -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <!-- 注入数据库连接池 -->
+        <!-- 娉ㄥ叆鏁版嵁搴撹繛鎺ユ睜 -->
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- 配置基于注解的声明式事务 -->
+    <!-- 閰嶇疆鍩轰簬娉ㄨВ鐨勫０鏄庡紡浜嬪姟 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
