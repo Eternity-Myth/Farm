@@ -28,3 +28,5 @@ IDE:JetBrains-Intellij Idea Ultimate
 
 逆向工程：MyBatis-Generator
 
+
+中文乱码的初步解决：项目中html文件的编码设置为GBK，其余（xml、jsp等）设置为UTF-8。数据库和表编码设置为UTF-8
