@@ -17,7 +17,8 @@
     <meta name="author" content="关文聪">
     <title>登录</title>
 
-
+    <!-- Bootstrap -->
+    <link href="css/font.css" rel="stylesheet">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrapValidator.min.css">
@@ -28,76 +29,82 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div class="container">
+<body style="background-image:url(agro/UIpic/background.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
+<div class="container-fluid">
+    <div class="row" style="height:100px"></div>
     <div class="row">
-        <form id="signInForm" name="form"
-              class="form-horizontal col-sm-6 col-sm-offset-3"
-              onsubmit="form.$valid && signIn()" role="form">
-            <h2 style="text-align: center">登录</h2>
-            <br/>
-
-            <div class="form-group">
-                <label class="col-sm-3 control-label">用户名</label>
-
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" name="userName" required/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-3 control-label">密 码</label>
-
-                <div class="col-sm-9">
-                    <input type="password" class="form-control" name="userPass" required/>
-                </div>
-            </div>
-
-
-            <!--  验证码-->
-
-            <%--<div class="form-group">--%>
-            <%--<div class="col-sm-9" align="middle">--%>
-            <%--<input type="text" class="form-control" name="code" size="8" ,maxlength="4" placeholder="请输入验证码"/>--%>
-            <%--<img id="validateCodeImg" src="/user/validateCode" />--%>
-            <%--<a href="" onclick="javascript:reloadValidateCode();"> 看不清,换一个</a>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <div class="form-group">
-                <div class="col-sm-3 ">
-                    <input type="text" class="form-control" name="code" size="8" ,maxlength="4" placeholder="请输入验证码"/>
-                </div>
-                <div class="col-sm-8 col-sm-offset-1">
-                    <img id="validateCodeImg" src="/user/validateCode"/>
-                    <a href="" onclick="javascript:reloadValidateCode();"> 看不清,换一个</a>
-                </div>
-
-            </div>
-
-
-            <div class="row">
-                <div class="col-sm-9 col-sm-offset-3">
-                    <button type="submit" name="submit" class="btn btn-md btn-primary btn-block">登录</button>
-                </div>
-            </div>
-            <br/>
-
-            <div class="row">
-                <div class="col-sm-9 col-sm-offset-3">
-                    <p>没有账号，前往 <a href="sign-up.jsp">注册</a></p>
-                </div>
-            </div>
-        </form>
+        <div class="col-md-6 col-md-offset-2">
+            <img src="agro/UIpic/agro logo.png" style="height:100px">
+        </div>
     </div>
+    <br>
+    <form id="signInForm" name="form"
+          onsubmit="form.$valid && signIn()" role="form">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2" style="background-color:rgba(80,77,77,0.9);height:300px">
+                <div class="biaoti">
+                    登&nbsp;录
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 col-md-offset-3 control-label normalfonts">&nbsp;&nbsp;&nbsp;用户名</label>
+                    <div class="col-md-4">
+                        <input type="text" style="height:25px" class="form-control" name="userName" required/>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 col-md-offset-3 control-label normalfonts">&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <div class="col-md-4">
+                        <input type="password" style="height:25px" class="form-control" name="userPass" required/>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-2 col-md-offset-3">
+                        <input type="text" class="form-control" style="height:25px; margin-left:20px" name="code"
+                               size="8"
+                               maxlength="4" placeholder="验证码"/>
+                    </div>
+                    <div class="col-md-4">
+                        <img id="validateCodeImg" src="/user/validateCode" style="height:25px;margin-left:10px"/>
+                        <a style="color:#E3E3E3;margin-left:5px" href="" onclick="javascript:reloadValidateCode();">
+                            看不清,换一个</a>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 col-sm-offset-5">
+                        <button type="submit" name="submit" class="btn btn-md btn-primary btn-block"
+                                style="background-color:rgba(88,88,88,0.7)">登&nbsp;&nbsp;录
+                        </button>
+                    </div>
+                    <div class="col-md-5" style="height:50px"></div>
+                </div>
+
+
+                <div class="row">
+                    <div style="text-align:center">
+                        <p style="color:#FFFFFF">没有账号，前往 <a style="color:#E3E3E3" href="sign-up.jsp">注册</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-<!-- /container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="lib/jquery-1.12.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="lib/bootstrap.min.js"></script>
 <script src="lib/bootstrapValidator.min.js"></script>

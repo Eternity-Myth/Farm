@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Eternity-Myth
   Date: 2018/5/11
-  Time: 19:28
+  Time: 19:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=gbk" language="java" %>
@@ -17,112 +17,123 @@
     <meta name="author" content="关文聪">
     <title>注册</title>
 
+    <!-- Bootstrap -->
+    <link href="css/font.css" rel="stylesheet">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrapValidator.min.css">
-    <!-- Custom styles for this template -->
-
-    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div class="container">
-    <div class="row">
-        <form id="signUpForm" name="form" class="form-horizontal col-sm-6 col-sm-offset-3"
-              onsubmit="form.$valid && signUp()" role="form">
-            <h2 style="text-align: center">注册</h2>
-
-            <div class="form-group" id="accountDiv">
-                <label class="col-sm-2 control-label" for="inputAccount">账号</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="userName" maxlength="20" id="inputAccount"
-                           class="form-control" required autofocus>
-                </div>
-            </div>
-
-            <div class="form-group" id="emailDiv">
-                <label class="col-sm-2 control-label" for="inputEmail">邮箱</label>
-
-                <div class="col-sm-10">
-                    <input type="email" name="userEmail" maxlength="20" id="inputEmail"
-                           class="form-control" required
-                           autofocus>
-                    <small id="userEmailMsg" class="help-block" data-bv-for="userEmail" data-bv-result="INVALID"
-                           style="display: none">邮箱已被使用
-                    </small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputPassword">密码</label>
-
-                <div class="col-sm-10">
-                    <input type="password" name="userPass" maxlength="16" id="inputPassword" class="form-control"
-                           required>
-
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="inputConfirmPassword">确认密码</label>
-
-                <div class="col-sm-10">
-                    <input type="password" name="userConfirmPass" maxlength="16" minlength="6" id="inputConfirmPassword"
-                           class="form-control"
-                           required>
-                </div>
-            </div>
-
-            <!--  验证码-->
-
-            <div class="form-group">
-                <div class="col-sm-9" align="middle">
-                    <input type="text" class="form-control" name="code" size="8" ,maxlength="4" placeholder="请输入验证码"/>
-                    <img id="validateCodeImg" src="/user/validateCode"/>
-                    <a href="" onclick="javascript:reloadValidateCode();"> 看不清,换一个</a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-2">
-                    <button class="btn btn-md btn-primary btn-block" type="submit">注册</button>
-                </div>
-            </div>
-            <br/>
-            <div class="row">
-                <div class="col-sm-9 col-sm-offset-3">
-                    <p>已有账号，前往 <a href="sign-in.jsp">登录</a></p>
-                </div>
-            </div>
-        </form>
+<body style="background-image:url(agro/UIpic/background.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
+<div class="container-fluid">
+    <div class="row" style="height:60px">
     </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <img src="agro/UIpic/agro logo.png" style="height:100px">
+        </div>
+    </div>
+    <br>
+    <form id="signUpForm" name="form"
+          onsubmit="form.$valid && signUp()" role="form">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2"
+                 style="background-color:rgba(80,77,77,0.9);height:400px;margin-bottom:100px">
+                <div class="biaoti">
+                    注&nbsp;册
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 col-md-offset-3 control-label normalfonts">&nbsp;&nbsp;&nbsp;用户名</label>
+                    <div class="col-md-4">
+                        <input type="text" style="height:25px" class="form-control" name="userName" maxlength="20"
+                               id="inputAccount" required autofocus/>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 col-md-offset-3 control-label normalfonts">&nbsp;&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+                    <div class="col-md-4">
+                        <input type="email" style="height:25px" class="form-control" name="userEmail" maxlength="20"
+                               id="inputEmail" required autofocus/>
+                        <small id="userEmailMsg" class="help-block" data-bv-for="userEmail" data-bv-result="INVALID"
+                               style="display: none">邮箱已被使用
+                        </small>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 col-md-offset-3 control-label normalfonts">&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <div class="col-md-4">
+                        <input type="password" style="height:25px" class="form-control" name="userPass" maxlength="16"
+                               id="inputPassword" required/>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 col-md-offset-3 control-label normalfonts">请确认密码</label>
+                    <div class="col-md-4">
+                        <input type="password" style="height:25px" class="form-control" name="userConfirmPass"
+                               maxlength="16" minlength="6" id="inputConfirmPassword"
+                               required/>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2 col-md-offset-3">
+                        <input type="text" class="form-control" style="height:25px; margin-left:20px" name="code"
+                               size="8"
+                               maxlength="4" placeholder="验证码"/>
+                    </div>
+                    <div class="col-md-4">
+                        <img id="validateCodeImg" src="/user/validateCode" style="height:25px;margin-left:10px"/>
+                        <a style="color:#E3E3E3;margin-left:5px" href="" onclick="javascript:reloadValidateCode();">
+                            看不清,换一个</a>
+                    </div>
+                    <div class="col-md-3" style="height:50px"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 col-sm-offset-5">
+                        <button type="submit" name="submit" class="btn btn-md btn-primary btn-block"
+                                style="background-color:rgba(88,88,88,0.7)">注&nbsp;&nbsp;册
+                        </button>
+                    </div>
+                    <div class="col-md-5" style="height:50px"></div>
+                </div>
+
+
+                <div class="row">
+                    <div style="text-align:center">
+                        <p style="color:#FFFFFF">已有账号，前往 <a style="color:#E3E3E3" href="sign-in.jsp">登录</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-<!-- /container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="lib/jquery-1.12.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="lib/bootstrap.min.js"></script>
 <script src="lib/bootstrapValidator.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="js/sign.js"></script>
-</body>
-<script type="text/javascript">
-    $(document).ready(function () {
-    });
-    ;
-</script>
 <%--刷新的函数--%>
 <script>
     function reloadValidateCode() {
         $("#validateCodeImg").attr("src", "/user/validateCode" + new Date() + Math.floor(Math.random() * 24));
     }
 </script>
-
+</body>
 </html>

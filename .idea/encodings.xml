@@ -20,18 +20,23 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/spring" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/sql/test.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/sign_up.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/agro" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/bg.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.css.map" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.min.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap-theme.min.css.map" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.css.map" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css.map" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/bootstrapValidator.min.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/font.css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/fonts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/fonts/bradleyhanditcttbold.ttf" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.eot" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.eot" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.svg" charset="GBK" />
@@ -44,7 +49,9 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff2" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-1.11.2.min.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-3.3.1.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-3.3.1.min.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/npm.js" charset="GBK" />
@@ -53,9 +60,10 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/lib/bootstrap.min.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/lib/bootstrapValidator.min.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/lib/jquery-1.12.3.min.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-in.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-up.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/views/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-in.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sign-up.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sign_up.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/views/index.jsp" charset="GBK" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>
