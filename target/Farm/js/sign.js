@@ -62,7 +62,7 @@ $(document).ready(function () {
                     //点击确定以后刷新页面
                     location.reload()
                 } else {
-                    location.href = "views/index.jsp"
+                    location.href = "/views/index.jsp"
                 }
             }
         });

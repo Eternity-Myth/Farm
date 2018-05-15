@@ -33,7 +33,5 @@ public class CropsDaoTest extends BaseDaoTest {
 
     @Test
     public void testSelectById() throws Exception {
-        Crops crops = new Crops();
-
     }
 }

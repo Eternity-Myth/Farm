@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 处理农作物CRUD请求
+ *
+ * @author 关文聪
+ */
 @Controller
 public class CropsController {
     @Autowired

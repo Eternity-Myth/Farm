@@ -24,7 +24,7 @@ public class UserDaoTest extends BaseDaoTest {
         user.setUserName("Eternity-Myth");
         user.setUserPass("123456");
         user.setUserEmail("530711667@qq.com");
-        user.setStatus(AccountStatusEnum.ACTIVED.getStatus());
+//        user.setStatus(AccountStatusEnum.ACTIVED.getStatus());
         int insertCount = userDao.insert(user);
         logger.info("insertCount=" + insertCount);
         logger.info("insertUser=" + user);

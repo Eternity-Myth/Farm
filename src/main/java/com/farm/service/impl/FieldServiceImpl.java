@@ -39,12 +39,6 @@ public class FieldServiceImpl implements FieleService {
         fieldDao.deleteByPrimaryKey(id);
     }
 
-    //菜地更新
-    @Override
-    public void updateField(Field field) {
-        fieldDao.updateByPrimaryKeySelective(field);
-    }
-
     @Override
     public void deleteBatch(List<Integer> ids) {
         FieldExample example = new FieldExample();
@@ -53,4 +47,12 @@ public class FieldServiceImpl implements FieleService {
         criteria.andIdIn(ids);
         fieldDao.deleteByExample(example);
     }
+
+    //菜地更新
+    @Override
+    public void updateField(Field field) {
+        fieldDao.updateByPrimaryKeySelective(field);
+    }
+
+
 }

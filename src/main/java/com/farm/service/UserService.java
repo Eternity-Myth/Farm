@@ -3,8 +3,11 @@ package com.farm.service;
 import com.farm.dto.CheckResult;
 import com.farm.dto.UserSignInResult;
 import com.farm.dto.UserSignUpResult;
+import com.farm.entity.User;
 import com.farm.vo.UserSignInForm;
 import com.farm.vo.UserSignUpForm;
+
+import java.util.List;
 
 /**
  * 测试案例：User的业务逻辑接口
@@ -23,5 +26,11 @@ public interface UserService {
     CheckResult checkUserEmailIsExist(String userEmail);
 
     UserSignInResult signIn(UserSignInForm userSignInForm, String codeSession);
+
+    public List<User> getAll();
+
+    public void deleteBatch(List<Integer> del_ids);
+
+    public void deleteUser(Integer id);
 
 }

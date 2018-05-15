@@ -1,6 +1,10 @@
 package com.farm.dao;
 
 import com.farm.entity.User;
+import com.farm.entity.UserExample;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 测试案例：User的数据访问接口
@@ -11,11 +15,27 @@ import com.farm.entity.User;
  */
 public interface UserDao {
 
-    int insert(User user);
+    long countByExample(UserExample example);
 
-    int updateBaseInfoById(User user);
+    int deleteByExample(UserExample example);
 
-    User selectById(int userId);
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 
     User selectByUserName(String userName);
 

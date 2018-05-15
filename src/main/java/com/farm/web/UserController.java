@@ -6,17 +6,21 @@ import com.farm.common.CommonValue;
 import com.farm.dto.CheckResult;
 import com.farm.dto.UserSignInResult;
 import com.farm.dto.UserSignUpResult;
+import com.farm.entity.Msg;
+import com.farm.entity.User;
 import com.farm.service.UserService;
+import com.farm.service.impl.UserServiceImpl;
 import com.farm.util.ValidateCode;
 import com.farm.vo.UserSignInForm;
 import com.farm.vo.UserSignUpForm;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.imageio.ImageIO;
@@ -26,6 +30,8 @@ import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Guan WenCong on 2018/5/3.
@@ -37,6 +43,8 @@ public class UserController {
     @Autowired
     private UserService userService;
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+    @Autowired
+    UserServiceImpl userServiceImpl;
 
     @ResponseBody
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
@@ -93,6 +101,17 @@ public class UserController {
         return new CommonResult<>(true, checkResult);
     }
 
+    @RequestMapping("/list")
+    @ResponseBody
+    public Msg getUsersWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
+        //pageSize：10，指每页显示的数据数
+        PageHelper.startPage(pn, 10);
+        List<User> users = userServiceImpl.getAll();
+        //navigatePages：5，指在页面需要连续显示的页码数
+        PageInfo page = new PageInfo(users, 5);
+        return Msg.success().add("pageInfo", page);
+    }
+
     /**
      * 生成验证码
      *
@@ -123,4 +142,27 @@ public class UserController {
         return new CommonResult(true);
     }
 
+    /**
+     * 单个批量删除二合一
+     * 批量删除：1-2-3
+     * 单个删除：1
+     */
+    @ResponseBody
+    @RequestMapping(value = "/{ids}", method = RequestMethod.DELETE)
+    public Msg deleteUsers(@PathVariable("ids") String ids) {
+        //批量删除
+        if (ids.contains("-")) {
+            List<Integer> del_ids = new ArrayList<>();
+            String[] str_ids = ids.split("-");
+            //组装id的集合
+            for (String string : str_ids) {
+                del_ids.add(Integer.parseInt(string));
+            }
+            userServiceImpl.deleteBatch(del_ids);
+        } else {
+            Integer id = Integer.parseInt(ids);
+            userServiceImpl.deleteUser(id);
+        }
+        return Msg.success();
+    }
 }

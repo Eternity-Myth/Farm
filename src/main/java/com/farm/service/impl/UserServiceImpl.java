@@ -7,6 +7,7 @@ import com.farm.dto.CheckResult;
 import com.farm.dto.UserSignInResult;
 import com.farm.dto.UserSignUpResult;
 import com.farm.entity.User;
+import com.farm.entity.UserExample;
 import com.farm.exception.DataExistException;
 import com.farm.exception.DataInsertException;
 import com.farm.exception.DataMatchException;
@@ -18,6 +19,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 /**
@@ -31,7 +34,28 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
-    private UserDao userDao;
+    UserDao userDao;
+
+
+    @Override
+    public void deleteBatch(List<Integer> ids) {
+        UserExample example = new UserExample();
+        UserExample.Criteria criteria = example.createCriteria();
+        //delete from xxx where emp_id in(1,2,3)
+        criteria.andIdIn(ids);
+        userDao.deleteByExample(example);
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
+        userDao.deleteByPrimaryKey(id);
+    }
+
+    //查看所有用户信息
+    @Override
+    public List<User> getAll() {
+        return userDao.selectByExample(null);
+    }
 
     @Override
     public UserSignUpResult signUp(UserSignUpForm userSignUpForm, String codeSession)
