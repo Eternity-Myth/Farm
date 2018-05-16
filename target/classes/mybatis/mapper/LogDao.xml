@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.LogDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.Log">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="classname" jdbcType="VARCHAR" property="classname"/>
+        <result column="method" jdbcType="VARCHAR" property="method"/>
+        <result column="status_code" jdbcType="INTEGER" property="statusCode"/>
+        <result column="timestamp" jdbcType="TIMESTAMP" property="timestamp"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.farm.entity.Log">
+        <result column="error_msg" jdbcType="LONGVARCHAR" property="errorMsg"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    id, classname, method, status_code, timestamp
+  </sql>
+    <sql id="Blob_Column_List">
+    error_msg
+  </sql>
+    <select id="selectByExampleWithBLOBs" parameterType="com.farm.entity.LogExample" resultMap="ResultMapWithBLOBs">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByExample" parameterType="com.farm.entity.LogExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from log
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.farm.entity.LogExample">
+        delete from log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.Log">
+    insert into log (id, classname, method,
+      status_code, timestamp, error_msg
+      )
+    values (#{id,jdbcType=INTEGER}, #{classname,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR},
+      #{statusCode,jdbcType=INTEGER}, #{timestamp,jdbcType=TIMESTAMP}, #{errorMsg,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.Log">
+        insert into log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="classname != null">
+                classname,
+            </if>
+            <if test="method != null">
+                method,
+            </if>
+            <if test="statusCode != null">
+                status_code,
+            </if>
+            <if test="timestamp != null">
+                timestamp,
+            </if>
+            <if test="errorMsg != null">
+                error_msg,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="classname != null">
+                #{classname,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="statusCode != null">
+                #{statusCode,jdbcType=INTEGER},
+            </if>
+            <if test="timestamp != null">
+                #{timestamp,jdbcType=TIMESTAMP},
+            </if>
+            <if test="errorMsg != null">
+                #{errorMsg,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.LogExample" resultType="java.lang.Long">
+        select count(*) from log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update log
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.classname != null">
+                classname = #{record.classname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.method != null">
+                method = #{record.method,jdbcType=VARCHAR},
+            </if>
+            <if test="record.statusCode != null">
+                status_code = #{record.statusCode,jdbcType=INTEGER},
+            </if>
+            <if test="record.timestamp != null">
+                timestamp = #{record.timestamp,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.errorMsg != null">
+                error_msg = #{record.errorMsg,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExampleWithBLOBs" parameterType="map">
+        update log
+        set id = #{record.id,jdbcType=INTEGER},
+        classname = #{record.classname,jdbcType=VARCHAR},
+        method = #{record.method,jdbcType=VARCHAR},
+        status_code = #{record.statusCode,jdbcType=INTEGER},
+        timestamp = #{record.timestamp,jdbcType=TIMESTAMP},
+        error_msg = #{record.errorMsg,jdbcType=LONGVARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update log
+        set id = #{record.id,jdbcType=INTEGER},
+        classname = #{record.classname,jdbcType=VARCHAR},
+        method = #{record.method,jdbcType=VARCHAR},
+        status_code = #{record.statusCode,jdbcType=INTEGER},
+        timestamp = #{record.timestamp,jdbcType=TIMESTAMP}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.Log">
+        update log
+        <set>
+            <if test="classname != null">
+                classname = #{classname,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                method = #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="statusCode != null">
+                status_code = #{statusCode,jdbcType=INTEGER},
+            </if>
+            <if test="timestamp != null">
+                timestamp = #{timestamp,jdbcType=TIMESTAMP},
+            </if>
+            <if test="errorMsg != null">
+                error_msg = #{errorMsg,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.farm.entity.Log">
+    update log
+    set classname = #{classname,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      status_code = #{statusCode,jdbcType=INTEGER},
+      timestamp = #{timestamp,jdbcType=TIMESTAMP},
+      error_msg = #{errorMsg,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.Log">
+    update log
+    set classname = #{classname,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      status_code = #{statusCode,jdbcType=INTEGER},
+      timestamp = #{timestamp,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -102,14 +102,14 @@
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.farm.entity.User">
-    insert into usertable (id, user_name, user_pass,
-      user_email, register_time, status
-      )
-    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPass,jdbcType=VARCHAR},
-      #{userEmail,jdbcType=VARCHAR}, #{registerTime,jdbcType=TIMESTAMP}, #{status,jdbcType=BIT}
-      )
-  </insert>
+    <!--<insert id="insert" parameterType="com.farm.entity.User">-->
+    <!--insert into usertable (id, user_name, user_pass,-->
+    <!--user_email, register_time, status-->
+    <!--)-->
+    <!--values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPass,jdbcType=VARCHAR},-->
+    <!--#{userEmail,jdbcType=VARCHAR}, #{registerTime,jdbcType=TIMESTAMP}, #{status,jdbcType=BIT}-->
+    <!--)-->
+    <!--</insert>-->
     <insert id="insertSelective" parameterType="com.farm.entity.User">
         insert into usertable
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -227,4 +227,23 @@
       status = #{status,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="selectById" resultType="com.farm.entity.User">
+        SELECT *
+        FROM usertable
+        WHERE id=#{id}
+    </select>
+    <select id="selectByUserName" resultType="com.farm.entity.User">
+        SELECT *
+        FROM usertable
+        WHERE user_name=#{userName}
+    </select>
+    <select id="selectByUserEmail" resultType="com.farm.entity.User">
+        SELECT *
+        FROM usertable
+        WHERE user_email=#{userEmail}
+    </select>
+    <insert id="insert" keyProperty="id" parameterType="com.farm.entity.User">
+        INSERT INTO usertable(user_name,user_pass,user_email)
+        VALUES (#{userName},#{userPass},#{userEmail})
+    </insert>
 </mapper>

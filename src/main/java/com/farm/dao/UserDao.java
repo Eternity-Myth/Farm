@@ -40,4 +40,6 @@ public interface UserDao {
     User selectByUserName(String userName);
 
     User selectByUserEmail(String userEmail);
+
+    User selectById(int userId);
 }

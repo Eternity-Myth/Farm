@@ -10,6 +10,7 @@ import com.farm.entity.Msg;
 import com.farm.entity.User;
 import com.farm.service.UserService;
 import com.farm.service.impl.UserServiceImpl;
+import com.farm.util.LogUtil;
 import com.farm.util.ValidateCode;
 import com.farm.vo.UserSignInForm;
 import com.farm.vo.UserSignUpForm;
@@ -77,6 +78,9 @@ public class UserController {
                 HttpSession userNameSession = request.getSession(true);
                 userNameSession.setAttribute("userNameSession", userSignInResult.getUserName());
                 userNameSession.setMaxInactiveInterval(CommonValue.USER_SESSION_TIMEOUT_MINUTE);
+                LogUtil.writeLogs(this.getClass().getName(),
+                        Thread.currentThread().getStackTrace()[1].getMethodName(),
+                        "");
             } else {
                 request.getRequestDispatcher("/webapp/sign-in.jsp");
             }

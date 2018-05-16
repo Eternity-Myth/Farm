@@ -4,8 +4,8 @@
 USE test;
 
 
-DROP TABLE IF EXISTS `user`;
-create table `user` (
+DROP TABLE IF EXISTS `usertable`;
+create table `usertable` (
   `id` int(10) not null AUTO_INCREMENT,
   `user_name` varchar(20) not null COMMENT '用户名',
   `user_pass` varchar(20) not null COMMENT '用户密码',
@@ -45,4 +45,19 @@ primary key (`id`)
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8
   COMMENT = '农作物信息表';
+
+DROP TABLE IF EXISTS `log`;
+CREATE TABLE `log` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `classname` VARCHAR(255) NOT NULL,
+  `method` VARCHAR(255) NOT NULL,
+  `status_code` INT(11) NOT NULL,
+  `error_msg` TEXT,
+  `timestamp` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
+  ENGINE=InnoDB
+  DEFAULT CHARSET=utf8;
+  COMMENT = '日志信息表';
+
 -- 手写ddl，记录每次sql修改

@@ -91,6 +91,7 @@ To change this template use File | Settings | File Templates.
             <br><br><a href="/views/field.jsp">查看菜地信息</a>
             <br><a href="/views/crops.jsp">查看农作物信息</a>
             <br><a href="/views/users.jsp">用户信息管理</a>
+            <br><a href="/views/logs.jsp">系统操作日志</a>
         </div>
     </div>
     <div class="row" style="height:80px">

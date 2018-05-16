@@ -41,7 +41,7 @@ public class CropsServiceImpl implements CropsService {
     public void deleteBatch(List<Integer> ids) {
         CropsExample example = new CropsExample();
         CropsExample.Criteria criteria = example.createCriteria();
-        //delete from xxx where emp_id in(1,2,3)
+        //delete from xxx where id in(1,2,3)
         criteria.andIdIn(ids);
         cropsDao.deleteByExample(example);
     }
