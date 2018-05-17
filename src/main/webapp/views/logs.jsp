@@ -104,7 +104,8 @@
             var methodTd = $("<td></td>").append(item.method);
             var statusCodeTd = $("<td></td>").append(item.statusCode);
             var errorMsgTd = $("<td></td>").append(item.errorMsg);
-            var timestampTd = $("<td></td>").append(item.timestamp);
+            var timestamp = getMyDate(item.timestamp);
+            var timestampTd = $("<td></td>").append(timestamp);
             var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的日志id
@@ -120,6 +121,27 @@
                 .append(delBtn)
                 .appendTo("#logs_table tbody");
         });
+    }
+
+    //获得年月日      得到日期oTime
+    function getMyDate(str) {
+        var oDate = new Date(str),
+            oYear = oDate.getFullYear(),
+            oMonth = oDate.getMonth() + 1,
+            oDay = oDate.getDate(),
+            oHour = oDate.getHours(),
+            oMin = oDate.getMinutes(),
+            oSen = oDate.getSeconds(),
+            oTime = oYear + '-' + getzf(oMonth) + '-' + getzf(oDay) + ' ' + getzf(oHour) + ':' + getzf(oMin) + ':' + getzf(oSen);//最后拼接时间
+        return oTime;
+    };
+
+    //补0操作
+    function getzf(num) {
+        if (parseInt(num) < 10) {
+            num = '0' + num;
+        }
+        return num;
     }
 
     //解析显示分页信息

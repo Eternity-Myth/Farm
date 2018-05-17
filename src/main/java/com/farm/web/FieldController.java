@@ -4,6 +4,7 @@ import com.farm.entity.Field;
 import com.farm.entity.Msg;
 import com.farm.service.impl.FieldServiceImpl;
 
+import com.farm.util.LogUtil;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,9 @@ public class FieldController {
     @ResponseBody
     public Msg saveField(Field field) {
         fieldServiceImpl.saveField(field);
+        LogUtil.writeLogs(this.getClass().getName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "");
         return Msg.success();
     }
 
@@ -50,6 +54,9 @@ public class FieldController {
     @RequestMapping(value = "/field/{id}", method = RequestMethod.PUT)
     public Msg updateField(Field field, HttpServletRequest request) {
         fieldServiceImpl.updateField(field);
+        LogUtil.writeLogs(this.getClass().getName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "");
         return Msg.success();
     }
 
@@ -71,9 +78,15 @@ public class FieldController {
                 del_ids.add(Integer.parseInt(string));
             }
             fieldServiceImpl.deleteBatch(del_ids);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
         } else {
             Integer id = Integer.parseInt(ids);
             fieldServiceImpl.deleteField(id);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
         }
         return Msg.success();
     }

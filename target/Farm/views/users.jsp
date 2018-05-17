@@ -48,6 +48,7 @@
                     <th>用户名</th>
                     <th>密码</th>
                     <th>邮箱</th>
+                    <th>注册时间</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -101,21 +102,48 @@
             var userNameTd = $("<td></td>").append(item.userName);
             var userPassTd = $("<td></td>").append(item.userPass);
             var userEmailTd = $("<td></td>").append(item.userEmail);
+            var registerTime = getMyDate(item.registerTime);
+            var registerTimeTd = $("<td></td>").append(registerTime);
             var statusTd = $("<td></td>").append(item.status);
+            var statusBtn = $("<button></button>").addClass("btn btn-danger btn-sm status_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-ban-circle")).append("禁/启用");
             var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的用户id
             delBtn.attr("del-id", item.id);
+            var btnTd = $("<td></td>").append(statusBtn).append(" ").append(delBtn);
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
                 .append(userIdTd)
                 .append(userNameTd)
                 .append(userPassTd)
                 .append(userEmailTd)
+                .append(registerTimeTd)
                 .append(statusTd)
-                .append(delBtn)
+                .append(btnTd)
                 .appendTo("#users_table tbody");
         });
+    }
+
+    //获得年月日      得到日期oTime
+    function getMyDate(str) {
+        var oDate = new Date(str),
+            oYear = oDate.getFullYear(),
+            oMonth = oDate.getMonth() + 1,
+            oDay = oDate.getDate(),
+            oHour = oDate.getHours(),
+            oMin = oDate.getMinutes(),
+            oSen = oDate.getSeconds(),
+            oTime = oYear + '-' + getzf(oMonth) + '-' + getzf(oDay) + ' ' + getzf(oHour) + ':' + getzf(oMin) + ':' + getzf(oSen);//最后拼接时间
+        return oTime;
+    };
+
+    //补0操作
+    function getzf(num) {
+        if (parseInt(num) < 10) {
+            num = '0' + num;
+        }
+        return num;
     }
 
     //解析显示分页信息

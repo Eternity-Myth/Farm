@@ -31,6 +31,8 @@ import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,12 +56,18 @@ public class UserController {
         String codeSession = (String) session.getAttribute("validateCode");
 
         logger.info("userSignUpForm={}", userSignUpForm);
+        StringWriter sw = new StringWriter();
         try {
             UserSignUpResult userSignUpResult = userService.signUp(userSignUpForm, codeSession);
             return new CommonResult<>(true, userSignUpResult);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
+            e.printStackTrace(new PrintWriter(sw));
             return new CommonResult<>(false, e.getMessage());
+        } finally {
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    sw.toString());
         }
     }
 
@@ -71,6 +79,7 @@ public class UserController {
         String codeSession = (String) session.getAttribute("validateCode");
 
         logger.info("userSignInForm={}", userSignInForm);
+        StringWriter sw = new StringWriter();
         try {
             UserSignInResult userSignInResult = userService.signIn(userSignInForm, codeSession);
             //判断登录成功则将用户名保存在session中
@@ -78,16 +87,18 @@ public class UserController {
                 HttpSession userNameSession = request.getSession(true);
                 userNameSession.setAttribute("userNameSession", userSignInResult.getUserName());
                 userNameSession.setMaxInactiveInterval(CommonValue.USER_SESSION_TIMEOUT_MINUTE);
-                LogUtil.writeLogs(this.getClass().getName(),
-                        Thread.currentThread().getStackTrace()[1].getMethodName(),
-                        "");
             } else {
                 request.getRequestDispatcher("/webapp/sign-in.jsp");
             }
             return new CommonResult<>(true, userSignInResult);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
+            e.printStackTrace(new PrintWriter(sw));
             return new CommonResult<>(false, e.getMessage());
+        } finally {
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    sw.toString());
         }
     }
 
@@ -143,6 +154,9 @@ public class UserController {
     public CommonResult signOut(HttpServletRequest request) {
         HttpSession userNameSession = request.getSession(true);
         userNameSession.removeAttribute("userNameSession");
+        LogUtil.writeLogs(this.getClass().getName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "");
         return new CommonResult(true);
     }
 
@@ -163,9 +177,15 @@ public class UserController {
                 del_ids.add(Integer.parseInt(string));
             }
             userServiceImpl.deleteBatch(del_ids);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
         } else {
             Integer id = Integer.parseInt(ids);
             userServiceImpl.deleteUser(id);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
         }
         return Msg.success();
     }

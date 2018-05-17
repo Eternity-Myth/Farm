@@ -3,6 +3,7 @@ package com.farm.web;
 import com.farm.entity.Crops;
 import com.farm.entity.Msg;
 import com.farm.service.impl.CropsServiceImpl;
+import com.farm.util.LogUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,9 @@ public class CropsController {
     @ResponseBody
     public Msg saveCrops(Crops crops) {
         cropsServiceImpl.saveCrops(crops);
+        LogUtil.writeLogs(this.getClass().getName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "");
         return Msg.success();
     }
 
@@ -49,6 +53,9 @@ public class CropsController {
     @ResponseBody
     public Msg updateCrops(Crops crops, HttpServletRequest request) {
         cropsServiceImpl.updateCrops(crops);
+        LogUtil.writeLogs(this.getClass().getName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "");
         return Msg.success();
     }
 
@@ -69,9 +76,15 @@ public class CropsController {
                 del_ids.add(Integer.parseInt(string));
             }
             cropsServiceImpl.deleteBatch(del_ids);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
         } else {
             Integer id = Integer.parseInt(ids);
             cropsServiceImpl.deleteCrops(id);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
         }
         return Msg.success();
     }
