@@ -11,9 +11,9 @@ public class Log {
 
     private Integer statusCode;
 
-    private Date timestamp;
-
     private String errorMsg;
+
+    private Date timestamp;
 
     public Integer getId() {
         return id;
@@ -47,19 +47,19 @@ public class Log {
         this.statusCode = statusCode;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
     public String getErrorMsg() {
         return errorMsg;
     }
 
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg == null ? null : errorMsg.trim();
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 }

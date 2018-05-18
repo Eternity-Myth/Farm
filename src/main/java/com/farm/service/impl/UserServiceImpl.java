@@ -152,4 +152,8 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public void changeStatus(User user) {
+        userDao.changeStatus(user);
+    }
 }

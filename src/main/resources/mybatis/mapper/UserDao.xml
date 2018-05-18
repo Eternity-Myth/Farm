@@ -246,4 +246,9 @@
         INSERT INTO usertable(user_name,user_pass,user_email)
         VALUES (#{userName},#{userPass},#{userEmail})
     </insert>
+    <update id="changeStatus" keyProperty="id" parameterType="com.farm.entity.User">
+        update usertable
+        set status = ABS(status-1)
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>

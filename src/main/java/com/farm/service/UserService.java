@@ -33,4 +33,5 @@ public interface UserService {
 
     public void deleteUser(Integer id);
 
+    public void changeStatus(User user);
 }

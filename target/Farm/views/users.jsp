@@ -104,9 +104,11 @@
             var userEmailTd = $("<td></td>").append(item.userEmail);
             var registerTime = getMyDate(item.registerTime);
             var registerTimeTd = $("<td></td>").append(registerTime);
-            var statusTd = $("<td></td>").append(item.status);
+            var statusTd = $("<td></td>").append(item.status?"正常":"禁用");
             var statusBtn = $("<button></button>").addClass("btn btn-danger btn-sm status_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-ban-circle")).append("禁/启用");
+            statusBtn.attr("status-id", item.id);
+            //为禁用/启用按钮添加一个自定义的属性来表示当前禁用/启用的用户id
             var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的用户id
@@ -223,6 +225,25 @@
             $.ajax({
                 url: "${APP_PATH}/user/" + userId,
                 type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到本页
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //单个禁用/启用
+    $(document).on("click", ".status_btn", function () {
+        //1、弹出是否确认禁用/启用对话框
+        var userId = $(this).attr("status-id");
+        if (confirm("确认要禁用/启用该用户吗")) {
+            //确认，发送ajax请求即可
+            $.ajax({
+                url: "${APP_PATH}/user/status/" + userId,
+                type: "PUT",
+                data:"#user_table",
                 success: function (result) {
                     alert(result.msg);
                     //回到本页

@@ -365,6 +365,76 @@ public class LogExample {
             return (Criteria) this;
         }
 
+        public Criteria andErrorMsgIsNull() {
+            addCriterion("error_msg is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgIsNotNull() {
+            addCriterion("error_msg is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgEqualTo(String value) {
+            addCriterion("error_msg =", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgNotEqualTo(String value) {
+            addCriterion("error_msg <>", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgGreaterThan(String value) {
+            addCriterion("error_msg >", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgGreaterThanOrEqualTo(String value) {
+            addCriterion("error_msg >=", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgLessThan(String value) {
+            addCriterion("error_msg <", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgLessThanOrEqualTo(String value) {
+            addCriterion("error_msg <=", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgLike(String value) {
+            addCriterion("error_msg like", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgNotLike(String value) {
+            addCriterion("error_msg not like", value, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgIn(List<String> values) {
+            addCriterion("error_msg in", values, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgNotIn(List<String> values) {
+            addCriterion("error_msg not in", values, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgBetween(String value1, String value2) {
+            addCriterion("error_msg between", value1, value2, "errorMsg");
+            return (Criteria) this;
+        }
+
+        public Criteria andErrorMsgNotBetween(String value1, String value2) {
+            addCriterion("error_msg not between", value1, value2, "errorMsg");
+            return (Criteria) this;
+        }
+
         public Criteria andTimestampIsNull() {
             addCriterion("timestamp is null");
             return (Criteria) this;

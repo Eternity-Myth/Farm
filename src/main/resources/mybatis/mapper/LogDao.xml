@@ -6,10 +6,8 @@
         <result column="classname" jdbcType="VARCHAR" property="classname"/>
         <result column="method" jdbcType="VARCHAR" property="method"/>
         <result column="status_code" jdbcType="INTEGER" property="statusCode"/>
+        <result column="error_msg" jdbcType="VARCHAR" property="errorMsg"/>
         <result column="timestamp" jdbcType="TIMESTAMP" property="timestamp"/>
-    </resultMap>
-    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.farm.entity.Log">
-        <result column="error_msg" jdbcType="LONGVARCHAR" property="errorMsg"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -72,27 +70,8 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    id, classname, method, status_code, timestamp
+    id, classname, method, status_code, error_msg, timestamp
   </sql>
-    <sql id="Blob_Column_List">
-    error_msg
-  </sql>
-    <select id="selectByExampleWithBLOBs" parameterType="com.farm.entity.LogExample" resultMap="ResultMapWithBLOBs">
-        select
-        <if test="distinct">
-            distinct
-        </if>
-        <include refid="Base_Column_List"/>
-        ,
-        <include refid="Blob_Column_List"/>
-        from log
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause"/>
-        </if>
-        <if test="orderByClause != null">
-            order by ${orderByClause}
-        </if>
-    </select>
     <select id="selectByExample" parameterType="com.farm.entity.LogExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
@@ -107,11 +86,9 @@
             order by ${orderByClause}
         </if>
     </select>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        ,
-        <include refid="Blob_Column_List"/>
         from log
         where id = #{id,jdbcType=INTEGER}
     </select>
@@ -127,10 +104,10 @@
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Log">
     insert into log (id, classname, method,
-      status_code, timestamp, error_msg
+      status_code, error_msg, timestamp
       )
     values (#{id,jdbcType=INTEGER}, #{classname,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR},
-      #{statusCode,jdbcType=INTEGER}, #{timestamp,jdbcType=TIMESTAMP}, #{errorMsg,jdbcType=LONGVARCHAR}
+      #{statusCode,jdbcType=INTEGER}, #{errorMsg,jdbcType=VARCHAR}, #{timestamp,jdbcType=TIMESTAMP}
       )
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Log">
@@ -148,11 +125,11 @@
             <if test="statusCode != null">
                 status_code,
             </if>
-            <if test="timestamp != null">
-                timestamp,
-            </if>
             <if test="errorMsg != null">
                 error_msg,
+            </if>
+            <if test="timestamp != null">
+                timestamp,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -168,11 +145,11 @@
             <if test="statusCode != null">
                 #{statusCode,jdbcType=INTEGER},
             </if>
+            <if test="errorMsg != null">
+                #{errorMsg,jdbcType=VARCHAR},
+            </if>
             <if test="timestamp != null">
                 #{timestamp,jdbcType=TIMESTAMP},
-            </if>
-            <if test="errorMsg != null">
-                #{errorMsg,jdbcType=LONGVARCHAR},
             </if>
         </trim>
     </insert>
@@ -197,25 +174,13 @@
             <if test="record.statusCode != null">
                 status_code = #{record.statusCode,jdbcType=INTEGER},
             </if>
+            <if test="record.errorMsg != null">
+                error_msg = #{record.errorMsg,jdbcType=VARCHAR},
+            </if>
             <if test="record.timestamp != null">
                 timestamp = #{record.timestamp,jdbcType=TIMESTAMP},
             </if>
-            <if test="record.errorMsg != null">
-                error_msg = #{record.errorMsg,jdbcType=LONGVARCHAR},
-            </if>
         </set>
-        <if test="_parameter != null">
-            <include refid="Update_By_Example_Where_Clause"/>
-        </if>
-    </update>
-    <update id="updateByExampleWithBLOBs" parameterType="map">
-        update log
-        set id = #{record.id,jdbcType=INTEGER},
-        classname = #{record.classname,jdbcType=VARCHAR},
-        method = #{record.method,jdbcType=VARCHAR},
-        status_code = #{record.statusCode,jdbcType=INTEGER},
-        timestamp = #{record.timestamp,jdbcType=TIMESTAMP},
-        error_msg = #{record.errorMsg,jdbcType=LONGVARCHAR}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
@@ -226,6 +191,7 @@
         classname = #{record.classname,jdbcType=VARCHAR},
         method = #{record.method,jdbcType=VARCHAR},
         status_code = #{record.statusCode,jdbcType=INTEGER},
+        error_msg = #{record.errorMsg,jdbcType=VARCHAR},
         timestamp = #{record.timestamp,jdbcType=TIMESTAMP}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
@@ -243,29 +209,21 @@
             <if test="statusCode != null">
                 status_code = #{statusCode,jdbcType=INTEGER},
             </if>
+            <if test="errorMsg != null">
+                error_msg = #{errorMsg,jdbcType=VARCHAR},
+            </if>
             <if test="timestamp != null">
                 timestamp = #{timestamp,jdbcType=TIMESTAMP},
-            </if>
-            <if test="errorMsg != null">
-                error_msg = #{errorMsg,jdbcType=LONGVARCHAR},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.farm.entity.Log">
-    update log
-    set classname = #{classname,jdbcType=VARCHAR},
-      method = #{method,jdbcType=VARCHAR},
-      status_code = #{statusCode,jdbcType=INTEGER},
-      timestamp = #{timestamp,jdbcType=TIMESTAMP},
-      error_msg = #{errorMsg,jdbcType=LONGVARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.Log">
     update log
     set classname = #{classname,jdbcType=VARCHAR},
       method = #{method,jdbcType=VARCHAR},
       status_code = #{statusCode,jdbcType=INTEGER},
+      error_msg = #{errorMsg,jdbcType=VARCHAR},
       timestamp = #{timestamp,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

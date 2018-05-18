@@ -42,4 +42,6 @@ public interface UserDao {
     User selectByUserEmail(String userEmail);
 
     User selectById(int userId);
+
+    int changeStatus(User record);
 }

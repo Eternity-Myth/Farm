@@ -5,14 +5,14 @@ Date: 2018/5/11
 Time: 21:03
 To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=gbk" language="java" %>
+<%@ page contentType="text/html;charset=utf-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html lang="zh">
+<html>
 <head>
-    <meta charset="GBK">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AgroÅ©³¡ĞÅÏ¢¹ÜÀíÏµÍ³</title>
+    <%--<meta charset="GBK">--%>
+    <%--<meta http-equiv="X-UA-Compatible" content="IE=edge">--%>
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
+    <title>Agroå†œåœºä¿¡æ¯ç®¡ç†ç³»ç»Ÿ</title>
 
     <!-- Bootstrap -->
     <link href="../css/font.css" rel="stylesheet">
@@ -53,13 +53,13 @@ To change this template use File | Settings | File Templates.
         <div class="col-md-6 col-md-offset-3" style="background-color:rgba(255,255,255,0.7)">
 
             <div id="myCarousel" class="carousel slide" style="margin-top:15px;margin-bottom:15px">
-                <!-- ÂÖ²¥£¨Carousel£©Ö¸±ê -->
+                <!-- è½®æ’­ï¼ˆCarouselï¼‰æŒ‡æ ‡ -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol>
-                <!-- ÂÖ²¥£¨Carousel£©ÏîÄ¿ -->
+                <!-- è½®æ’­ï¼ˆCarouselï¼‰é¡¹ç›® -->
                 <div class="carousel-inner">
                     <div class="item active">
                         <img src="../agro/UIpic/pic1.jpg" alt="First slide">
@@ -71,7 +71,7 @@ To change this template use File | Settings | File Templates.
                         <img src="../agro/UIpic/pic3.jpg" alt="Third slide">
                     </div>
                 </div>
-                <!-- ÂÖ²¥£¨Carousel£©µ¼º½ -->
+                <!-- è½®æ’­ï¼ˆCarouselï¼‰å¯¼èˆª -->
                 <a class="carousel-control left" href="#myCarousel"
                    data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true"
                                             class="glyphicon glyphicon-chevron-left"></span></a>
@@ -85,13 +85,13 @@ To change this template use File | Settings | File Templates.
     <div class="row">
         <div class="col-md-6 col-md-offset-3"
              style="background-color:rgba(80,77,77,0.9);height:300px;color:#FFFFFF;padding-left:30px">
-            <br>AgroÅ©³¡ĞÅÏ¢¹ÜÀíÏµÍ³<br><br>×÷Õß£º<br>¹ØÎÄ´Ï¡¢ĞíØ¨³É¡¢Îâ½ğ³½¡¢»Æ½İÃô¡¢ÍõÃ÷Òå<br><br>ÏîÄ¿¿ªÔ´µØÖ·£º<br><a
-                href="https://github.com/Eternity-Myth/Farm">https://github.com/Eternity-Myth/Farm</a> <br><br>»ù±¾¿ª·¢»·¾³£ºJDK
-            1.8.0_162¡¢Apache-Tomcat-9.0.6¡¢MySQL 5.7.21 Community Server<br><br>Ê¹ÓÃ¿ò¼Ü£ºSpring+SpringMVC+Mybatis£¨Ö÷Òª£©,Maven£¨ÏîÄ¿ÒÀÀµ¹ÜÀí£©,Bootstrap£¨Ç°¶Ë¿ò¼Ü£©<br><br>ÄæÏò¹¤³Ì£ºMyBatis-Generator
-            <br><br><a href="/views/field.jsp">²é¿´²ËµØĞÅÏ¢</a>
-            <br><a href="/views/crops.jsp">²é¿´Å©×÷ÎïĞÅÏ¢</a>
-            <br><a href="/views/users.jsp">ÓÃ»§ĞÅÏ¢¹ÜÀí</a>
-            <br><a href="/views/logs.jsp">ÏµÍ³²Ù×÷ÈÕÖ¾</a>
+            <br>Agroå†œåœºä¿¡æ¯ç®¡ç†ç³»ç»Ÿ<br><br>ä½œè€…ï¼š<br>å…³æ–‡èªã€è®¸äº˜æˆã€å´é‡‘è¾°ã€é»„æ·æ•ã€ç‹æ˜ä¹‰<br><br>é¡¹ç›®å¼€æºåœ°å€ï¼š<br><a
+                href="https://github.com/Eternity-Myth/Farm">https://github.com/Eternity-Myth/Farm</a> <br><br>åŸºæœ¬å¼€å‘ç¯å¢ƒï¼šJDK
+            1.8.0_162ã€Apache-Tomcat-9.0.6ã€MySQL 5.7.21 Community Server<br><br>ä½¿ç”¨æ¡†æ¶ï¼šSpring+SpringMVC+Mybatisï¼ˆä¸»è¦ï¼‰,Mavenï¼ˆé¡¹ç›®ä¾èµ–ç®¡ç†ï¼‰,Bootstrapï¼ˆå‰ç«¯æ¡†æ¶ï¼‰<br><br>é€†å‘å·¥ç¨‹ï¼šMyBatis-Generator
+            <br><br><a href="/views/field.jsp">æŸ¥çœ‹èœåœ°ä¿¡æ¯</a>
+            <br><a href="/views/crops.jsp">æŸ¥çœ‹å†œä½œç‰©ä¿¡æ¯</a>
+            <br><a href="/views/users.jsp">ç”¨æˆ·ä¿¡æ¯ç®¡ç†</a>
+            <br><a href="/views/logs.jsp">ç³»ç»Ÿæ“ä½œæ—¥å¿—</a>
         </div>
     </div>
     <div class="row" style="height:80px">
