@@ -35,7 +35,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Guan WenCong on 2018/5/3.
+ * 控制、处理、实现用户相关的操作
+ *
+ * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 @Controller
 @RequestMapping(value = "/user")
@@ -56,9 +60,15 @@ public class UserController {
         logger.info("userSignUpForm={}", userSignUpForm);
         try {
             UserSignUpResult userSignUpResult = userService.signUp(userSignUpForm, codeSession);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    "");
             return new CommonResult<>(true, userSignUpResult);
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
+            LogUtil.writeLogs(this.getClass().getName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName(),
+                    e.toString());
             return new CommonResult<>(false, e.getMessage());
         }
     }

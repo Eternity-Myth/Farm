@@ -24,9 +24,9 @@ import java.util.List;
 
 
 /**
- * 测试案例：User的业务逻辑实现类
+ * User的业务逻辑实现类
  *
- * @author Guan WenCong
+ * @author 关文聪
  * @version 1.0
  * @email 530711667@qq.com
  */
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
     public void deleteBatch(List<Integer> ids) {
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
-        //delete from xxx where emp_id in(1,2,3)
+        //delete from xxx where id in(1,2,3)
         criteria.andIdIn(ids);
         userDao.deleteByExample(example);
     }

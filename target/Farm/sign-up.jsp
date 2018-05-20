@@ -9,12 +9,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <%--<meta charset="GBK">--%>
-    <%--<meta http-equiv="X-UA-Compatible" content="IE=edge">--%>
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <%--<meta name="description" content="注册">--%>
-    <%--<meta name="author" content="关文聪">--%>
     <title>注册</title>
 
     <!-- Bootstrap -->
@@ -93,8 +87,9 @@
                                maxlength="4" placeholder="验证码"/>
                     </div>
                     <div class="col-md-4">
-                        <img id="validateCodeImg" src="/user/validateCode" style="height:25px;margin-left:10px"/>
-                        <a style="color:#E3E3E3;margin-left:5px" href="" onclick="javascript:reloadValidateCode();">
+                        <img id="validateCodeImg" src="/user/validateCode" style="height:25px;margin-left:10px"
+                             onclick="this.src=this.src+'?'+new Date() + Math.floor(Math.random() * 24)"/>
+                        <a style="color:#E3E3E3;margin-left:5px" href="javascript:validateCodeImg.onclick()">
                             看不清,换一个</a>
                     </div>
                     <div class="col-md-3" style="height:50px"></div>
@@ -129,11 +124,6 @@
 <script src="lib/bootstrapValidator.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/sign.js"></script>
-<%--刷新的函数--%>
-<script>
-    function reloadValidateCode() {
-        $("#validateCodeImg").attr("src", "/user/validateCode" + new Date() + Math.floor(Math.random() * 24));
-    }
-</script>
+
 </body>
 </html>

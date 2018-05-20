@@ -19,6 +19,8 @@ import java.util.List;
  * 处理农作物CRUD请求
  *
  * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 @Controller
 public class CropsController {

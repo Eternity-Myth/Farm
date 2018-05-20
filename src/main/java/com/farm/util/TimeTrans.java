@@ -5,7 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 时间格式转换
+ * 时间格式转换的工具类
+ *
+ * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 public class TimeTrans {
 

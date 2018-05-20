@@ -6,6 +6,10 @@ import org.apache.log4j.MDC;
 
 /**
  * 用于控制日志打印的工具类
+ *
+ * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 public class LogUtil {
     private static Logger logger = Logger.getLogger(LogUtil.class);

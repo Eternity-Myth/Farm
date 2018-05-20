@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 日志的业务逻辑实现类
+ * Log的业务逻辑实现类
  *
  * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 @Service
 public class LogServiceImpl implements LogService {

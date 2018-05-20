@@ -7,9 +7,9 @@ import com.farm.entity.FieldExample;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * 测试案例：Field的数据访问接口
+ * Field的数据访问接口
  *
- * @author Guan Wencong
+ * @author 关文聪
  * @version 1.0
  * @email 530711667@qq.com
  */

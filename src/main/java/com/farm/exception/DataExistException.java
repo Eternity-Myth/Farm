@@ -1,7 +1,9 @@
 package com.farm.exception;
 
 /**
- * Created by Guan WenCong on 2018/5/3.
+ * @author 关文聪
+ * @email 530711667@qq.com
+ * @version 1.0
  */
 public class DataExistException extends SystemException {
 

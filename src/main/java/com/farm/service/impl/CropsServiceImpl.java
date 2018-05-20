@@ -9,6 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Crops的业务逻辑实现类
+ *
+ * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
+ */
 @Service
 public class CropsServiceImpl implements CropsService {
     @Autowired

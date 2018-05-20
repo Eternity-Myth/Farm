@@ -1,4 +1,4 @@
-À¹½ØÆ÷°ü£º´æ·Å×Ô¶¨ÒåµÄMVCÀ¹½ØÆ÷
-@author Guan WenCong
+æ‹¦æˆªå™¨åŒ…ï¼šå­˜æ”¾è‡ªå®šä¹‰çš„MVCæ‹¦æˆªå™¨
+@author å…³æ–‡èª
 @version 1.0
 @email 530711667@qq.com

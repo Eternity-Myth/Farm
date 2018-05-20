@@ -1,5 +1,7 @@
 ﻿/**
- * Created by fo on 2017/2/5.
+ * 处理登录、注册请求的js代码
+ *
+ * Created by 关文聪 on 2017/2/5.
  */
 $(document).ready(function () {
 
@@ -37,6 +39,17 @@ $(document).ready(function () {
                         message: '长度必须在6-16之间'
                     }
                 }
+            },
+            code: {
+                validators: {
+                    notEmpty: {
+                        message: '验证码不能为空'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9]+$/,
+                        message: '只能使用大小写字母、数字'
+                    }
+                }
             }
 
         }
@@ -59,8 +72,18 @@ $(document).ready(function () {
                 console.log(responseData);
                 if (!responseData.success) {
                     alert(responseData.errorMsg);
+                    $("#signInBtn").removeAttr("disabled");
                     //点击确定以后刷新页面
-                    location.reload()
+                    // alert("window.history.go(-1)");
+                    // window.history.go(-1);
+                    // location.reload()
+                    // showUserName(document.getElementsByName("userName"))
+                    //要进行回显
+                    // huixian()
+                    // var formObj = document.getElementById('signInForm')
+                    // getPOSTValue(formObj)
+                    // submit(formObj)
+                    // sessionStorage.getItem()
                 } else {
                     location.href = "/views/index.jsp"
                 }
@@ -133,6 +156,17 @@ $(document).ready(function () {
                         message: '长度必须在6-16之间'
                     }
                 }
+            },
+            code: {
+                validators: {
+                    notEmpty: {
+                        message: '验证码不能为空'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9]+$/,
+                        message: '只能使用大小写字母、数字'
+                    }
+                }
             }
 
         }
@@ -157,7 +191,9 @@ $(document).ready(function () {
                 if (!responseData.success) {
                     alert(responseData.errorMsg);
                     //点击确定以后刷新页面
-                    location.reload()
+                    // location.reload()
+                    // window.history.go(-1);
+                    $("#signUpBtn").removeAttr("disabled");
 
                 } else {
                     location.href = "sign-in.jsp"

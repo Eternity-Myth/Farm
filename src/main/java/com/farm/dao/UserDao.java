@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 测试案例：User的数据访问接口
+ * User的数据访问接口
  *
- * @author Guan WenCong
+ * @author 关文聪
  * @version 1.0
  * @email 530711667@qq.com
  */

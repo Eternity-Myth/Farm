@@ -10,15 +10,14 @@ import com.farm.vo.UserSignUpForm;
 import java.util.List;
 
 /**
- * ²âÊÔ°¸Àı£ºUserµÄÒµÎñÂß¼­½Ó¿Ú
+ * Userçš„ä¸šåŠ¡é€»è¾‘æ¥å£
  *
- * @author Guan WenCong
+ * @author å…³æ–‡èª
  * @version 1.0
  * @email 530711667@qq.com
  */
 
 public interface UserService {
-    //·½·¨ÀïÌí¼ÓÑéÖ¤Âë²ÎÊı
     UserSignUpResult signUp(UserSignUpForm userSignUpForm, String codeSession);
 
     CheckResult checkUserNameIsExist(String userName);

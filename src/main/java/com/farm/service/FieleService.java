@@ -6,9 +6,9 @@ import com.farm.entity.FieldExample;
 import java.util.List;
 
 /**
- * 测试案例：Field的业务逻辑接口
+ * Field的业务逻辑接口
  *
- * @author Guan WenCong
+ * @author 关文聪
  * @version 1.0
  * @email 530711667@qq.com
  */

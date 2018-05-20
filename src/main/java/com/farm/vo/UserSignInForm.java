@@ -1,7 +1,9 @@
 package com.farm.vo;
 
 /**
- * Created by Guan WenCong on 2018/5/3.
+ * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 public class UserSignInForm {
     private String userName;

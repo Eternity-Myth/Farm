@@ -3,7 +3,7 @@ package com.farm.common;
 /**
  * HTTP请求返回JSON格式结果公共类
  *
- * @author Guan WenCong
+ * @author 关文聪
  * @version 1.0
  * @email 530711667@qq.com
  */

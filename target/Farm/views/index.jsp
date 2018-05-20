@@ -29,7 +29,7 @@ To change this template use File | Settings | File Templates.
         <div class="col-md-8 col-md-offset-2" style="background-color:rgba(0,0,0,0.8);height:60px">
             <p class="col-md-4"
                style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
-                <img src="../agro/UIpic/home.png" style="height:25px">&nbsp;&nbsp;&nbsp;HOME&nbsp;&nbsp;&nbsp;
+                <img src="../agro/UIpic/home.png" style="height:25px">&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="location.reload()">HOME</a>&nbsp;&nbsp;&nbsp;
             </p>
             <p class="col-md-4"
                style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
@@ -37,7 +37,8 @@ To change this template use File | Settings | File Templates.
             </p>
             <p1 class="col-md-4"
                 style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
-                <img src="../agro/UIpic/sign.png" style="height:25px">&nbsp;&nbsp;&nbsp;SIGN&nbsp;IN&nbsp;/&nbsp;UP
+                <img src="../agro/UIpic/sign.png" style="height:25px">&nbsp;&nbsp;&nbsp;<a href="sign-in.jsp">SIGN&nbsp;IN</a>&nbsp;/<a
+                    href="sign-up.jsp">&nbsp;UP</a>
             </p1>
         </div>
 
@@ -89,9 +90,10 @@ To change this template use File | Settings | File Templates.
                 href="https://github.com/Eternity-Myth/Farm">https://github.com/Eternity-Myth/Farm</a> <br><br>基本开发环境：JDK
             1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
             <br><br><a href="/views/field.jsp">查看菜地信息</a>
-            <br><a href="/views/crops.jsp">查看农作物信息</a>
-            <br><a href="/views/users.jsp">用户信息管理</a>
-            <br><a href="/views/logs.jsp">系统操作日志</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="/views/crops.jsp">查看农作物信息</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="/views/users.jsp">用户信息管理</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="/views/logs.jsp">系统操作日志</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="/views/seller.jsp">商家信息一览</a>
         </div>
     </div>
     <div class="row" style="height:80px">

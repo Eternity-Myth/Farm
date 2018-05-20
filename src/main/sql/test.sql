@@ -60,4 +60,15 @@ CREATE TABLE `log` (
   DEFAULT CHARSET=utf8;
   COMMENT = '日志信息表';
 
+DROP TABLE IF EXISTS `sellerinfo`;
+CREATE TABLE `sellerinfo` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `seller_phone` VARCHAR(255) NOT NULL,
+  `seller_name` VARCHAR(255) NOT NULL,
+  `seller_company_name` VARCHAR(255) NOT NULL,
+  `seller_add` VARCHAR(255) NOT NULL,
+  `seller_state` INT(11) NOT NULL DEFAULT '1',
+  `seller_alipaynum` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB  DEFAULT CHARSET=utf8;
 -- 手写ddl，记录每次sql修改

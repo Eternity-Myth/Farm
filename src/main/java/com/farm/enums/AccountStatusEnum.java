@@ -1,7 +1,9 @@
 package com.farm.enums;
 
 /**
- * Created by Guan WenCong on 2018/5/3.
+ * @author 关文聪
+ * @email 530711667@qq.com
+ * @version 1.0
  */
 public enum AccountStatusEnum {
     ACTIVED((byte) 1, "可用状态"), DISABLED((byte) 0, "禁用状态");

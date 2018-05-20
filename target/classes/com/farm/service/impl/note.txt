@@ -1,4 +1,4 @@
-ҵ���߼���ӿ�ʵ�ְ������ҵ���߼���ӿڶ�Ӧ��ʵ��
-@author Guan WenCong
+业务逻辑层接口实现包：存放业务逻辑层接口对应的实现
+@author 关文聪
 @version 1.0
 @email 530711667@qq.com

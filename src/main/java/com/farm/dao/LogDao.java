@@ -6,6 +6,13 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * Log的数据访问接口
+ *
+ * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
+ */
 
 public interface LogDao {
     long countByExample(LogExample example);

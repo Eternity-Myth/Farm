@@ -17,6 +17,8 @@ import java.util.List;
  * 用于显示系统操作日志，并提供删除功能
  *
  * @author 关文聪
+ * @version 1.0
+ * @email 530711667@qq.com
  */
 @Controller
 public class LogController {
