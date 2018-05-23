@@ -1,7 +1,6 @@
 package com.farm.service;
 
 import com.farm.entity.Field;
-import com.farm.entity.FieldExample;
 
 import java.util.List;
 
@@ -26,4 +25,7 @@ public interface FieleService {
     public void updateField(Field field);
 
     public void deleteBatch(List<Integer> ids);
+
+    //根据ID查询菜地
+    public Field getField(Integer id);
 }

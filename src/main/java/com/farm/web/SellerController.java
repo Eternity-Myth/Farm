@@ -84,4 +84,11 @@ public class SellerController {
         }
         return Msg.success();
     }
+
+    @RequestMapping(value = "/seller/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Msg getSeller(@PathVariable("id") Integer id) {
+        Seller seller = sellerServiceImpl.getSeller(id);
+        return Msg.success().add("seller", seller);
+    }
 }

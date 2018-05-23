@@ -92,4 +92,11 @@ public class FieldController {
         }
         return Msg.success();
     }
+
+    @RequestMapping(value = "/field/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Msg getField(@PathVariable("id") Integer id) {
+        Field field = fieldServiceImpl.getField(id);
+        return Msg.success().add("field", field);
+    }
 }

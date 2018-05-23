@@ -1,12 +1,10 @@
 package com.farm.dao;
 
-
 import java.util.List;
 
 import com.farm.entity.Seller;
 import com.farm.entity.SellerExample;
 import org.apache.ibatis.annotations.Param;
-
 
 public interface SellerDao {
     long countByExample(SellerExample example);

@@ -3,12 +3,12 @@
 <mapper namespace="com.farm.dao.SellerDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.Seller">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="seller_phone" jdbcType="VARCHAR" property="sellerPhone"/>
+        <result column="seller_phone" jdbcType="INTEGER" property="sellerPhone"/>
         <result column="seller_name" jdbcType="VARCHAR" property="sellerName"/>
         <result column="seller_company_name" jdbcType="VARCHAR" property="sellerCompanyName"/>
         <result column="seller_add" jdbcType="VARCHAR" property="sellerAdd"/>
         <result column="seller_state" jdbcType="INTEGER" property="sellerState"/>
-        <result column="seller_alipaynum" jdbcType="VARCHAR" property="sellerAlipaynum"/>
+        <result column="seller_alipaynum" jdbcType="INTEGER" property="sellerAlipaynum"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -107,9 +107,9 @@
     insert into sellerinfo (id, seller_phone, seller_name,
       seller_company_name, seller_add, seller_state,
       seller_alipaynum)
-    values (#{id,jdbcType=INTEGER}, #{sellerPhone,jdbcType=VARCHAR}, #{sellerName,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER}, #{sellerPhone,jdbcType=INTEGER}, #{sellerName,jdbcType=VARCHAR},
       #{sellerCompanyName,jdbcType=VARCHAR}, #{sellerAdd,jdbcType=VARCHAR}, #{sellerState,jdbcType=INTEGER},
-      #{sellerAlipaynum,jdbcType=VARCHAR})
+      #{sellerAlipaynum,jdbcType=INTEGER})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Seller">
         insert into sellerinfo
@@ -141,7 +141,7 @@
                 #{id,jdbcType=INTEGER},
             </if>
             <if test="sellerPhone != null">
-                #{sellerPhone,jdbcType=VARCHAR},
+                #{sellerPhone,jdbcType=INTEGER},
             </if>
             <if test="sellerName != null">
                 #{sellerName,jdbcType=VARCHAR},
@@ -156,7 +156,7 @@
                 #{sellerState,jdbcType=INTEGER},
             </if>
             <if test="sellerAlipaynum != null">
-                #{sellerAlipaynum,jdbcType=VARCHAR},
+                #{sellerAlipaynum,jdbcType=INTEGER},
             </if>
         </trim>
     </insert>
@@ -173,7 +173,7 @@
                 id = #{record.id,jdbcType=INTEGER},
             </if>
             <if test="record.sellerPhone != null">
-                seller_phone = #{record.sellerPhone,jdbcType=VARCHAR},
+                seller_phone = #{record.sellerPhone,jdbcType=INTEGER},
             </if>
             <if test="record.sellerName != null">
                 seller_name = #{record.sellerName,jdbcType=VARCHAR},
@@ -188,7 +188,7 @@
                 seller_state = #{record.sellerState,jdbcType=INTEGER},
             </if>
             <if test="record.sellerAlipaynum != null">
-                seller_alipaynum = #{record.sellerAlipaynum,jdbcType=VARCHAR},
+                seller_alipaynum = #{record.sellerAlipaynum,jdbcType=INTEGER},
             </if>
         </set>
         <if test="_parameter != null">
@@ -198,12 +198,12 @@
     <update id="updateByExample" parameterType="map">
         update sellerinfo
         set id = #{record.id,jdbcType=INTEGER},
-        seller_phone = #{record.sellerPhone,jdbcType=VARCHAR},
+        seller_phone = #{record.sellerPhone,jdbcType=INTEGER},
         seller_name = #{record.sellerName,jdbcType=VARCHAR},
         seller_company_name = #{record.sellerCompanyName,jdbcType=VARCHAR},
         seller_add = #{record.sellerAdd,jdbcType=VARCHAR},
         seller_state = #{record.sellerState,jdbcType=INTEGER},
-        seller_alipaynum = #{record.sellerAlipaynum,jdbcType=VARCHAR}
+        seller_alipaynum = #{record.sellerAlipaynum,jdbcType=INTEGER}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
@@ -212,7 +212,7 @@
         update sellerinfo
         <set>
             <if test="sellerPhone != null">
-                seller_phone = #{sellerPhone,jdbcType=VARCHAR},
+                seller_phone = #{sellerPhone,jdbcType=INTEGER},
             </if>
             <if test="sellerName != null">
                 seller_name = #{sellerName,jdbcType=VARCHAR},
@@ -227,19 +227,19 @@
                 seller_state = #{sellerState,jdbcType=INTEGER},
             </if>
             <if test="sellerAlipaynum != null">
-                seller_alipaynum = #{sellerAlipaynum,jdbcType=VARCHAR},
+                seller_alipaynum = #{sellerAlipaynum,jdbcType=INTEGER},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.Seller">
     update sellerinfo
-    set seller_phone = #{sellerPhone,jdbcType=VARCHAR},
+    set seller_phone = #{sellerPhone,jdbcType=INTEGER},
       seller_name = #{sellerName,jdbcType=VARCHAR},
       seller_company_name = #{sellerCompanyName,jdbcType=VARCHAR},
       seller_add = #{sellerAdd,jdbcType=VARCHAR},
       seller_state = #{sellerState,jdbcType=INTEGER},
-      seller_alipaynum = #{sellerAlipaynum,jdbcType=VARCHAR}
+      seller_alipaynum = #{sellerAlipaynum,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

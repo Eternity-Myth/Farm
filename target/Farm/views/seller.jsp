@@ -66,7 +66,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">支付宝</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sellerAlipaynum" class="form-control"
+                            <input type="number" name="sellerAlipaynum" class="form-control"
                                    id="sellerAlipaynum_add_input"
                                    placeholder="SellerAlipaynum">
                         </div>
@@ -91,6 +91,12 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="sellerID_update_static"></p>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">店铺名</label>
                         <div class="col-sm-10">
@@ -123,7 +129,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">支付宝</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sellerAlipaynum" class="form-control"
+                            <input type="number" name="sellerAlipaynum" class="form-control"
                                    id="sellerAlipaynum_update_input">
                             <span class="help-block"></span>
                         </div>
@@ -396,11 +402,31 @@
     //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
     //jquery新版没有live，使用on进行替代
     $(document).on("click", ".edit_btn", function () {
-        //3、把商家的id传递给模态框的更新按钮
+        //查出商家信息，显示商家信息
+        getSeller($(this).attr("edit-id"));
+        //把商家的id传递给模态框的更新按钮
         $("#seller_update_btn").attr("edit-id", $(this).attr("edit-id"));
         $("#sellerUpdateModal").modal({
             backdrop: "static"
         });
+
+        function getSeller(id) {
+            $.ajax({
+                url: "${APP_PATH}/seller/" + id,
+                type: "GET",
+                success: function (result) {
+                    // console.log(result);
+                    var sellerData = result.extend.seller;
+                    $("#sellerID_update_static").text(sellerData.id);
+                    $("#sellerName_update_input").val(sellerData.sellerName);
+                    $("#sellerPhone_update_input").val(sellerData.sellerPhone);
+                    $("#sellerCompanyName_update_input").val(sellerData.sellerCompanyName);
+                    $("#sellerAdd_update_input").val(sellerData.sellerAdd);
+                    $("#sellerAlipaynum_update_input").val(sellerData.sellerAlipaynum);
+                }
+            });
+        }
+
         $("#seller_update_btn").click(function () {
             //发送ajax请求保存更新的商家数据
             $.ajax({

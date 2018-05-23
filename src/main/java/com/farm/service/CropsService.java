@@ -26,4 +26,7 @@ public interface CropsService {
     public void updateCrops(Crops crops);
 
     public void deleteBatch(List<Integer> ids);
+
+    //根据ID查询农作物
+    public Crops getCrops(Integer id);
 }

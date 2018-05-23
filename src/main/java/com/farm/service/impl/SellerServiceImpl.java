@@ -46,4 +46,11 @@ public class SellerServiceImpl implements SellerService {
         criteria.andIdIn(ids);
         sellerDao.deleteByExample(example);
     }
+
+    //根据ID查询商家
+    @Override
+    public Seller getSeller(Integer id) {
+        Seller seller = sellerDao.selectByPrimaryKey(id);
+        return seller;
+    }
 }

@@ -31,7 +31,7 @@
     <developers>
         <developer>
             <id>Eternity-Myth</id>
-            <name>Guan Wencong</name>
+            <name>关文聪</name>
             <email>530711667@qq.com</email>
             <url>https://github.com/Eternity-Myth</url>
             <roles>
@@ -44,22 +44,8 @@
             <timezone>8</timezone>
         </developer>
     </developers>
-    <repositories>
-        <repository>
-            <id>alibaba-opensource</id>
-            <name>alibaba-opensource</name>
-            <url>http://code.alibabatech.com/mvn/releases/</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>alibaba-opensource-snapshot</id>
-            <name>alibaba-opensource-snapshot</name>
-            <url>http://code.alibabatech.com/mvn/snapshots/</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
-    <properties>
 
+    <properties>
         <!-- junit4-->
         <junit.version>4.11</junit.version>
         <!-- 日志依赖
@@ -69,8 +55,8 @@
         <slf4j.version>1.7.7</slf4j.version>
         <logback.version>1.1.2</logback.version>
         <!-- DB依赖:mysql,druid -->
-        <mysql.version>5.1.26</mysql.version>
-        <druid.version>1.0.18</druid.version>
+        <mysql.version>5.1.46</mysql.version>
+        <druid.version>1.1.9</druid.version>
         <!-- DAO依赖:mybatis,mybatis支持Spring的依赖 -->
         <mybatis.version>3.3.0</mybatis.version>
         <mybatis.spring.version>1.3.0</mybatis.spring.version>
@@ -278,8 +264,6 @@
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
-
-
     </dependencies>
 
 </project>

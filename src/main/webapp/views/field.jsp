@@ -68,6 +68,12 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="fieldID_update_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Area</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="area_update_input">
@@ -340,11 +346,28 @@
     //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
     //jquery新版没有live，使用on进行替代
     $(document).on("click", ".edit_btn", function () {
-        //3、把菜地的id传递给模态框的更新按钮
+        //查出菜地信息，显示菜地信息
+        getField($(this).attr("edit-id"));
+        //把菜地的id传递给模态框的更新按钮
         $("#field_update_btn").attr("edit-id", $(this).attr("edit-id"));
         $("#fieldUpdateModal").modal({
             backdrop: "static"
         });
+
+        function getField(id) {
+            $.ajax({
+                url: "${APP_PATH}/field/" + id,
+                type: "GET",
+                success: function (result) {
+                    // console.log(result);
+                    var fieldData = result.extend.field;
+                    $("#fieldID_update_static").text(fieldData.id);
+                    $("#area_update_input").val(fieldData.area);
+                    $("#crops_update_input").val(fieldData.crops);
+                }
+            });
+        }
+
         $("#field_update_btn").click(function () {
             //发送ajax请求保存更新的菜地数据
             $.ajax({

@@ -7,138 +7,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e29725-cebb-48b6-9a1a-c4acd47ee26e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/SellerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/farm/entity/Seller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/farm/entity/SellerExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/SellerDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/agro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/managementbackground.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/tools.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/seller.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/common/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/common/CommonResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/common/CommonValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/common/CommonValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/common/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/common/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dao/CropsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/CropsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dao/FieldDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/FieldDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dao/LogDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/LogDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dao/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dto/CheckResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dto/CheckResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignInResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignInResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignUpResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignUpResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dto/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dto/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/entity/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/entity/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/enums/AccountStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/enums/AccountStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/enums/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/enums/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/exception/DataExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/exception/DataExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/exception/DataInsertException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/exception/DataInsertException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/exception/DataMatchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/exception/DataMatchException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/exception/SystemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/exception/SystemException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/exception/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/exception/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/interceptor/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/interceptor/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/dao/SellerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/dao/SellerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/entity/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/entity/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/entity/SellerExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/entity/SellerExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/CropsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/CropsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/FieleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/FieleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/CropsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/CropsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/FieldServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/FieldServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/impl/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/service/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/service/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/util/LogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/util/LogUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/util/TimeTrans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/util/TimeTrans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/util/ValidateCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/util/ValidateCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/util/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/util/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignInForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignInForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignUpForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignUpForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/SellerDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/SellerDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sql/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/test.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/千图网_主页图标_图片编号18377257.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/agro/UIpic/千图网_巧克力甜甜圈卡通透明素材_图片编号27864793.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/sign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-in.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-in.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/common/CommonValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/common/CommonValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/common/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/common/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dao/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dao/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/CheckResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/CheckResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/UserSignInResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/UserSignInResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/UserSignUpResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/UserSignUpResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/dto/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/enums/AccountStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/enums/AccountStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/enums/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/enums/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/DataExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/DataExistException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/DataInsertException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/DataInsertException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/DataMatchException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/DataMatchException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/SystemException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/SystemException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/exception/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/interceptor/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/interceptor/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/crops.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/crops.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/field.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/field.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/seller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/seller.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/Seller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/Seller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/SellerExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/SellerExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/SellerExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/SellerExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/SellerExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/entity/SellerExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/CropsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/CropsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/FieleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/FieleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/CropsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/CropsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/LogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/LogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/LogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/LogUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/TimeTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/TimeTrans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/ValidateCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/ValidateCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/util/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/vo/UserSignInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/vo/UserSignInForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/vo/UserSignUpForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/vo/UserSignUpForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/FieldServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/service/impl/FieldServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/CropsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/CropsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/FieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/FieldController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/LogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/LogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/agro/UIpic/千图网_主页图标_图片编号18377257.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/agro/UIpic/千图网_巧克力甜甜圈卡通透明素材_图片编号27864793.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/js/sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/js/sign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/sign-in.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/sign-in.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/sign-up.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/sign-up.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/common/CommonValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/common/CommonValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/common/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/common/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/dao/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/dao/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/dto/CheckResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/dto/CheckResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/dto/UserSignInResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/dto/UserSignInResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/dto/UserSignUpResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/dto/UserSignUpResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/dto/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/dto/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/entity/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/entity/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/enums/AccountStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/enums/AccountStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/enums/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/enums/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/exception/DataExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/exception/DataExistException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/exception/DataInsertException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/exception/DataInsertException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/exception/DataMatchException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/exception/DataMatchException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/exception/SystemException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/exception/SystemException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/exception/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/exception/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/interceptor/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/interceptor/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/mybatis/mapper/SellerDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/mybatis/mapper/SellerDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/lib/druid-1.0.18.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/lib/mysql-connector-java-5.1.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/views/crops.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/views/crops.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/views/field.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/views/field.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/views/seller.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/views/seller.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/entity/Seller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/entity/Seller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/entity/SellerExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/entity/SellerExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/entity/SellerExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/entity/SellerExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/entity/SellerExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/entity/SellerExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/CropsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/CropsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/FieleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/FieleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/impl/CropsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/impl/CropsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/impl/LogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/impl/LogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/impl/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/impl/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/util/LogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/util/LogUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/util/TimeTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/util/TimeTrans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/util/ValidateCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/util/ValidateCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/util/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/util/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/vo/UserSignInForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/vo/UserSignInForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/vo/UserSignUpForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/vo/UserSignUpForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/service/impl/FieldServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/service/impl/FieldServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/CropsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/web/CropsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/FieldController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/web/FieldController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/LogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/web/LogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/web/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/farm/web/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/SellerDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/SellerDao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -166,7 +84,26 @@
     <favorites_list name="Farm" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="seller.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/seller.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="423" column="75" lean-forward="true" selection-start-line="423" selection-start-column="75" selection-end-line="423" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="field.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/field.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="364" column="20" selection-start-line="364" selection-start-column="20" selection-end-line="364" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -174,16 +111,13 @@
         <option value="spring-beans.schema" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>servlet.api.version</find>
-      <find>field_save_btn</find>
-      <find>fieldAddModal</find>
       <find>test.domain</find>
       <find>totalRecord</find>
       <find>员工</find>
@@ -197,7 +131,6 @@
       <find>edit</find>
       <find>userNameTd</find>
       <find>pageInfo</find>
-      <find>result</find>
       <find>resultmap</find>
       <find>resultMap</find>
       <find>fieldId</find>
@@ -211,6 +144,10 @@
       <find>sellerId</find>
       <find>edit-id</find>
       <find>sellerUpdateModal</find>
+      <find>Update_By_Example_Where_Clause</find>
+      <find>record</find>
+      <find>mysql.version</find>
+      <find>result</find>
     </findStrings>
     <replaceStrings>
       <replace>com.farm.entity</replace>
@@ -223,21 +160,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/exception/SystemException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/FieldServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/CropsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/LogServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/common/CommonResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/common/CommonValue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/dao/CropsDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dao/FieldDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dao/LogDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dto/CheckResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignInResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignUpResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/CropsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/FieleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/service/LogService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/util/LogUtil.java" />
@@ -255,25 +183,34 @@
         <option value="$PROJECT_DIR$/src/main/java/com/farm/util/ValidateCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignInForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignUpForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/web/LogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/web/note.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/sign.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/sign-in.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/seller.jsp" />
-        <option value="$PROJECT_DIR$/src/main/sql/test.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/entity/Seller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/entity/SellerExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/farm/dao/SellerDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/SellerDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/sql/test.sql" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/crops.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/CropsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/CropsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/FieldServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/FieleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/field.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/seller.jsp" />
       </list>
     </option>
   </component>
@@ -327,7 +264,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,12 +302,30 @@
               <item name="Farm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="farm" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Farm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Farm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Farm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Farm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -385,7 +339,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -474,7 +428,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Farm_32" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Farm_33" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -482,7 +436,7 @@
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62573" />
+        <option name="DEBUG_PORT" value="51127" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -593,6 +547,25 @@
       <workItem from="1526651805316" duration="3546000" />
       <workItem from="1526697469905" duration="14875000" />
       <workItem from="1526785547135" duration="12884000" />
+      <workItem from="1526816243026" duration="12496000" />
+      <workItem from="1526872915318" duration="511000" />
+      <workItem from="1526873475550" duration="296000" />
+      <workItem from="1526873870997" duration="726000" />
+      <workItem from="1526874630992" duration="937000" />
+      <workItem from="1526884455208" duration="1139000" />
+      <workItem from="1526894021414" duration="2061000" />
+      <workItem from="1526896181993" duration="4260000" />
+      <workItem from="1526906583043" duration="522000" />
+      <workItem from="1526907180933" duration="845000" />
+      <workItem from="1526909439804" duration="825000" />
+      <workItem from="1526910317607" duration="257000" />
+      <workItem from="1526910636788" duration="1736000" />
+      <workItem from="1526913028083" duration="780000" />
+      <workItem from="1526914297799" duration="1974000" />
+      <workItem from="1526959207718" duration="95000" />
+      <workItem from="1526959457661" duration="1407000" />
+      <workItem from="1526991875035" duration="7498000" />
+      <workItem from="1527043995037" duration="3130000" />
     </task>
     <servers />
   </component>
@@ -629,7 +602,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324335000" />
+    <option name="totallyTimeSpent" value="365830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,10 +635,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289256" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3289256" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39171976" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43630573" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3289256" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289256" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4958217" visible="true" weight="0.26793557" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4958217" visible="true" weight="0.2635432" />
       <window_info id="Web" order="6" sideWeight="0.5041783" side_tool="true" weight="0.27685326" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.5041783" side_tool="true" weight="0.27685326" />
@@ -693,212 +666,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/util/ValidateCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/util/LogUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/util/note.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/note.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/common/CommonResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/common/CommonValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/common/note.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignInResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-394">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/dto/UserSignUpResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-218">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/dto/CheckResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/enums/AccountStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataExistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataInsertException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataMatchException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/note.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/SystemException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/CropsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignInForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignUpForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-790">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/LogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/sign.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="203" lean-forward="true" selection-start-line="203" selection-end-line="203" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sign-in.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1518">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/sign-up.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#5;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#5;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#5;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/LogServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2134">
-          <caret line="97" column="10" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -909,15 +680,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/crops.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/CropsExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-990" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+        <state relative-caret-position="88">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -928,6 +694,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/FieldExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/LogExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/Msg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -935,213 +722,283 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/CropsDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4158" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/field.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="73" column="60" lean-forward="true" selection-start-line="73" selection-start-column="60" selection-end-line="73" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/seller.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="83" column="45" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/dao/CropsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/CropsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/note.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/Seller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
-          <folding>
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1423#1424#0" expanded="true" />
-            <element signature="e#1465#1466#0" expanded="true" />
-            <element signature="e#1503#1504#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/SellerExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="669" column="1" selection-start-line="669" selection-start-column="1" selection-end-line="669" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1727#1728#0" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1817#1818#0" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1904#1905#0" expanded="true" />
-            <element signature="e#19849#19850#0" expanded="true" />
-            <element signature="e#19880#19881#0" expanded="true" />
-            <element signature="e#20249#20250#0" expanded="true" />
-            <element signature="e#20289#20290#0" expanded="true" />
-            <element signature="e#20325#20326#0" expanded="true" />
-            <element signature="e#20361#20362#0" expanded="true" />
-            <element signature="e#20403#20404#0" expanded="true" />
-            <element signature="e#20445#20446#0" expanded="true" />
-            <element signature="e#20483#20484#0" expanded="true" />
-            <element signature="e#20521#20522#0" expanded="true" />
-            <element signature="e#20563#20564#0" expanded="true" />
-            <element signature="e#20605#20606#0" expanded="true" />
-            <element signature="e#20648#20649#0" expanded="true" />
-            <element signature="e#20691#20692#0" expanded="true" />
-            <element signature="e#20731#20732#0" expanded="true" />
-            <element signature="e#20771#20772#0" expanded="true" />
-            <element signature="e#20813#20814#0" expanded="true" />
-            <element signature="e#20855#20856#0" expanded="true" />
-            <element signature="e#21497#21498#0" expanded="true" />
-            <element signature="e#21549#21550#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="22">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/dao/FieldDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/FieldServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding>
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-          </folding>
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/dao/SellerDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/entity/UserExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/enums/AccountStatusEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/note.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/LogService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/FieldDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/note.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="164" column="45" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
+        <state relative-caret-position="200">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/SellerDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/LogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="212" column="13" lean-forward="true" selection-start-line="212" selection-start-column="13" selection-end-line="212" selection-end-column="13" />
+        <state relative-caret-position="200">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/note.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/util/LogUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/util/TimeTrans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/util/ValidateCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignInForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/vo/UserSignUpForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/LogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/note.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataInsertException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/DataMatchException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/exception/SystemException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2926">
+          <caret line="158" column="1" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="68" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="122" lean-forward="true" selection-start-line="6" selection-start-column="122" selection-end-line="6" selection-end-column="122" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sql/test.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="65" column="39" lean-forward="true" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+        <state relative-caret-position="1188">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5852">
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/CropsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/CropsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/crops.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="87" column="26" lean-forward="true" selection-start-line="82" selection-start-column="20" selection-end-line="87" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/SellerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/FieleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/SellerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/service/impl/FieldServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="97" column="57" lean-forward="true" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/farm/web/SellerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="91" column="51" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/field.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="364" column="20" selection-start-line="364" selection-start-column="20" selection-end-line="364" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/seller.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="423" column="75" lean-forward="true" selection-start-line="423" selection-start-column="75" selection-end-line="423" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -1164,7 +1021,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Web (Farm)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1225,6 +1082,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

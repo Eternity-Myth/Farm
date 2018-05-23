@@ -81,6 +81,18 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
+                        <label class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="cropsID_update_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="cropsName_update_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Area</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="area_update_input">
@@ -366,11 +378,30 @@
     //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
     //jquery新版没有live，使用on进行替代
     $(document).on("click", ".edit_btn", function () {
-        //3、把菜地的id传递给模态框的更新按钮
+        //查出农作物信息，显示农作物信息
+        getCrops($(this).attr("edit-id"));
+        //把农作物的id传递给模态框的更新按钮
         $("#crops_update_btn").attr("edit-id", $(this).attr("edit-id"));
         $("#cropsUpdateModal").modal({
             backdrop: "static"
         });
+
+        function getCrops(id) {
+            $.ajax({
+                url: "${APP_PATH}/crops/" + id,
+                type: "GET",
+                success: function (result) {
+                    // console.log(result);
+                    var cropsData = result.extend.crops;
+                    $("#cropsID_update_static").text(cropsData.id);
+                    $("#cropsName_update_static").text(cropsData.cropsname);
+                    $("#area_update_input").val(cropsData.area);
+                    $("#profit_update_input").val(cropsData.profit);
+                    $("#cropsTime_update_input").val(cropsData.cropstime);
+                }
+            });
+        }
+
         $("#crops_update_btn").click(function () {
             //发送ajax请求保存更新的菜地数据
             $.ajax({

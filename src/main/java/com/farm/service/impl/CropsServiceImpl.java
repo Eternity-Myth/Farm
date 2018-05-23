@@ -40,16 +40,24 @@ public class CropsServiceImpl implements CropsService {
     }
 
     @Override
-    public void updateCrops(Crops crops) {
-        cropsDao.updateByPrimaryKeySelective(crops);
-    }
-
-    @Override
     public void deleteBatch(List<Integer> ids) {
         CropsExample example = new CropsExample();
         CropsExample.Criteria criteria = example.createCriteria();
         //delete from xxx where id in(1,2,3)
         criteria.andIdIn(ids);
         cropsDao.deleteByExample(example);
+    }
+
+    //农作物更新
+    @Override
+    public void updateCrops(Crops crops) {
+        cropsDao.updateByPrimaryKeySelective(crops);
+    }
+
+    //根据ID查询农作物
+    @Override
+    public Crops getCrops(Integer id) {
+        Crops crops = cropsDao.selectByPrimaryKey(id);
+        return crops;
     }
 }

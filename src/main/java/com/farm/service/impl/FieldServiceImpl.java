@@ -1,5 +1,6 @@
 package com.farm.service.impl;
 
+import com.farm.entity.Crops;
 import com.farm.service.FieleService;
 import com.farm.dao.FieldDao;
 import com.farm.entity.Field;
@@ -13,8 +14,8 @@ import java.util.List;
  * Field的业务逻辑实现类
  *
  * @author 关文聪
- * @email 530711667@qq.com
  * @version 1.0
+ * @email 530711667@qq.com
  */
 @Service
 public class FieldServiceImpl implements FieleService {
@@ -54,5 +55,10 @@ public class FieldServiceImpl implements FieleService {
         fieldDao.updateByPrimaryKeySelective(field);
     }
 
-
+    //根据ID查询菜地
+    @Override
+    public Field getField(Integer id) {
+        Field field = fieldDao.selectByPrimaryKey(id);
+        return field;
+    }
 }

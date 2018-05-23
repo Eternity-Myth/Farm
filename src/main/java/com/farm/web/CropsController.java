@@ -90,4 +90,11 @@ public class CropsController {
         }
         return Msg.success();
     }
+
+    @RequestMapping(value = "/crops/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Msg getCrops(@PathVariable("id") Integer id) {
+        Crops crops = cropsServiceImpl.getCrops(id);
+        return Msg.success().add("crops", crops);
+    }
 }

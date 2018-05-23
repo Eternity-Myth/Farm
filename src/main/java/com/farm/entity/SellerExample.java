@@ -174,62 +174,52 @@ public class SellerExample {
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneEqualTo(String value) {
+        public Criteria andSellerPhoneEqualTo(Integer value) {
             addCriterion("seller_phone =", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneNotEqualTo(String value) {
+        public Criteria andSellerPhoneNotEqualTo(Integer value) {
             addCriterion("seller_phone <>", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneGreaterThan(String value) {
+        public Criteria andSellerPhoneGreaterThan(Integer value) {
             addCriterion("seller_phone >", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneGreaterThanOrEqualTo(String value) {
+        public Criteria andSellerPhoneGreaterThanOrEqualTo(Integer value) {
             addCriterion("seller_phone >=", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneLessThan(String value) {
+        public Criteria andSellerPhoneLessThan(Integer value) {
             addCriterion("seller_phone <", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneLessThanOrEqualTo(String value) {
+        public Criteria andSellerPhoneLessThanOrEqualTo(Integer value) {
             addCriterion("seller_phone <=", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneLike(String value) {
-            addCriterion("seller_phone like", value, "sellerPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andSellerPhoneNotLike(String value) {
-            addCriterion("seller_phone not like", value, "sellerPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andSellerPhoneIn(List<String> values) {
+        public Criteria andSellerPhoneIn(List<Integer> values) {
             addCriterion("seller_phone in", values, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneNotIn(List<String> values) {
+        public Criteria andSellerPhoneNotIn(List<Integer> values) {
             addCriterion("seller_phone not in", values, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneBetween(String value1, String value2) {
+        public Criteria andSellerPhoneBetween(Integer value1, Integer value2) {
             addCriterion("seller_phone between", value1, value2, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneNotBetween(String value1, String value2) {
+        public Criteria andSellerPhoneNotBetween(Integer value1, Integer value2) {
             addCriterion("seller_phone not between", value1, value2, "sellerPhone");
             return (Criteria) this;
         }
@@ -514,62 +504,52 @@ public class SellerExample {
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumEqualTo(String value) {
+        public Criteria andSellerAlipaynumEqualTo(Integer value) {
             addCriterion("seller_alipaynum =", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumNotEqualTo(String value) {
+        public Criteria andSellerAlipaynumNotEqualTo(Integer value) {
             addCriterion("seller_alipaynum <>", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumGreaterThan(String value) {
+        public Criteria andSellerAlipaynumGreaterThan(Integer value) {
             addCriterion("seller_alipaynum >", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumGreaterThanOrEqualTo(String value) {
+        public Criteria andSellerAlipaynumGreaterThanOrEqualTo(Integer value) {
             addCriterion("seller_alipaynum >=", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumLessThan(String value) {
+        public Criteria andSellerAlipaynumLessThan(Integer value) {
             addCriterion("seller_alipaynum <", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumLessThanOrEqualTo(String value) {
+        public Criteria andSellerAlipaynumLessThanOrEqualTo(Integer value) {
             addCriterion("seller_alipaynum <=", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumLike(String value) {
-            addCriterion("seller_alipaynum like", value, "sellerAlipaynum");
-            return (Criteria) this;
-        }
-
-        public Criteria andSellerAlipaynumNotLike(String value) {
-            addCriterion("seller_alipaynum not like", value, "sellerAlipaynum");
-            return (Criteria) this;
-        }
-
-        public Criteria andSellerAlipaynumIn(List<String> values) {
+        public Criteria andSellerAlipaynumIn(List<Integer> values) {
             addCriterion("seller_alipaynum in", values, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumNotIn(List<String> values) {
+        public Criteria andSellerAlipaynumNotIn(List<Integer> values) {
             addCriterion("seller_alipaynum not in", values, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumBetween(String value1, String value2) {
+        public Criteria andSellerAlipaynumBetween(Integer value1, Integer value2) {
             addCriterion("seller_alipaynum between", value1, value2, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumNotBetween(String value1, String value2) {
+        public Criteria andSellerAlipaynumNotBetween(Integer value1, Integer value2) {
             addCriterion("seller_alipaynum not between", value1, value2, "sellerAlipaynum");
             return (Criteria) this;
         }
