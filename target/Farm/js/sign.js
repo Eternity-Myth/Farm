@@ -85,7 +85,7 @@ $(document).ready(function () {
                     // submit(formObj)
                     // sessionStorage.getItem()
                 } else {
-                    location.href = "/views/index.jsp"
+                    location.href = "/views/management.jsp"
                 }
             }
         });
