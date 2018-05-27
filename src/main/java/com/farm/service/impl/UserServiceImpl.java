@@ -140,6 +140,9 @@ public class UserServiceImpl implements UserService {
         if (!user.getUserPass().equals(userSignInForm.getUserPass())) {
             throw new DataMatchException("用户名或密码错误");
         } else {
+            if (user.getStatus() != true) {
+                throw new DataMatchException("用户已被禁用");
+            }
             //校验验证码,无视大小写
             if (!codeSession.equalsIgnoreCase(userSignInForm.getCode())) {
 
