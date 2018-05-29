@@ -203,3 +203,15 @@ $(document).ready(function () {
     });
 
 });
+
+function sign_out() {
+    $.ajax({
+        type: "GET",
+        url: "../user/signOut",
+        success: function () {
+            alert("注销成功！")
+            location.href = "index.jsp"
+        }
+
+    })
+}

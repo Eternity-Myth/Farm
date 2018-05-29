@@ -22,6 +22,7 @@
             rel="stylesheet">
     <script
             src="${APP_PATH}/js/bootstrap.min.js"></script>
+    <script src="../js/sign.js"></script>
 </head>
 <body style="background-image:url(../agro/UIpic/managementbackground.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
 <div class="container-fluid">
@@ -151,8 +152,8 @@
                         <li class="list-group-item" style="background-color:transparent">
                             信息
                         </li>
-                        <li class="list-group-item" style="background-color:transparent">
-                            <a href="/views/index.jsp">注销</a>
+                        <li class="list-group-item" style="background-color:transparent" >
+                            <a href="#" onclick="sign_out()">注销</a>
                         </li>
                     </ul>
                 </div>
