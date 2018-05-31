@@ -51,6 +51,9 @@
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/seller.jsp">商家信息管理</a>
                             </li>
+                            <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/assignment.jsp">任务信息管理</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -121,9 +124,9 @@
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.2.min.js"></script>
+<%--<script src="js/jquery-1.11.2.min.js"></script>--%>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.js"></script>
+<%--<script src="js/bootstrap.js"></script>--%>
 <style type="text/css">
     p {
         border-right: thin solid #FFFFFF;

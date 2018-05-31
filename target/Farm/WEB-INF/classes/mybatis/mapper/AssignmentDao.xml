@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.AssignmentDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.Assignment">
+        <id column="assi_id" jdbcType="INTEGER" property="assiId"/>
+        <result column="assi_state" jdbcType="INTEGER" property="assiState"/>
+        <result column="assi_type" jdbcType="VARCHAR" property="assiType"/>
+        <result column="assi_data" jdbcType="VARCHAR" property="assiData"/>
+        <result column="assi_phone" jdbcType="VARCHAR" property="assiPhone"/>
+        <result column="assi_nickname" jdbcType="VARCHAR" property="assiNickname"/>
+        <result column="assi_createtime" jdbcType="TIMESTAMP" property="assiCreatetime"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    assi_id, assi_state, assi_type, assi_data, assi_phone, assi_nickname, assi_createtime
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.AssignmentExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from assignment
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from assignment
+        where assi_id = #{assiId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from assignment
+    where assi_id = #{assiId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.farm.entity.AssignmentExample">
+        delete from assignment
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.Assignment">
+    insert into assignment (assi_id, assi_state, assi_type,
+      assi_data, assi_phone, assi_nickname,
+      assi_createtime)
+    values (#{assiId,jdbcType=INTEGER}, #{assiState,jdbcType=INTEGER}, #{assiType,jdbcType=VARCHAR},
+      #{assiData,jdbcType=VARCHAR}, #{assiPhone,jdbcType=VARCHAR}, #{assiNickname,jdbcType=VARCHAR},
+      #{assiCreatetime,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.Assignment">
+        insert into assignment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="assiId != null">
+                assi_id,
+            </if>
+            <if test="assiState != null">
+                assi_state,
+            </if>
+            <if test="assiType != null">
+                assi_type,
+            </if>
+            <if test="assiData != null">
+                assi_data,
+            </if>
+            <if test="assiPhone != null">
+                assi_phone,
+            </if>
+            <if test="assiNickname != null">
+                assi_nickname,
+            </if>
+            <if test="assiCreatetime != null">
+                assi_createtime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="assiId != null">
+                #{assiId,jdbcType=INTEGER},
+            </if>
+            <if test="assiState != null">
+                #{assiState,jdbcType=INTEGER},
+            </if>
+            <if test="assiType != null">
+                #{assiType,jdbcType=VARCHAR},
+            </if>
+            <if test="assiData != null">
+                #{assiData,jdbcType=VARCHAR},
+            </if>
+            <if test="assiPhone != null">
+                #{assiPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="assiNickname != null">
+                #{assiNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="assiCreatetime != null">
+                #{assiCreatetime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.AssignmentExample" resultType="java.lang.Long">
+        select count(*) from assignment
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update assignment
+        <set>
+            <if test="record.assiId != null">
+                assi_id = #{record.assiId,jdbcType=INTEGER},
+            </if>
+            <if test="record.assiState != null">
+                assi_state = #{record.assiState,jdbcType=INTEGER},
+            </if>
+            <if test="record.assiType != null">
+                assi_type = #{record.assiType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.assiData != null">
+                assi_data = #{record.assiData,jdbcType=VARCHAR},
+            </if>
+            <if test="record.assiPhone != null">
+                assi_phone = #{record.assiPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.assiNickname != null">
+                assi_nickname = #{record.assiNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.assiCreatetime != null">
+                assi_createtime = #{record.assiCreatetime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update assignment
+        set assi_id = #{record.assiId,jdbcType=INTEGER},
+        assi_state = #{record.assiState,jdbcType=INTEGER},
+        assi_type = #{record.assiType,jdbcType=VARCHAR},
+        assi_data = #{record.assiData,jdbcType=VARCHAR},
+        assi_phone = #{record.assiPhone,jdbcType=VARCHAR},
+        assi_nickname = #{record.assiNickname,jdbcType=VARCHAR},
+        assi_createtime = #{record.assiCreatetime,jdbcType=TIMESTAMP}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.Assignment">
+        update assignment
+        <set>
+            <if test="assiState != null">
+                assi_state = #{assiState,jdbcType=INTEGER},
+            </if>
+            <if test="assiType != null">
+                assi_type = #{assiType,jdbcType=VARCHAR},
+            </if>
+            <if test="assiData != null">
+                assi_data = #{assiData,jdbcType=VARCHAR},
+            </if>
+            <if test="assiPhone != null">
+                assi_phone = #{assiPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="assiNickname != null">
+                assi_nickname = #{assiNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="assiCreatetime != null">
+                assi_createtime = #{assiCreatetime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where assi_id = #{assiId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.Assignment">
+    update assignment
+    set assi_state = #{assiState,jdbcType=INTEGER},
+      assi_type = #{assiType,jdbcType=VARCHAR},
+      assi_data = #{assiData,jdbcType=VARCHAR},
+      assi_phone = #{assiPhone,jdbcType=VARCHAR},
+      assi_nickname = #{assiNickname,jdbcType=VARCHAR},
+      assi_createtime = #{assiCreatetime,jdbcType=TIMESTAMP}
+    where assi_id = #{assiId,jdbcType=INTEGER}
+  </update>
+</mapper>

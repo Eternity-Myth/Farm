@@ -201,7 +201,6 @@ $(document).ready(function () {
             }
         });
     });
-
 });
 
 function sign_out() {
@@ -215,3 +214,5 @@ function sign_out() {
 
     })
 }
+
+
