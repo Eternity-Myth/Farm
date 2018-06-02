@@ -45,9 +45,23 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">菜地作物</label>
+                        <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
-                            <input type="text" name="crops" class="form-control" id="fieldCrops_add_input"
+                            <input type="text" name="username" class="form-control" id="username_add_input"
+                                   placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="phone" class="form-control" id="phone_add_input"
+                                   placeholder="Phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">时长/月（默认为3）</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="time" class="form-control" id="time_add_input"
                                    placeholder="Crops">
                         </div>
                     </div>
@@ -85,9 +99,23 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Crops</label>
+                        <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
-                            <input type="text" name="crops" class="form-control" id="crops_update_input">
+                            <input type="text" name="username" class="form-control" id="username_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="phone" class="form-control" id="phone_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">时长/月</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="time" class="form-control" id="time_update_input">
                             <span class="help-block"></span>
                         </div>
                     </div>
@@ -191,7 +219,11 @@
                                     </th>
                                     <th style="text-align:center">#ID</th>
                                     <th style="text-align:center">Area/亩</th>
-                                    <th style="text-align:center">Crops</th>
+                                    <th style="text-align:center">用户名</th>
+                                    <th style="text-align:center">手机号</th>
+                                    <th style="text-align:center">起始时间</th>
+                                    <th style="text-align:center">时长/月</th>
+                                    <th style="text-align:center">状态</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
                                     </th>
@@ -231,7 +263,7 @@
                         <li class="list-group-item" style="background-color:transparent">
                             信息
                         </li>
-                        <li class="list-group-item" style="background-color:transparent" >
+                        <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()">注销</a>
                         </li>
                     </ul>
@@ -280,7 +312,12 @@
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
             var fieldIdTd = $("<td></td>").append(item.id);
             var fieldAreaTd = $("<td></td>").append(item.area);
-            var fieldCropsTd = $("<td></td>").append(item.crops);
+            var usernameTd = $("<td></td>").append(item.username);
+            var phoneTd = $("<td></td>").append(item.phone);
+            var startTime = getMyDate(item.startTime)
+            var startTimeTd = $("<td></td>").append(startTime);
+            var timeTd=$("<td></td>").append(item.time);
+            var statusTd = $("<td></td>").append(item.status ? "正常" : "异常");
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
             //为编辑按钮添加一个自定义的属性，来表示当前菜地id
@@ -294,10 +331,35 @@
             $("<tr></tr>").append(checkBoxTd)
                 .append(fieldIdTd)
                 .append(fieldAreaTd)
-                .append(fieldCropsTd)
+                .append(usernameTd)
+                .append(phoneTd)
+                .append(startTimeTd)
+                .append(timeTd)
+                .append(statusTd)
                 .append(btnTd)
                 .appendTo("#field_table tbody");
         });
+    }
+
+    //获得年月日      得到日期oTime
+    function getMyDate(str) {
+        var oDate = new Date(str),
+            oYear = oDate.getFullYear(),
+            oMonth = oDate.getMonth() + 1,
+            oDay = oDate.getDate(),
+            oHour = oDate.getHours(),
+            oMin = oDate.getMinutes(),
+            oSen = oDate.getSeconds(),
+            oTime = oYear + '-' + getzf(oMonth) + '-' + getzf(oDay) + ' ' + getzf(oHour) + ':' + getzf(oMin) + ':' + getzf(oSen);//最后拼接时间
+        return oTime;
+    };
+
+    //补0操作
+    function getzf(num) {
+        if (parseInt(num) < 10) {
+            num = '0' + num;
+        }
+        return num;
     }
 
     //解析显示分页信息
@@ -469,8 +531,9 @@
                     // console.log(result);
                     var fieldData = result.extend.field;
                     $("#fieldID_update_static").text(fieldData.id);
-                    $("#area_update_input").val(fieldData.area);
-                    $("#crops_update_input").val(fieldData.crops);
+                    $("#username_update_input").val(fieldData.username);
+                    $("#phone_update_input").val(fieldData.phone);
+                    $("#time_update_input").val(fieldData.time);
                 }
             });
         }

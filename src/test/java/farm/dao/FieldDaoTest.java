@@ -21,7 +21,7 @@ public class FieldDaoTest extends BaseDaoTest {
         for (int i = 0; i < 100; i++) {
             Field field = new Field();
             Random random=new Random();
-            field.setArea(random.nextInt(500));
+            field.setArea(random.nextFloat()*500);
             int insertCount = fieldDao.insertSelective(field);
             logger.info("insertCount=" + insertCount);
             logger.info("insertField=" + field);

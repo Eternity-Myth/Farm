@@ -1,11 +1,21 @@
 package com.farm.entity;
 
+import java.util.Date;
+
 public class Field {
     private Integer id;
 
-    private Integer area;
+    private Float area;
 
-    private String crops;
+    private String username;
+
+    private Integer phone;
+
+    private Date startTime;
+
+    private Integer time;
+
+    private Boolean status;
 
     public Integer getId() {
         return id;
@@ -15,19 +25,51 @@ public class Field {
         this.id = id;
     }
 
-    public Integer getArea() {
+    public Float getArea() {
         return area;
     }
 
-    public void setArea(Integer area) {
+    public void setArea(Float area) {
         this.area = area;
     }
 
-    public String getCrops() {
-        return crops;
+    public String getUsername() {
+        return username;
     }
 
-    public void setCrops(String crops) {
-        this.crops = crops == null ? null : crops.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }
