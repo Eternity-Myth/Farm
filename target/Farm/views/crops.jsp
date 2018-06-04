@@ -158,6 +158,12 @@
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/assignment.jsp">任务信息管理</a>
                             </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/items.jsp">商品信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/orders.jsp">订单信息管理</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -217,8 +223,8 @@
                                     </th>
                                     <th style="text-align:center">#ID</th>
                                     <th style="text-align:center">Name</th>
-                                    <th style="text-align:center">Area（株/亩）</th>
-                                    <th style="text-align:center">Profit（元/亩）</th>
+                                    <th style="text-align:center">Area（株/平方米）</th>
+                                    <th style="text-align:center">Profit（元/株）</th>
                                     <th style="text-align:center">Time（月）</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
@@ -259,7 +265,7 @@
                         <li class="list-group-item" style="background-color:transparent">
                             信息
                         </li>
-                        <li class="list-group-item" style="background-color:transparent" >
+                        <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()">注销</a>
                         </li>
                     </ul>

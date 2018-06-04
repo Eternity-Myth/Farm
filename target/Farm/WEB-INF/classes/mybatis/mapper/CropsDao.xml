@@ -4,8 +4,8 @@
     <resultMap id="BaseResultMap" type="com.farm.entity.Crops">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="cropsName" jdbcType="VARCHAR" property="cropsname"/>
-        <result column="area" jdbcType="INTEGER" property="area"/>
-        <result column="profit" jdbcType="INTEGER" property="profit"/>
+        <result column="area" jdbcType="REAL" property="area"/>
+        <result column="profit" jdbcType="REAL" property="profit"/>
         <result column="cropsTime" jdbcType="INTEGER" property="cropstime"/>
     </resultMap>
     <sql id="Example_Where_Clause">
@@ -102,10 +102,10 @@
         </if>
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Crops">
-    insert into crops (id, cropsName, area, 
+    insert into crops (id, cropsName, area,
       profit, cropsTime)
-    values (#{id,jdbcType=INTEGER}, #{cropsname,jdbcType=VARCHAR}, #{area,jdbcType=INTEGER}, 
-      #{profit,jdbcType=INTEGER}, #{cropstime,jdbcType=INTEGER})
+    values (#{id,jdbcType=INTEGER}, #{cropsname,jdbcType=VARCHAR}, #{area,jdbcType=REAL},
+      #{profit,jdbcType=REAL}, #{cropstime,jdbcType=INTEGER})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Crops">
         insert into crops
@@ -134,10 +134,10 @@
                 #{cropsname,jdbcType=VARCHAR},
             </if>
             <if test="area != null">
-                #{area,jdbcType=INTEGER},
+                #{area,jdbcType=REAL},
             </if>
             <if test="profit != null">
-                #{profit,jdbcType=INTEGER},
+                #{profit,jdbcType=REAL},
             </if>
             <if test="cropstime != null">
                 #{cropstime,jdbcType=INTEGER},
@@ -160,10 +160,10 @@
                 cropsName = #{record.cropsname,jdbcType=VARCHAR},
             </if>
             <if test="record.area != null">
-                area = #{record.area,jdbcType=INTEGER},
+                area = #{record.area,jdbcType=REAL},
             </if>
             <if test="record.profit != null">
-                profit = #{record.profit,jdbcType=INTEGER},
+                profit = #{record.profit,jdbcType=REAL},
             </if>
             <if test="record.cropstime != null">
                 cropsTime = #{record.cropstime,jdbcType=INTEGER},
@@ -177,8 +177,8 @@
         update crops
         set id = #{record.id,jdbcType=INTEGER},
         cropsName = #{record.cropsname,jdbcType=VARCHAR},
-        area = #{record.area,jdbcType=INTEGER},
-        profit = #{record.profit,jdbcType=INTEGER},
+        area = #{record.area,jdbcType=REAL},
+        profit = #{record.profit,jdbcType=REAL},
         cropsTime = #{record.cropstime,jdbcType=INTEGER}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
@@ -191,10 +191,10 @@
                 cropsName = #{cropsname,jdbcType=VARCHAR},
             </if>
             <if test="area != null">
-                area = #{area,jdbcType=INTEGER},
+                area = #{area,jdbcType=REAL},
             </if>
             <if test="profit != null">
-                profit = #{profit,jdbcType=INTEGER},
+                profit = #{profit,jdbcType=REAL},
             </if>
             <if test="cropstime != null">
                 cropsTime = #{cropstime,jdbcType=INTEGER},
@@ -205,8 +205,8 @@
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.Crops">
     update crops
     set cropsName = #{cropsname,jdbcType=VARCHAR},
-      area = #{area,jdbcType=INTEGER},
-      profit = #{profit,jdbcType=INTEGER},
+      area = #{area,jdbcType=REAL},
+      profit = #{profit,jdbcType=REAL},
       cropsTime = #{cropstime,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

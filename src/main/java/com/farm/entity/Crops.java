@@ -5,9 +5,9 @@ public class Crops {
 
     private String cropsname;
 
-    private Integer area;
+    private Float area;
 
-    private Integer profit;
+    private Float profit;
 
     private Integer cropstime;
 
@@ -27,19 +27,19 @@ public class Crops {
         this.cropsname = cropsname == null ? null : cropsname.trim();
     }
 
-    public Integer getArea() {
+    public Float getArea() {
         return area;
     }
 
-    public void setArea(Integer area) {
+    public void setArea(Float area) {
         this.area = area;
     }
 
-    public Integer getProfit() {
+    public Float getProfit() {
         return profit;
     }
 
-    public void setProfit(Integer profit) {
+    public void setProfit(Float profit) {
         this.profit = profit;
     }
 

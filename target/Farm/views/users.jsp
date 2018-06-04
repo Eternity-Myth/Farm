@@ -57,6 +57,12 @@
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/assignment.jsp">任务信息管理</a>
                             </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/items.jsp">商品信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/orders.jsp">订单信息管理</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -1,19 +1,22 @@
 <%--
   Created by IntelliJ IDEA.
   User: Eternity-Myth
-  Date: 2018/5/23
-  Time: 16:53
+  Date: 2018/6/4
+  Time: 21:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Agro农场信息管理系统</title>
+    <title>商品信息管理</title>
     <%
         pageContext.setAttribute("APP_PATH", request.getContextPath());
     %>
     <script type="text/javascript"
             src="${APP_PATH}/js/jquery-3.3.1.js"></script>
+    <link
+            href="${APP_PATH}/css/bootstrap.min.css"
+            rel="stylesheet">
     <link
             href="${APP_PATH}/css/font.css"
             rel="stylesheet">
@@ -95,11 +98,53 @@
             </div>
             <div class="col-md-12" style="background-color:rgba(80,77,77,0.9);height:100%;color:#FFFFFF">
                 <div class="row" style="height:50px">
-                    <div class="col-md-3" style="margin-top:10px;text-align:center;font-size:20px">系统公告</div>
+                    <div class="col-md-3" style="margin-top:10px;text-align:center;font-size:20px">商品信息管理</div>
+                    <div class="col-md-4 col-md-offset-5" style="margin-top:10px;text-align:right;font-size:20px">
+                        <button class="btn btn-primary" id="items_add_modal_btn"
+                                style="background-color:transparent; vertical-align:middle"><img
+                                src="../agro/UIpic/plus.png" style="height:15px">&nbsp;&nbsp;添&nbsp;加
+                        </button>
+                        <button class="btn btn-danger" id="items_delete_all_btn"
+                                style="background-color:transparent; vertical-align:middle"><img
+                                src="../agro/UIpic/delete.png" style="height:15px">&nbsp;&nbsp;删&nbsp;除
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
                 </div>
-                <br>Agro农场信息管理系统<br><br>作者：<br>关文聪、许亘成、吴金辰、黄捷敏、王明义<br><br>项目开源地址：<br><a
-                    href="https://github.com/Eternity-Myth/Farm">https://github.com/Eternity-Myth/Farm</a> <br><br>基本开发环境：JDK
-                1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
+                <div class="col-md-12" style="background-color:rgba(0,0,0,0.7);height:420px;color:#FFFFFF">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-hover" id="field_table">
+                                <thead>
+                                <tr>
+                                    <th style="text-align:center">
+                                        <input type="checkbox" id="check_all"
+                                               style="background-color:transparent; border-color:#FFFFFF"/>
+                                    </th>
+                                    <th style="text-align:center">#ID</th>
+                                    <th style="text-align:center">商品名</th>
+                                    <th style="text-align:center">数量</th>
+                                    <th style="text-align:center">单价</th>
+                                    <th style="text-align:center">合计</th>
+                                    <th style="text-align:center">状态</th>
+                                    <th style="text-align:center"><img src="../agro/UIpic/tools.png"
+                                                                       style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody style="text-align:center">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row" style="position:absolute; bottom:5px; text-align:left">
+                        <!--分页文字信息  -->
+                        <div class="col-md-6" id="page_info_area"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12"
+                 style="background-color:rgba(80,77,77,0.9);height:50px;color:#FFFFFF;text-align:center"
+                 id="page_nav_area">
             </div>
         </div>
         <div class="col-md-1" style="background-color:rgba(0,0,0,0.8); height:615px">
@@ -132,10 +177,10 @@
         </div>
     </div>
 </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<%--<script src="js/jquery-1.11.2.min.js"></script>--%>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<%--<script src="js/bootstrap.js"></script>--%>
+<script type="text/javascript">
+
+</script>
+</body>
 <style type="text/css">
     p {
         border-right: thin solid #FFFFFF;
@@ -149,7 +194,7 @@
         font-size: 15px;
     }
 </style>
-</body>
+
 <script>
     $(function () {
         $(".panel-heading").click(function (e) {
@@ -160,3 +205,4 @@
     });
 </script>
 </html>
+

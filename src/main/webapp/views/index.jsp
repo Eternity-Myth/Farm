@@ -6,12 +6,8 @@ Time: 21:03
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <%--<meta charset="GBK">--%>
-    <%--<meta http-equiv="X-UA-Compatible" content="IE=edge">--%>
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
     <title>Agro农场信息管理系统</title>
 
     <!-- Bootstrap -->

@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>菜地信息管理</title>
@@ -160,6 +159,12 @@
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/assignment.jsp">任务信息管理</a>
                             </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/items.jsp">商品信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/orders.jsp">订单信息管理</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -218,7 +223,7 @@
                                                style="background-color:transparent; border-color:#FFFFFF"/>
                                     </th>
                                     <th style="text-align:center">#ID</th>
-                                    <th style="text-align:center">Area/亩</th>
+                                    <th style="text-align:center">Area/平方米</th>
                                     <th style="text-align:center">用户名</th>
                                     <th style="text-align:center">手机号</th>
                                     <th style="text-align:center">起始时间</th>
@@ -316,7 +321,7 @@
             var phoneTd = $("<td></td>").append(item.phone);
             var startTime = getMyDate(item.startTime)
             var startTimeTd = $("<td></td>").append(startTime);
-            var timeTd=$("<td></td>").append(item.time);
+            var timeTd = $("<td></td>").append(item.time);
             var statusTd = $("<td></td>").append(item.status ? "正常" : "异常");
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
@@ -531,6 +536,7 @@
                     // console.log(result);
                     var fieldData = result.extend.field;
                     $("#fieldID_update_static").text(fieldData.id);
+                    $("#area_update_input").val(fieldData.area);
                     $("#username_update_input").val(fieldData.username);
                     $("#phone_update_input").val(fieldData.phone);
                     $("#time_update_input").val(fieldData.time);

@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>任务管理</title>
@@ -165,6 +164,12 @@
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/assignment.jsp">任务信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/items.jsp">商品信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/orders.jsp">订单信息管理</a>
                             </li>
                         </ul>
                     </div>

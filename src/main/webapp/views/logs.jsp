@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>操作日志</title>
@@ -26,52 +25,6 @@
     <script src="../js/sign.js"></script>
 </head>
 <body style="background-image:url(../agro/UIpic/managementbackground.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
-<%--&lt;%&ndash;搭建显示页面&ndash;%&gt;--%>
-<%--<div class="container">--%>
-<%--&lt;%&ndash;标题&ndash;%&gt;--%>
-<%--<div class="row">--%>
-<%--<div class="col-md-12">--%>
-<%--<h2>系统操作日志</h2>--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--&lt;%&ndash;按钮&ndash;%&gt;--%>
-<%--<div class="row">--%>
-<%--<div class="col-md-4 col-md-offset-8">--%>
-<%--<button class="btn btn-danger" id="logs_delete_all_btn">删除</button>--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--&lt;%&ndash;显示表格数据&ndash;%&gt;--%>
-<%--<div class="row">--%>
-<%--<div class="col-md-12">--%>
-<%--<table class="table table-hover" id="logs_table">--%>
-<%--<thead>--%>
-<%--<tr>--%>
-<%--<th>--%>
-<%--<input type="checkbox" id="check_all"/>--%>
-<%--</th>--%>
-<%--<th>#ID</th>--%>
-<%--<th>类名</th>--%>
-<%--<th>方法</th>--%>
-<%--<th>状态码</th>--%>
-<%--<th>异常信息</th>--%>
-<%--<th>时间</th>--%>
-<%--<th>操作</th>--%>
-<%--</tr>--%>
-<%--</thead>--%>
-<%--<tbody>--%>
-<%--</tbody>--%>
-<%--</table>--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--<!-- 显示分页信息 -->--%>
-<%--<div class="row">--%>
-<%--<!--分页文字信息  -->--%>
-<%--<div class="col-md-6" id="page_info_area"></div>--%>
-<%--<!-- 分页条信息 -->--%>
-<%--<div class="col-md-6" id="page_nav_area">--%>
-<%--</div>--%>
-<%--</div>--%>
-<%--</div>--%>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2" style="background-color:rgba(0,0,0,0.8); height:615px">
@@ -103,6 +56,12 @@
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/assignment.jsp">任务信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/items.jsp">商品信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/orders.jsp">订单信息管理</a>
                             </li>
                         </ul>
                     </div>
@@ -202,7 +161,7 @@
                         <li class="list-group-item" style="background-color:transparent">
                             信息
                         </li>
-                        <li class="list-group-item" style="background-color:transparent" >
+                        <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()">注销</a>
                         </li>
                     </ul>

@@ -3,9 +3,6 @@ package com.farm.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CropsExample {
     protected String orderByClause;
 
@@ -247,52 +244,52 @@ public class CropsExample {
             return (Criteria) this;
         }
 
-        public Criteria andAreaEqualTo(Integer value) {
+        public Criteria andAreaEqualTo(Float value) {
             addCriterion("area =", value, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaNotEqualTo(Integer value) {
+        public Criteria andAreaNotEqualTo(Float value) {
             addCriterion("area <>", value, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaGreaterThan(Integer value) {
+        public Criteria andAreaGreaterThan(Float value) {
             addCriterion("area >", value, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaGreaterThanOrEqualTo(Integer value) {
+        public Criteria andAreaGreaterThanOrEqualTo(Float value) {
             addCriterion("area >=", value, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaLessThan(Integer value) {
+        public Criteria andAreaLessThan(Float value) {
             addCriterion("area <", value, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaLessThanOrEqualTo(Integer value) {
+        public Criteria andAreaLessThanOrEqualTo(Float value) {
             addCriterion("area <=", value, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaIn(List<Integer> values) {
+        public Criteria andAreaIn(List<Float> values) {
             addCriterion("area in", values, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaNotIn(List<Integer> values) {
+        public Criteria andAreaNotIn(List<Float> values) {
             addCriterion("area not in", values, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaBetween(Integer value1, Integer value2) {
+        public Criteria andAreaBetween(Float value1, Float value2) {
             addCriterion("area between", value1, value2, "area");
             return (Criteria) this;
         }
 
-        public Criteria andAreaNotBetween(Integer value1, Integer value2) {
+        public Criteria andAreaNotBetween(Float value1, Float value2) {
             addCriterion("area not between", value1, value2, "area");
             return (Criteria) this;
         }
@@ -307,52 +304,52 @@ public class CropsExample {
             return (Criteria) this;
         }
 
-        public Criteria andProfitEqualTo(Integer value) {
+        public Criteria andProfitEqualTo(Float value) {
             addCriterion("profit =", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitNotEqualTo(Integer value) {
+        public Criteria andProfitNotEqualTo(Float value) {
             addCriterion("profit <>", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitGreaterThan(Integer value) {
+        public Criteria andProfitGreaterThan(Float value) {
             addCriterion("profit >", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitGreaterThanOrEqualTo(Integer value) {
+        public Criteria andProfitGreaterThanOrEqualTo(Float value) {
             addCriterion("profit >=", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitLessThan(Integer value) {
+        public Criteria andProfitLessThan(Float value) {
             addCriterion("profit <", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitLessThanOrEqualTo(Integer value) {
+        public Criteria andProfitLessThanOrEqualTo(Float value) {
             addCriterion("profit <=", value, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitIn(List<Integer> values) {
+        public Criteria andProfitIn(List<Float> values) {
             addCriterion("profit in", values, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitNotIn(List<Integer> values) {
+        public Criteria andProfitNotIn(List<Float> values) {
             addCriterion("profit not in", values, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitBetween(Integer value1, Integer value2) {
+        public Criteria andProfitBetween(Float value1, Float value2) {
             addCriterion("profit between", value1, value2, "profit");
             return (Criteria) this;
         }
 
-        public Criteria andProfitNotBetween(Integer value1, Integer value2) {
+        public Criteria andProfitNotBetween(Float value1, Float value2) {
             addCriterion("profit not between", value1, value2, "profit");
             return (Criteria) this;
         }
