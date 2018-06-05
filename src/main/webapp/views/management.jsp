@@ -127,7 +127,8 @@
                 </div>
             </div>
             <div style=" position:absolute;bottom:10px; right:4px; text-align:center;height:60px;color:#FFFFFF;font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
-                <img src="../agro/UIpic/contact.png" style="height:25px; margin-bottom:8px">CONTACT&nbsp;US
+                <img src="../agro/UIpic/contact.png" style="height:25px; margin-bottom:8px">
+                <a href="/views/contactus.jsp">CONTACT&nbsp;US</a>
             </div>
         </div>
     </div>
