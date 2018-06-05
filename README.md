@@ -18,18 +18,20 @@
 
 
 
-操作系统：Microsoft Windows 10、Red Hat CentOS7
+操作系统：Microsoft Windows 10
 
 IDE:JetBrains-Intellij Idea Ultimate
 
 基本开发环境：JDK 1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server
+
+数据库可视化操作工具：SQLYog Ultimate
 
 使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）
 
 逆向工程：MyBatis-Generator
 
 
-中文乱码的初步解决：项目中html文件的编码设置为GBK，其余（xml、jsp等）设置为UTF-8。数据库和表编码设置为UTF-8
+中文乱码的解决：项目相关所有文件编码统一设置为UTF-8，数据库相关项统一设置为UTF-8
 
 
 2018.6.5：待修复/完成：
