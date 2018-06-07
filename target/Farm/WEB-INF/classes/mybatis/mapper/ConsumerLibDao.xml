@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.ConsumerLibDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.ConsumerLib">
+        <id column="con_id" jdbcType="INTEGER" property="conId"/>
+        <id column="item_id" jdbcType="INTEGER" property="itemId"/>
+        <result column="user_item_num" jdbcType="INTEGER" property="userItemNum"/>
+        <result column="item_updatetime" jdbcType="TIMESTAMP" property="itemUpdatetime"/>
+        <result column="user_item_state" jdbcType="BIT" property="userItemState"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    con_id, item_id, user_item_num, item_updatetime, user_item_state
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.ConsumerLibExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from conlib
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="com.farm.entity.ConsumerLibKey" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from conlib
+        where con_id = #{conId,jdbcType=INTEGER}
+        and item_id = #{itemId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="com.farm.entity.ConsumerLibKey">
+    delete from conlib
+    where con_id = #{conId,jdbcType=INTEGER}
+      and item_id = #{itemId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.farm.entity.ConsumerLibExample">
+        delete from conlib
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.ConsumerLib">
+    insert into conlib (con_id, item_id, user_item_num,
+      item_updatetime, user_item_state)
+    values (#{conId,jdbcType=INTEGER}, #{itemId,jdbcType=INTEGER}, #{userItemNum,jdbcType=INTEGER},
+      #{itemUpdatetime,jdbcType=TIMESTAMP}, #{userItemState,jdbcType=BIT})
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.ConsumerLib">
+        insert into conlib
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="conId != null">
+                con_id,
+            </if>
+            <if test="itemId != null">
+                item_id,
+            </if>
+            <if test="userItemNum != null">
+                user_item_num,
+            </if>
+            <if test="itemUpdatetime != null">
+                item_updatetime,
+            </if>
+            <if test="userItemState != null">
+                user_item_state,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="conId != null">
+                #{conId,jdbcType=INTEGER},
+            </if>
+            <if test="itemId != null">
+                #{itemId,jdbcType=INTEGER},
+            </if>
+            <if test="userItemNum != null">
+                #{userItemNum,jdbcType=INTEGER},
+            </if>
+            <if test="itemUpdatetime != null">
+                #{itemUpdatetime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userItemState != null">
+                #{userItemState,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.ConsumerLibExample" resultType="java.lang.Long">
+        select count(*) from conlib
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update conlib
+        <set>
+            <if test="record.conId != null">
+                con_id = #{record.conId,jdbcType=INTEGER},
+            </if>
+            <if test="record.itemId != null">
+                item_id = #{record.itemId,jdbcType=INTEGER},
+            </if>
+            <if test="record.userItemNum != null">
+                user_item_num = #{record.userItemNum,jdbcType=INTEGER},
+            </if>
+            <if test="record.itemUpdatetime != null">
+                item_updatetime = #{record.itemUpdatetime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.userItemState != null">
+                user_item_state = #{record.userItemState,jdbcType=BIT},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update conlib
+        set con_id = #{record.conId,jdbcType=INTEGER},
+        item_id = #{record.itemId,jdbcType=INTEGER},
+        user_item_num = #{record.userItemNum,jdbcType=INTEGER},
+        item_updatetime = #{record.itemUpdatetime,jdbcType=TIMESTAMP},
+        user_item_state = #{record.userItemState,jdbcType=BIT}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.ConsumerLib">
+        update conlib
+        <set>
+            <if test="userItemNum != null">
+                user_item_num = #{userItemNum,jdbcType=INTEGER},
+            </if>
+            <if test="itemUpdatetime != null">
+                item_updatetime = #{itemUpdatetime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userItemState != null">
+                user_item_state = #{userItemState,jdbcType=BIT},
+            </if>
+        </set>
+        where con_id = #{conId,jdbcType=INTEGER}
+        and item_id = #{itemId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.ConsumerLib">
+    update conlib
+    set user_item_num = #{userItemNum,jdbcType=INTEGER},
+      item_updatetime = #{itemUpdatetime,jdbcType=TIMESTAMP},
+      user_item_state = #{userItemState,jdbcType=BIT}
+    where con_id = #{conId,jdbcType=INTEGER}
+      and item_id = #{itemId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.OrderDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.Order">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="payment_id" jdbcType="INTEGER" property="paymentId"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="item_id" jdbcType="INTEGER" property="itemId"/>
+        <result column="item_number" jdbcType="INTEGER" property="itemNumber"/>
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    id, payment_id, user_id, item_id, item_number, start_time, finish_time
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.OrderExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from order
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from order
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.farm.entity.OrderExample">
+        delete from order
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.Order">
+    insert into order (id, payment_id, user_id,
+      item_id, item_number, start_time,
+      finish_time)
+    values (#{id,jdbcType=BIGINT}, #{paymentId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER},
+      #{itemId,jdbcType=INTEGER}, #{itemNumber,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP},
+      #{finishTime,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.Order">
+        insert into order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="paymentId != null">
+                payment_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="itemId != null">
+                item_id,
+            </if>
+            <if test="itemNumber != null">
+                item_number,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="finishTime != null">
+                finish_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="paymentId != null">
+                #{paymentId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="itemId != null">
+                #{itemId,jdbcType=INTEGER},
+            </if>
+            <if test="itemNumber != null">
+                #{itemNumber,jdbcType=INTEGER},
+            </if>
+            <if test="startTime != null">
+                #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishTime != null">
+                #{finishTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.OrderExample" resultType="java.lang.Long">
+        select count(*) from order
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update order
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=BIGINT},
+            </if>
+            <if test="record.paymentId != null">
+                payment_id = #{record.paymentId,jdbcType=INTEGER},
+            </if>
+            <if test="record.userId != null">
+                user_id = #{record.userId,jdbcType=INTEGER},
+            </if>
+            <if test="record.itemId != null">
+                item_id = #{record.itemId,jdbcType=INTEGER},
+            </if>
+            <if test="record.itemNumber != null">
+                item_number = #{record.itemNumber,jdbcType=INTEGER},
+            </if>
+            <if test="record.startTime != null">
+                start_time = #{record.startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.finishTime != null">
+                finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update order
+        set id = #{record.id,jdbcType=BIGINT},
+        payment_id = #{record.paymentId,jdbcType=INTEGER},
+        user_id = #{record.userId,jdbcType=INTEGER},
+        item_id = #{record.itemId,jdbcType=INTEGER},
+        item_number = #{record.itemNumber,jdbcType=INTEGER},
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
+        finish_time = #{record.finishTime,jdbcType=TIMESTAMP}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.Order">
+        update order
+        <set>
+            <if test="paymentId != null">
+                payment_id = #{paymentId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="itemId != null">
+                item_id = #{itemId,jdbcType=INTEGER},
+            </if>
+            <if test="itemNumber != null">
+                item_number = #{itemNumber,jdbcType=INTEGER},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="finishTime != null">
+                finish_time = #{finishTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.Order">
+    update order
+    set payment_id = #{paymentId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=INTEGER},
+      item_number = #{itemNumber,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      finish_time = #{finishTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

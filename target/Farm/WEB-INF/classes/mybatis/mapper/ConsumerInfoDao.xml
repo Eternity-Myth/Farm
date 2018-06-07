@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.ConsumerInfoDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.ConsumerInfo">
+        <id column="con_id" jdbcType="INTEGER" property="conId"/>
+        <result column="con_phone" jdbcType="VARCHAR" property="conPhone"/>
+        <result column="con_nickname" jdbcType="VARCHAR" property="conNickname"/>
+        <result column="con_state" jdbcType="BIT" property="conState"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    con_id, con_phone, con_nickname, con_state
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.ConsumerInfoExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from consumerinfo
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from consumerinfo
+        where con_id = #{conId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from consumerinfo
+    where con_id = #{conId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.farm.entity.ConsumerInfoExample">
+        delete from consumerinfo
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.ConsumerInfo">
+    insert into consumerinfo (con_id, con_phone, con_nickname,
+      con_state)
+    values (#{conId,jdbcType=INTEGER}, #{conPhone,jdbcType=VARCHAR}, #{conNickname,jdbcType=VARCHAR},
+      #{conState,jdbcType=BIT})
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.ConsumerInfo">
+        insert into consumerinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="conId != null">
+                con_id,
+            </if>
+            <if test="conPhone != null">
+                con_phone,
+            </if>
+            <if test="conNickname != null">
+                con_nickname,
+            </if>
+            <if test="conState != null">
+                con_state,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="conId != null">
+                #{conId,jdbcType=INTEGER},
+            </if>
+            <if test="conPhone != null">
+                #{conPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="conNickname != null">
+                #{conNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="conState != null">
+                #{conState,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.ConsumerInfoExample" resultType="java.lang.Long">
+        select count(*) from consumerinfo
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update consumerinfo
+        <set>
+            <if test="record.conId != null">
+                con_id = #{record.conId,jdbcType=INTEGER},
+            </if>
+            <if test="record.conPhone != null">
+                con_phone = #{record.conPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.conNickname != null">
+                con_nickname = #{record.conNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.conState != null">
+                con_state = #{record.conState,jdbcType=BIT},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update consumerinfo
+        set con_id = #{record.conId,jdbcType=INTEGER},
+        con_phone = #{record.conPhone,jdbcType=VARCHAR},
+        con_nickname = #{record.conNickname,jdbcType=VARCHAR},
+        con_state = #{record.conState,jdbcType=BIT}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.ConsumerInfo">
+        update consumerinfo
+        <set>
+            <if test="conPhone != null">
+                con_phone = #{conPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="conNickname != null">
+                con_nickname = #{conNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="conState != null">
+                con_state = #{conState,jdbcType=BIT},
+            </if>
+        </set>
+        where con_id = #{conId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.ConsumerInfo">
+    update consumerinfo
+    set con_phone = #{conPhone,jdbcType=VARCHAR},
+      con_nickname = #{conNickname,jdbcType=VARCHAR},
+      con_state = #{conState,jdbcType=BIT}
+    where con_id = #{conId,jdbcType=INTEGER}
+  </update>
+</mapper>

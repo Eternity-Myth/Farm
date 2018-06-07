@@ -188,7 +188,7 @@
                                 <a href="/views/crops.jsp">农作物信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/seller.jsp">商家信息管理</a>
+                                <a href="/views/sellerinfo.jsp">商家信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/assignment.jsp">任务信息管理</a>

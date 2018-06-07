@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.SellerLibDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.SellerLib">
+        <id column="sellerlib_id" jdbcType="INTEGER" property="sellerlibId"/>
+        <result column="seller_id" jdbcType="INTEGER" property="sellerId"/>
+        <result column="item_id" jdbcType="INTEGER" property="itemId"/>
+        <result column="seller_item_num" jdbcType="INTEGER" property="sellerItemNum"/>
+        <result column="item_updatetime" jdbcType="VARCHAR" property="itemUpdatetime"/>
+        <result column="seller_item_state" jdbcType="BIT" property="sellerItemState"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    sellerlib_id, seller_id, item_id, seller_item_num, item_updatetime, seller_item_state
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.SellerLibExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from sellerlib
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sellerlib
+        where sellerlib_id = #{sellerlibId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sellerlib
+    where sellerlib_id = #{sellerlibId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.farm.entity.SellerLibExample">
+        delete from sellerlib
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.SellerLib">
+    insert into sellerlib (sellerlib_id, seller_id, item_id,
+      seller_item_num, item_updatetime, seller_item_state
+      )
+    values (#{sellerlibId,jdbcType=INTEGER}, #{sellerId,jdbcType=INTEGER}, #{itemId,jdbcType=INTEGER},
+      #{sellerItemNum,jdbcType=INTEGER}, #{itemUpdatetime,jdbcType=VARCHAR}, #{sellerItemState,jdbcType=BIT}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.SellerLib">
+        insert into sellerlib
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sellerlibId != null">
+                sellerlib_id,
+            </if>
+            <if test="sellerId != null">
+                seller_id,
+            </if>
+            <if test="itemId != null">
+                item_id,
+            </if>
+            <if test="sellerItemNum != null">
+                seller_item_num,
+            </if>
+            <if test="itemUpdatetime != null">
+                item_updatetime,
+            </if>
+            <if test="sellerItemState != null">
+                seller_item_state,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="sellerlibId != null">
+                #{sellerlibId,jdbcType=INTEGER},
+            </if>
+            <if test="sellerId != null">
+                #{sellerId,jdbcType=INTEGER},
+            </if>
+            <if test="itemId != null">
+                #{itemId,jdbcType=INTEGER},
+            </if>
+            <if test="sellerItemNum != null">
+                #{sellerItemNum,jdbcType=INTEGER},
+            </if>
+            <if test="itemUpdatetime != null">
+                #{itemUpdatetime,jdbcType=VARCHAR},
+            </if>
+            <if test="sellerItemState != null">
+                #{sellerItemState,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.SellerLibExample" resultType="java.lang.Long">
+        select count(*) from sellerlib
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update sellerlib
+        <set>
+            <if test="record.sellerlibId != null">
+                sellerlib_id = #{record.sellerlibId,jdbcType=INTEGER},
+            </if>
+            <if test="record.sellerId != null">
+                seller_id = #{record.sellerId,jdbcType=INTEGER},
+            </if>
+            <if test="record.itemId != null">
+                item_id = #{record.itemId,jdbcType=INTEGER},
+            </if>
+            <if test="record.sellerItemNum != null">
+                seller_item_num = #{record.sellerItemNum,jdbcType=INTEGER},
+            </if>
+            <if test="record.itemUpdatetime != null">
+                item_updatetime = #{record.itemUpdatetime,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sellerItemState != null">
+                seller_item_state = #{record.sellerItemState,jdbcType=BIT},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update sellerlib
+        set sellerlib_id = #{record.sellerlibId,jdbcType=INTEGER},
+        seller_id = #{record.sellerId,jdbcType=INTEGER},
+        item_id = #{record.itemId,jdbcType=INTEGER},
+        seller_item_num = #{record.sellerItemNum,jdbcType=INTEGER},
+        item_updatetime = #{record.itemUpdatetime,jdbcType=VARCHAR},
+        seller_item_state = #{record.sellerItemState,jdbcType=BIT}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.SellerLib">
+        update sellerlib
+        <set>
+            <if test="sellerId != null">
+                seller_id = #{sellerId,jdbcType=INTEGER},
+            </if>
+            <if test="itemId != null">
+                item_id = #{itemId,jdbcType=INTEGER},
+            </if>
+            <if test="sellerItemNum != null">
+                seller_item_num = #{sellerItemNum,jdbcType=INTEGER},
+            </if>
+            <if test="itemUpdatetime != null">
+                item_updatetime = #{itemUpdatetime,jdbcType=VARCHAR},
+            </if>
+            <if test="sellerItemState != null">
+                seller_item_state = #{sellerItemState,jdbcType=BIT},
+            </if>
+        </set>
+        where sellerlib_id = #{sellerlibId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.SellerLib">
+    update sellerlib
+    set seller_id = #{sellerId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=INTEGER},
+      seller_item_num = #{sellerItemNum,jdbcType=INTEGER},
+      item_updatetime = #{itemUpdatetime,jdbcType=VARCHAR},
+      seller_item_state = #{sellerItemState,jdbcType=BIT}
+    where sellerlib_id = #{sellerlibId,jdbcType=INTEGER}
+  </update>
+</mapper>
