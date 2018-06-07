@@ -159,4 +159,9 @@ public class UserServiceImpl implements UserService {
     public void changeStatus(User user) {
         userDao.changeStatus(user);
     }
+
+    @Override
+    public User getUserByName(String name) {
+        return userDao.selectByUserName(name);
+    }
 }

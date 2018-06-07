@@ -77,7 +77,7 @@ public class UserController {
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)
     public CommonResult<UserSignInResult> signIn(HttpSession session, UserSignInForm userSignInForm,
                                                  HttpServletRequest request) {
-//将生成的验证码存起来用来比较
+        //将生成的验证码存起来用来比较
         String codeSession = (String) session.getAttribute("validateCode");
 
         logger.info("userSignInForm={}", userSignInForm);
@@ -87,6 +87,10 @@ public class UserController {
             if (userSignInResult.isSuccess()) {
                 HttpSession userNameSession = request.getSession(true);
                 userNameSession.setAttribute("userNameSession", userSignInResult.getUserName());
+                User user = userService.getUserByName(userNameSession.getAttribute("userNameSession").toString());
+                session.setAttribute("userName",user.getUserName());
+                session.setAttribute("userEmail",user.getUserEmail());
+                session.setAttribute("registerTime",user.getRegisterTime());
                 userNameSession.setMaxInactiveInterval(CommonValue.USER_SESSION_TIMEOUT_MINUTE);
                 LogUtil.writeLogs(this.getClass().getName(),
                         Thread.currentThread().getStackTrace()[1].getMethodName(),

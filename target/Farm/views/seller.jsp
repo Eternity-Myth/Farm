@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 <head>
     <title>商家信息管理</title>
@@ -142,6 +143,41 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-primary" id="seller_update_btn">更新</button>
+            </div>
+        </div>
+    </div>
+</div>
+<%--显示用户信息的模态框--%>
+<div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLable1">用户信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${sessionScope.userName}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">邮箱</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${sessionScope.userEmail}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">注册时间</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
@@ -284,7 +320,7 @@
                      style="background-color:transparent; color:#FFFFFF; text-align:center">
                     <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                         <li class="list-group-item" style="background-color:transparent">
-                            信息
+                            <a href="#" data-toggle="modal" data-target="#infoCheckModal">信息</a>
                         </li>
                         <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()">注销</a>
