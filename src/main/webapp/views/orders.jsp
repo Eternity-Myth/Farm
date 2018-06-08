@@ -52,7 +52,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">注册时间</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}"
+                                                                           pattern="yyyy-MM-dd HH:mm:ss"/></p>
                         </div>
                     </div>
 
@@ -199,7 +200,7 @@
                      style="background-color:transparent; color:#FFFFFF; text-align:center">
                     <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                         <li class="list-group-item" style="background-color:transparent">
-                            <a href = "#"  data-toggle="modal" data-target="#infoCheckModal">信息</a>
+                            <a href="#" data-toggle="modal" data-target="#infoCheckModal">信息</a>
                         </li>
                         <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()">注销</a>

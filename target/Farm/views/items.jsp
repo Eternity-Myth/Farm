@@ -26,8 +26,97 @@
     <script src="../js/sign.js"></script>
 </head>
 <body style="background-image:url(../agro/UIpic/managementbackground.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
+<!-- 商品添加的模态框 -->
+<div class="modal fade" id="itemsAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">商品添加</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">商品名</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" class="form-control" id="itemsName_add_input"
+                                   placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="quantity" class="form-control" id="itemsQuantity_add_input"
+                                   placeholder="Quantity">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">单价</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="unitPrice" class="form-control" id="unitPrice_add_input"
+                                   placeholder="Price">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="items_save_btn">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 商品修改的模态框 -->
+<div class="modal fade" id="itemsUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">商品修改</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="itemsID_update_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">商品名</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" class="form-control" id="itemsName_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="quantity" class="form-control" id="quantity_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">单价</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="unitPrice" class="form-control" id="unitPrice_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="items_update_btn">更新</button>
+            </div>
+        </div>
+    </div>
+</div>
 <%--显示用户信息的模态框--%>
-<div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -39,22 +128,22 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" >${sessionScope.userName}</p>
+                            <p class="form-control-static">${sessionScope.userName}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" >${sessionScope.userEmail}</p>
+                            <p class="form-control-static">${sessionScope.userEmail}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">注册时间</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}"
+                                                                           pattern="yyyy-MM-dd HH:mm:ss"/></p>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -148,7 +237,7 @@
                 <div class="col-md-12" style="background-color:rgba(0,0,0,0.7);height:420px;color:#FFFFFF">
                     <div class="row">
                         <div class="col-md-12">
-                            <table class="table table-hover" id="field_table">
+                            <table class="table table-hover" id="items_table">
                                 <thead>
                                 <tr>
                                     <th style="text-align:center">
@@ -158,8 +247,8 @@
                                     <th style="text-align:center">#ID</th>
                                     <th style="text-align:center">商品名</th>
                                     <th style="text-align:center">数量</th>
-                                    <th style="text-align:center">单价</th>
-                                    <th style="text-align:center">合计</th>
+                                    <th style="text-align:center">单价（元）</th>
+                                    <th style="text-align:center">合计（元）</th>
                                     <th style="text-align:center">状态</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
@@ -198,7 +287,7 @@
                      style="background-color:transparent; color:#FFFFFF; text-align:center">
                     <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                         <li class="list-group-item" style="background-color:transparent">
-                            <a href = "#"  data-toggle="modal" data-target="#infoCheckModal">信息</a>
+                            <a href="#" data-toggle="modal" data-target="#infoCheckModal">信息</a>
                         </li>
                         <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()">注销</a>
@@ -214,6 +303,256 @@
 </div>
 <script type="text/javascript">
 
+    var totalPages, currentPage;
+    //1、页面加载完成以后，直接去发送ajax请求,要到分页数据
+    $(function () {
+        //去首页
+        to_page(1);
+    });
+
+    function to_page(pn) {
+        $.ajax({
+            url: "${APP_PATH}/items-list",
+            data: "pn=" + pn,
+            type: "GET",
+            success: function (result) {
+                //1、解析并显示商品数据
+                build_items_table(result);
+                //2、解析并显示分页信息
+                build_page_info(result);
+                //3、解析显示分页条数据
+                build_page_nav(result);
+            }
+        });
+    }
+
+    function build_items_table(result) {
+        //清空table表格
+        $("#items_table tbody").empty();
+        var items = result.extend.pageInfo.list;
+        $.each(items, function (index, item) {
+            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+            var itemsIdTd = $("<td></td>").append(item.id);
+            var itemsNameTd = $("<td></td>").append(item.name);
+            var quantityTd = $("<td></td>").append(item.quantity);
+            var unitPriceTd = $("<td></td>").append(item.unitPrice);
+            var totalTd = $("<td></td>").append(item.unitPrice * item.quantity);
+            var statusTd = $("<td></td>").append(item.status ? "正常" : "异常");
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
+            //为编辑按钮添加一个自定义的属性，来表示当前商品id
+            editBtn.attr("edit-id", item.id);
+            var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+            //为删除按钮添加一个自定义的属性来表示当前删除的商品id
+            delBtn.attr("del-id", item.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            //append方法执行完成以后还是返回原来的元素
+            $("<tr></tr>").append(checkBoxTd)
+                .append(itemsIdTd)
+                .append(itemsNameTd)
+                .append(quantityTd)
+                .append(unitPriceTd)
+                .append(totalTd)
+                .append(statusTd)
+                .append(btnTd)
+                .appendTo("#items_table tbody");
+        });
+    }
+
+    //解析显示分页信息
+    function build_page_info(result) {
+        $("#page_info_area").empty();
+        $("#page_info_area").append("当前第" + result.extend.pageInfo.pageNum + "页,总" +
+            result.extend.pageInfo.pages + "页,总" +
+            result.extend.pageInfo.total + "条记录");
+        totalPages = result.extend.pageInfo.pages;
+        currentPage = result.extend.pageInfo.pageNum;
+    }
+
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_nav(result) {
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href", "#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if (result.extend.pageInfo.hasPreviousPage == false) {
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        } else {
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function () {
+                to_page(1);
+            });
+            prePageLi.click(function () {
+                to_page(result.extend.pageInfo.pageNum - 1);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href", "#"));
+        if (result.extend.pageInfo.hasNextPage == false) {
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        } else {
+            nextPageLi.click(function () {
+                to_page(result.extend.pageInfo.pageNum + 1);
+            });
+            lastPageLi.click(function () {
+                to_page(result.extend.pageInfo.pages);
+            });
+        }
+
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums, function (index, item) {
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if (result.extend.pageInfo.pageNum == item) {
+                numLi.addClass("active");
+            }
+            numLi.click(function () {
+                to_page(item);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
+
+    $("#items_add_modal_btn").click(function () {
+        $("#itemsAddModal").modal({
+            backdrop: "static"
+        });
+    });
+
+    $("#items_save_btn").click(function () {
+        // 1、模态框中填写的表单数据提交给服务器进行保存
+        // 2、发送ajax请求保存商品信息
+        $.ajax({
+            url: "${APP_PATH}/items",
+            type: "POST",
+            data: $("#itemsAddModal form").serialize(),
+            success: function (result) {
+                //商品信息保存成功
+                //1、关闭模态框
+                $("#itemsAddModal").modal('hide');
+                //2、来到最后一页，显示刚才保存的数据
+                //发送ajax请求显示最后一页数据即可
+                to_page(totalPages);
+            }
+        });
+    });
+
+    //单个删除
+    $(document).on("click", ".delete_btn", function () {
+        //1、弹出是否确认删除对话框
+        var itemsId = $(this).attr("del-id");
+        if (confirm("确认删除吗？")) {
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url: "${APP_PATH}/items/" + itemsId,
+                type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到本页
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //完成全选/全不选功能
+    $("#check_all").click(function () {
+        //attr获取checked是undefined;
+        //我们这些dom原生的属性；attr获取自定义属性的值；
+        //prop修改和读取dom原生属性的值
+        $(".check_item").prop("checked", $(this).prop("checked"));
+    });
+
+    //check_item
+    $(document).on("click", ".check_item", function () {
+        //判断当前选择中的元素是否该页所有元素
+        var flag = $(".check_item:checked").length == $(".check_item").length;
+        $("#check_all").prop("checked", flag);
+    });
+
+    //点击全部删除，就批量删除
+    $("#items_delete_all_btn").click(function () {
+        //
+        var del_idstr = "";
+        $.each($(".check_item:checked"), function () {
+            //组装商品id字符串
+            del_idstr += $(this).parents("tr").find("td:eq(1)").text() + "-";
+        });
+        //去除删除的id多余的-
+        del_idstr = del_idstr.substring(0, del_idstr.length - 1);
+        if (confirm("确认删除吗？")) {
+            //发送ajax请求删除
+            $.ajax({
+                url: "${APP_PATH}/items/" + del_idstr,
+                type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到当前页面
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //1、我们是按钮创建之前就绑定了click，所以绑定不上。
+    //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
+    //jquery新版没有live，使用on进行替代
+    $(document).on("click", ".edit_btn", function () {
+        //查出菜地信息，显示菜地信息
+        getItems($(this).attr("edit-id"));
+        //把菜地的id传递给模态框的更新按钮
+        $("#items_update_btn").attr("edit-id", $(this).attr("edit-id"));
+        $("#itemsUpdateModal").modal({
+            backdrop: "static"
+        });
+
+        function getItems(id) {
+            $.ajax({
+                url: "${APP_PATH}/items/" + id,
+                type: "GET",
+                success: function (result) {
+                    // console.log(result);
+                    var itemsData = result.extend.items;
+                    $("#itemsID_update_static").text(itemsData.id);
+                    $("#itemsName_update_input").val(itemsData.name);
+                    $("#quantity_update_input").val(itemsData.quantity);
+                    $("#unitPrice_update_input").val(itemsData.unitPrice);
+                }
+            });
+        }
+
+        $("#items_update_btn").click(function () {
+            //发送ajax请求保存更新的菜地数据
+            $.ajax({
+                url: "${APP_PATH}/items/" + $(this).attr("edit-id"),
+                type: "PUT",
+                data: $("#itemsUpdateModal form").serialize(),
+                success: function (result) {
+                    //alert(result.msg);
+                    //1、关闭对话框
+                    $("#itemsUpdateModal").modal("hide");
+                    //2、回到本页面
+                    to_page(currentPage);
+                }
+            });
+        });
+    });
 </script>
 </body>
 <style type="text/css">
