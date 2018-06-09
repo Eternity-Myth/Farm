@@ -24,7 +24,8 @@
 </head>
 <body style="background-image:url(../agro/UIpic/managementbackground.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
 <%--显示用户信息的模态框--%>
-<div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -36,19 +37,20 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" >${sessionScope.userName}</p>
+                            <p class="form-control-static">${sessionScope.userName}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" >${sessionScope.userEmail}</p>
+                            <p class="form-control-static">${sessionScope.userEmail}</p>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">注册时间</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}"
+                                                                           pattern="yyyy-MM-dd HH:mm:ss"/></p>
                         </div>
                     </div>
 
@@ -59,7 +61,7 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2" style="background-color:rgba(0,0,0,0.8); height:615px">
+        <div class="col-md-2" style="background-color:rgba(0,0,0,0.8); height:800px">
             <div class="panel-group table-responsive" role="tablist"
                  style="background-color:transparent; border-color:transparent">
                 <div class="panel panel-primary leftMenu"
@@ -78,22 +80,22 @@
                          style="background-color:transparent; color:#FFFFFF; text-align:center">
                         <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/field.jsp">菜地信息管理</a>
+                                <a href="/views/field.jsp" style="color: #ffffff">菜地信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/crops.jsp">农作物信息管理</a>
+                                <a href="/views/crops.jsp" style="color: #ffffff">农作物信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/sellerinfo.jsp">商家信息管理</a>
+                                <a href="/views/sellerinfo.jsp" style="color: #ffffff">商家信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/assignment.jsp">任务信息管理</a>
+                                <a href="/views/assignment.jsp" style="color: #ffffff">任务信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color: transparent">
-                                <a href="/views/items.jsp">商品信息管理</a>
+                                <a href="/views/items.jsp" style="color: #ffffff">商品信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color: transparent">
-                                <a href="/views/orders.jsp">订单信息管理</a>
+                                <a href="/views/orders.jsp" style="color: #ffffff">订单信息管理</a>
                             </li>
                         </ul>
                     </div>
@@ -114,10 +116,10 @@
                          style="background-color:transparent; color:#FFFFFF; text-align:center">
                         <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/users.jsp">用户信息管理</a>
+                                <a href="/views/users.jsp" style="color: #ffffff">用户信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
-                                <a href="/views/logs.jsp">系统操作日志</a>
+                                <a href="/views/logs.jsp" style="color: #ffffff">系统操作日志</a>
                             </li>
                         </ul>
                     </div>
@@ -132,9 +134,11 @@
                 <div class="row" style="height:50px">
                     <div class="col-md-3" style="margin-top:10px;text-align:center;font-size:20px">系统公告</div>
                 </div>
-                <br>Agro农场信息管理系统<br><br>作者：<br>关文聪、许亘成、吴金辰、黄捷敏、王明义<br><br>项目开源地址：<br><a
-                    href="https://github.com/Eternity-Myth/Farm">https://github.com/Eternity-Myth/Farm</a> <br><br>基本开发环境：JDK
-                1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
+                <div style="font-size:20px"><br>Agro农场信息管理系统<br><br>作者：<br>关文聪、许亘成、吴金辰、黄捷敏、王明义<br><br>项目开源地址：<br><a
+                        href="https://github.com/Eternity-Myth/Farm" style="color: #ffffff">https://github.com/Eternity-Myth/Farm</a>
+                    <br><br>基本开发环境：JDK
+                    1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
+                </div>
             </div>
         </div>
         <div class="col-md-1" style="background-color:rgba(0,0,0,0.8); height:615px">
@@ -153,17 +157,17 @@
                      style="background-color:transparent; color:#FFFFFF; text-align:center">
                     <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                         <li class="list-group-item" style="background-color:transparent">
-                            <a href = "#"  data-toggle="modal" data-target="#infoCheckModal">信息</a>
+                            <a href="#" data-toggle="modal" data-target="#infoCheckModal" style="color: #ffffff">信息</a>
                         </li>
                         <li class="list-group-item" style="background-color:transparent">
-                            <a href="#" onclick="sign_out()">注销</a>
+                            <a href="#" onclick="sign_out()" style="color: #ffffff">注销</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div style=" position:absolute;bottom:10px; right:4px; text-align:center;height:60px;color:#FFFFFF;font-size:12px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
                 <img src="../agro/UIpic/contact.png" style="height:25px; margin-bottom:8px">
-                <a href="/views/contactus.jsp">CONTACT&nbsp;US</a>
+                <a href="/views/contactus.jsp" style="color: #ffffff">CONTACT&nbsp;US</a>
             </div>
         </div>
     </div>

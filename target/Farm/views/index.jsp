@@ -15,9 +15,9 @@ To change this template use File | Settings | File Templates.
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
+    <%--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>--%>
+    <%--<![endif]-->--%>
 </head>
 <body style="background-image:url(../agro/UIpic/background.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
 <div class="container-fluid">
@@ -26,16 +26,16 @@ To change this template use File | Settings | File Templates.
             <p class="col-md-4"
                style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
                 <img src="../agro/UIpic/home.png" style="height:25px">&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)"
-                                                                                           onclick="location.reload()">HOME</a>&nbsp;&nbsp;&nbsp;
+                                                                                           onclick="location.reload()" style="color:#ffffff">HOME</a>&nbsp;&nbsp;&nbsp;
             </p>
             <p class="col-md-4"
                style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
-                <img src="../agro/UIpic/management.png" style="height:25px"><a href="/views/management.jsp">&nbsp;&nbsp;&nbsp;MANAGEMENT</a>
+                <img src="../agro/UIpic/management.png" style="height:25px"><a href="/views/management.jsp" style="color:#ffffff">&nbsp;&nbsp;&nbsp;MANAGEMENT</a>
             </p>
             <p1 class="col-md-4"
                 style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
-                <img src="../agro/UIpic/sign.png" style="height:25px">&nbsp;&nbsp;&nbsp;<a href="/sign-in.jsp">SIGN&nbsp;IN</a>&nbsp;/<a
-                    href="/sign-up.jsp">&nbsp;UP</a>
+                <img src="../agro/UIpic/sign.png" style="height:25px">&nbsp;&nbsp;&nbsp;<a href="/sign-in.jsp" style="color:#ffffff">SIGN&nbsp;IN</a>&nbsp;/<a
+                    href="/sign-up.jsp" style="color:#ffffff">&nbsp;UP</a>
             </p1>
         </div>
 
@@ -84,7 +84,7 @@ To change this template use File | Settings | File Templates.
         <div class="col-md-6 col-md-offset-3"
              style="background-color:rgba(80,77,77,0.9);height:300px;color:#FFFFFF;padding-left:30px">
             <br>Agro农场信息管理系统<br><br>作者：<br>关文聪、许亘成、吴金辰、黄捷敏、王明义<br><br>项目开源地址：<br><a
-                href="https://github.com/Eternity-Myth/Farm">https://github.com/Eternity-Myth/Farm</a> <br><br>基本开发环境：JDK
+                href="https://github.com/Eternity-Myth/Farm" style="color:#ffffff">https://github.com/Eternity-Myth/Farm</a> <br><br>基本开发环境：JDK
             1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
         </div>
     </div>
@@ -95,7 +95,7 @@ To change this template use File | Settings | File Templates.
             <div class="col-md-4 col-md-offset-4"
                  style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
                 <img src="../agro/UIpic/contact.png" style="height:25px">
-                <a href="/views/contactus.jsp">&nbsp;&nbsp;&nbsp;CONTACT&nbsp;US</a>
+                <a href="/views/contactus.jsp" style="color:#ffffff">&nbsp;&nbsp;&nbsp;CONTACT&nbsp;US</a>
             </div>
         </div>
     </div>
