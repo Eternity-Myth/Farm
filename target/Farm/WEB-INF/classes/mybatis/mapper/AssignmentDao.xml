@@ -3,7 +3,7 @@
 <mapper namespace="com.farm.dao.AssignmentDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.Assignment">
         <id column="assi_id" jdbcType="INTEGER" property="assiId"/>
-        <result column="assi_state" jdbcType="INTEGER" property="assiState"/>
+        <result column="assi_state" jdbcType="BIT" property="assiState"/>
         <result column="assi_type" jdbcType="VARCHAR" property="assiType"/>
         <result column="assi_data" jdbcType="VARCHAR" property="assiData"/>
         <result column="assi_phone" jdbcType="VARCHAR" property="assiPhone"/>
@@ -107,7 +107,7 @@
     insert into assignment (assi_id, assi_state, assi_type,
       assi_data, assi_phone, assi_nickname,
       assi_createtime)
-    values (#{assiId,jdbcType=INTEGER}, #{assiState,jdbcType=INTEGER}, #{assiType,jdbcType=VARCHAR},
+    values (#{assiId,jdbcType=INTEGER}, #{assiState,jdbcType=BIT}, #{assiType,jdbcType=VARCHAR},
       #{assiData,jdbcType=VARCHAR}, #{assiPhone,jdbcType=VARCHAR}, #{assiNickname,jdbcType=VARCHAR},
       #{assiCreatetime,jdbcType=TIMESTAMP})
   </insert>
@@ -141,7 +141,7 @@
                 #{assiId,jdbcType=INTEGER},
             </if>
             <if test="assiState != null">
-                #{assiState,jdbcType=INTEGER},
+                #{assiState,jdbcType=BIT},
             </if>
             <if test="assiType != null">
                 #{assiType,jdbcType=VARCHAR},
@@ -173,7 +173,7 @@
                 assi_id = #{record.assiId,jdbcType=INTEGER},
             </if>
             <if test="record.assiState != null">
-                assi_state = #{record.assiState,jdbcType=INTEGER},
+                assi_state = #{record.assiState,jdbcType=BIT},
             </if>
             <if test="record.assiType != null">
                 assi_type = #{record.assiType,jdbcType=VARCHAR},
@@ -198,7 +198,7 @@
     <update id="updateByExample" parameterType="map">
         update assignment
         set assi_id = #{record.assiId,jdbcType=INTEGER},
-        assi_state = #{record.assiState,jdbcType=INTEGER},
+        assi_state = #{record.assiState,jdbcType=BIT},
         assi_type = #{record.assiType,jdbcType=VARCHAR},
         assi_data = #{record.assiData,jdbcType=VARCHAR},
         assi_phone = #{record.assiPhone,jdbcType=VARCHAR},
@@ -212,7 +212,7 @@
         update assignment
         <set>
             <if test="assiState != null">
-                assi_state = #{assiState,jdbcType=INTEGER},
+                assi_state = #{assiState,jdbcType=BIT},
             </if>
             <if test="assiType != null">
                 assi_type = #{assiType,jdbcType=VARCHAR},
@@ -234,7 +234,7 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.Assignment">
     update assignment
-    set assi_state = #{assiState,jdbcType=INTEGER},
+    set assi_state = #{assiState,jdbcType=BIT},
       assi_type = #{assiType,jdbcType=VARCHAR},
       assi_data = #{assiData,jdbcType=VARCHAR},
       assi_phone = #{assiPhone,jdbcType=VARCHAR},

@@ -175,52 +175,52 @@ public class AssignmentExample {
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateEqualTo(Integer value) {
+        public Criteria andAssiStateEqualTo(Boolean value) {
             addCriterion("assi_state =", value, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateNotEqualTo(Integer value) {
+        public Criteria andAssiStateNotEqualTo(Boolean value) {
             addCriterion("assi_state <>", value, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateGreaterThan(Integer value) {
+        public Criteria andAssiStateGreaterThan(Boolean value) {
             addCriterion("assi_state >", value, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateGreaterThanOrEqualTo(Integer value) {
+        public Criteria andAssiStateGreaterThanOrEqualTo(Boolean value) {
             addCriterion("assi_state >=", value, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateLessThan(Integer value) {
+        public Criteria andAssiStateLessThan(Boolean value) {
             addCriterion("assi_state <", value, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateLessThanOrEqualTo(Integer value) {
+        public Criteria andAssiStateLessThanOrEqualTo(Boolean value) {
             addCriterion("assi_state <=", value, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateIn(List<Integer> values) {
+        public Criteria andAssiStateIn(List<Boolean> values) {
             addCriterion("assi_state in", values, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateNotIn(List<Integer> values) {
+        public Criteria andAssiStateNotIn(List<Boolean> values) {
             addCriterion("assi_state not in", values, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateBetween(Integer value1, Integer value2) {
+        public Criteria andAssiStateBetween(Boolean value1, Boolean value2) {
             addCriterion("assi_state between", value1, value2, "assiState");
             return (Criteria) this;
         }
 
-        public Criteria andAssiStateNotBetween(Integer value1, Integer value2) {
+        public Criteria andAssiStateNotBetween(Boolean value1, Boolean value2) {
             addCriterion("assi_state not between", value1, value2, "assiState");
             return (Criteria) this;
         }

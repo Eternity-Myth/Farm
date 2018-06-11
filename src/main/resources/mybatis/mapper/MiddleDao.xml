@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.farm.dao.MiddleDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.Middle">
+        <result column="m_fid" jdbcType="INTEGER" property="mFid"/>
+        <result column="m_cid" jdbcType="INTEGER" property="mCid"/>
+        <result column="m_cname" jdbcType="VARCHAR" property="mCname"/>
+        <result column="m_cprofit" jdbcType="REAL" property="mCprofit"/>
+        <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+        <result column="status" jdbcType="BIT" property="status"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    m_fid, m_cid, m_cname, m_cprofit, quantity, status
+  </sql>
+    <select id="selectByExample" parameterType="com.farm.entity.MiddleExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from middle
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <delete id="deleteByExample" parameterType="com.farm.entity.MiddleExample">
+        delete from middle
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.farm.entity.Middle">
+    insert into middle (m_fid, m_cid, m_cname,
+      m_cprofit, quantity, status
+      )
+    values (#{mFid,jdbcType=INTEGER}, #{mCid,jdbcType=INTEGER}, #{mCname,jdbcType=VARCHAR},
+      #{mCprofit,jdbcType=REAL}, #{quantity,jdbcType=INTEGER}, #{status,jdbcType=BIT}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.farm.entity.Middle">
+        insert into middle
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="mFid != null">
+                m_fid,
+            </if>
+            <if test="mCid != null">
+                m_cid,
+            </if>
+            <if test="mCname != null">
+                m_cname,
+            </if>
+            <if test="mCprofit != null">
+                m_cprofit,
+            </if>
+            <if test="quantity != null">
+                quantity,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="mFid != null">
+                #{mFid,jdbcType=INTEGER},
+            </if>
+            <if test="mCid != null">
+                #{mCid,jdbcType=INTEGER},
+            </if>
+            <if test="mCname != null">
+                #{mCname,jdbcType=VARCHAR},
+            </if>
+            <if test="mCprofit != null">
+                #{mCprofit,jdbcType=REAL},
+            </if>
+            <if test="quantity != null">
+                #{quantity,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=BIT},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.farm.entity.MiddleExample" resultType="java.lang.Long">
+        select count(*) from middle
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update middle
+        <set>
+            <if test="record.mFid != null">
+                m_fid = #{record.mFid,jdbcType=INTEGER},
+            </if>
+            <if test="record.mCid != null">
+                m_cid = #{record.mCid,jdbcType=INTEGER},
+            </if>
+            <if test="record.mCname != null">
+                m_cname = #{record.mCname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.mCprofit != null">
+                m_cprofit = #{record.mCprofit,jdbcType=REAL},
+            </if>
+            <if test="record.quantity != null">
+                quantity = #{record.quantity,jdbcType=INTEGER},
+            </if>
+            <if test="record.status != null">
+                status = #{record.status,jdbcType=BIT},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update middle
+        set m_fid = #{record.mFid,jdbcType=INTEGER},
+        m_cid = #{record.mCid,jdbcType=INTEGER},
+        m_cname = #{record.mCname,jdbcType=VARCHAR},
+        m_cprofit = #{record.mCprofit,jdbcType=REAL},
+        quantity = #{record.quantity,jdbcType=INTEGER},
+        status = #{record.status,jdbcType=BIT}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+
+    <update id="synchronize" parameterType="map">
+        UPDATE middle INNER JOIN crops
+        SET middle.`m_cname`=crops.`cropsName`,m_cprofit=crops.`profit` WHERE middle.`m_cid`=crops.`id`;
+    </update>
+</mapper>

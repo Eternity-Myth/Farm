@@ -3,12 +3,12 @@
 <mapper namespace="com.farm.dao.SellerInfoDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.SellerInfo">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="seller_phone" jdbcType="INTEGER" property="sellerPhone"/>
+        <result column="seller_phone" jdbcType="VARCHAR" property="sellerPhone"/>
         <result column="seller_name" jdbcType="VARCHAR" property="sellerName"/>
         <result column="seller_company_name" jdbcType="VARCHAR" property="sellerCompanyName"/>
         <result column="seller_add" jdbcType="VARCHAR" property="sellerAdd"/>
-        <result column="seller_state" jdbcType="INTEGER" property="sellerState"/>
-        <result column="seller_alipaynum" jdbcType="INTEGER" property="sellerAlipaynum"/>
+        <result column="seller_state" jdbcType="BIT" property="sellerState"/>
+        <result column="seller_alipaynum" jdbcType="VARCHAR" property="sellerAlipaynum"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -107,9 +107,9 @@
     insert into sellerinfo (id, seller_phone, seller_name,
       seller_company_name, seller_add, seller_state,
       seller_alipaynum)
-    values (#{id,jdbcType=INTEGER}, #{sellerPhone,jdbcType=INTEGER}, #{sellerName,jdbcType=VARCHAR},
-      #{sellerCompanyName,jdbcType=VARCHAR}, #{sellerAdd,jdbcType=VARCHAR}, #{sellerState,jdbcType=INTEGER},
-      #{sellerAlipaynum,jdbcType=INTEGER})
+    values (#{id,jdbcType=INTEGER}, #{sellerPhone,jdbcType=VARCHAR}, #{sellerName,jdbcType=VARCHAR},
+      #{sellerCompanyName,jdbcType=VARCHAR}, #{sellerAdd,jdbcType=VARCHAR}, #{sellerState,jdbcType=BIT},
+      #{sellerAlipaynum,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.SellerInfo">
         insert into sellerinfo
@@ -141,7 +141,7 @@
                 #{id,jdbcType=INTEGER},
             </if>
             <if test="sellerPhone != null">
-                #{sellerPhone,jdbcType=INTEGER},
+                #{sellerPhone,jdbcType=VARCHAR},
             </if>
             <if test="sellerName != null">
                 #{sellerName,jdbcType=VARCHAR},
@@ -153,10 +153,10 @@
                 #{sellerAdd,jdbcType=VARCHAR},
             </if>
             <if test="sellerState != null">
-                #{sellerState,jdbcType=INTEGER},
+                #{sellerState,jdbcType=BIT},
             </if>
             <if test="sellerAlipaynum != null">
-                #{sellerAlipaynum,jdbcType=INTEGER},
+                #{sellerAlipaynum,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
@@ -173,7 +173,7 @@
                 id = #{record.id,jdbcType=INTEGER},
             </if>
             <if test="record.sellerPhone != null">
-                seller_phone = #{record.sellerPhone,jdbcType=INTEGER},
+                seller_phone = #{record.sellerPhone,jdbcType=VARCHAR},
             </if>
             <if test="record.sellerName != null">
                 seller_name = #{record.sellerName,jdbcType=VARCHAR},
@@ -185,10 +185,10 @@
                 seller_add = #{record.sellerAdd,jdbcType=VARCHAR},
             </if>
             <if test="record.sellerState != null">
-                seller_state = #{record.sellerState,jdbcType=INTEGER},
+                seller_state = #{record.sellerState,jdbcType=BIT},
             </if>
             <if test="record.sellerAlipaynum != null">
-                seller_alipaynum = #{record.sellerAlipaynum,jdbcType=INTEGER},
+                seller_alipaynum = #{record.sellerAlipaynum,jdbcType=VARCHAR},
             </if>
         </set>
         <if test="_parameter != null">
@@ -198,12 +198,12 @@
     <update id="updateByExample" parameterType="map">
         update sellerinfo
         set id = #{record.id,jdbcType=INTEGER},
-        seller_phone = #{record.sellerPhone,jdbcType=INTEGER},
+        seller_phone = #{record.sellerPhone,jdbcType=VARCHAR},
         seller_name = #{record.sellerName,jdbcType=VARCHAR},
         seller_company_name = #{record.sellerCompanyName,jdbcType=VARCHAR},
         seller_add = #{record.sellerAdd,jdbcType=VARCHAR},
-        seller_state = #{record.sellerState,jdbcType=INTEGER},
-        seller_alipaynum = #{record.sellerAlipaynum,jdbcType=INTEGER}
+        seller_state = #{record.sellerState,jdbcType=BIT},
+        seller_alipaynum = #{record.sellerAlipaynum,jdbcType=VARCHAR}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
@@ -212,7 +212,7 @@
         update sellerinfo
         <set>
             <if test="sellerPhone != null">
-                seller_phone = #{sellerPhone,jdbcType=INTEGER},
+                seller_phone = #{sellerPhone,jdbcType=VARCHAR},
             </if>
             <if test="sellerName != null">
                 seller_name = #{sellerName,jdbcType=VARCHAR},
@@ -224,22 +224,22 @@
                 seller_add = #{sellerAdd,jdbcType=VARCHAR},
             </if>
             <if test="sellerState != null">
-                seller_state = #{sellerState,jdbcType=INTEGER},
+                seller_state = #{sellerState,jdbcType=BIT},
             </if>
             <if test="sellerAlipaynum != null">
-                seller_alipaynum = #{sellerAlipaynum,jdbcType=INTEGER},
+                seller_alipaynum = #{sellerAlipaynum,jdbcType=VARCHAR},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.SellerInfo">
     update sellerinfo
-    set seller_phone = #{sellerPhone,jdbcType=INTEGER},
+    set seller_phone = #{sellerPhone,jdbcType=VARCHAR},
       seller_name = #{sellerName,jdbcType=VARCHAR},
       seller_company_name = #{sellerCompanyName,jdbcType=VARCHAR},
       seller_add = #{sellerAdd,jdbcType=VARCHAR},
-      seller_state = #{sellerState,jdbcType=INTEGER},
-      seller_alipaynum = #{sellerAlipaynum,jdbcType=INTEGER}
+      seller_state = #{sellerState,jdbcType=BIT},
+      seller_alipaynum = #{sellerAlipaynum,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

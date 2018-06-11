@@ -1,20 +1,20 @@
 package com.farm.entity;
 
 public class ConsumerInfo {
-    private Integer conId;
+    private Integer id;
 
     private String conPhone;
 
-    private String conNickname;
+    private String conName;
 
     private Boolean conState;
 
-    public Integer getConId() {
-        return conId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setConId(Integer conId) {
-        this.conId = conId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getConPhone() {
@@ -25,12 +25,12 @@ public class ConsumerInfo {
         this.conPhone = conPhone == null ? null : conPhone.trim();
     }
 
-    public String getConNickname() {
-        return conNickname;
+    public String getConName() {
+        return conName;
     }
 
-    public void setConNickname(String conNickname) {
-        this.conNickname = conNickname == null ? null : conNickname.trim();
+    public void setConName(String conName) {
+        this.conName = conName == null ? null : conName.trim();
     }
 
     public Boolean getConState() {

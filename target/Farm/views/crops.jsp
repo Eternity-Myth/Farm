@@ -193,6 +193,12 @@
                                 <a href="/views/crops.jsp" style="color:#ffffff">农作物信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/plant.jsp" style="color:#ffffff">种植信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/consumerinfo.jsp" style="color: #ffffff">客户信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/sellerinfo.jsp" style="color:#ffffff">商家信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
@@ -262,10 +268,10 @@
                                                style="background-color:transparent; border-color:#FFFFFF"/>
                                     </th>
                                     <th style="text-align:center">#ID</th>
-                                    <th style="text-align:center">Name</th>
-                                    <th style="text-align:center">Area（株/平方米）</th>
-                                    <th style="text-align:center">Profit（元/株）</th>
-                                    <th style="text-align:center">Time（月）</th>
+                                    <th style="text-align:center">作物名</th>
+                                    <th style="text-align:center">面积（株/平方米）</th>
+                                    <th style="text-align:center">利润（元/株）</th>
+                                    <th style="text-align:center">时长（月）</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
                                     </th>

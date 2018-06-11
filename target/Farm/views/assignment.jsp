@@ -61,7 +61,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">手机号</label>
                         <div class="col-sm-10">
-                            <input type="number" name="assiPhone" class="form-control" id="assiPhone_add_input"
+                            <input type="text" name="assiPhone" class="form-control" id="assiPhone_add_input"
                                    placeholder="Phone">
                         </div>
                     </div>
@@ -194,6 +194,12 @@
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/crops.jsp" style="color:#ffffff">农作物信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/plant.jsp" style="color:#ffffff">种植信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/consumerinfo.jsp" style="color: #ffffff">客户信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/sellerinfo.jsp" style="color:#ffffff">商家信息管理</a>

@@ -174,52 +174,62 @@ public class SellerInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneEqualTo(Integer value) {
+        public Criteria andSellerPhoneEqualTo(String value) {
             addCriterion("seller_phone =", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneNotEqualTo(Integer value) {
+        public Criteria andSellerPhoneNotEqualTo(String value) {
             addCriterion("seller_phone <>", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneGreaterThan(Integer value) {
+        public Criteria andSellerPhoneGreaterThan(String value) {
             addCriterion("seller_phone >", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSellerPhoneGreaterThanOrEqualTo(String value) {
             addCriterion("seller_phone >=", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneLessThan(Integer value) {
+        public Criteria andSellerPhoneLessThan(String value) {
             addCriterion("seller_phone <", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneLessThanOrEqualTo(Integer value) {
+        public Criteria andSellerPhoneLessThanOrEqualTo(String value) {
             addCriterion("seller_phone <=", value, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneIn(List<Integer> values) {
+        public Criteria andSellerPhoneLike(String value) {
+            addCriterion("seller_phone like", value, "sellerPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSellerPhoneNotLike(String value) {
+            addCriterion("seller_phone not like", value, "sellerPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSellerPhoneIn(List<String> values) {
             addCriterion("seller_phone in", values, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneNotIn(List<Integer> values) {
+        public Criteria andSellerPhoneNotIn(List<String> values) {
             addCriterion("seller_phone not in", values, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneBetween(Integer value1, Integer value2) {
+        public Criteria andSellerPhoneBetween(String value1, String value2) {
             addCriterion("seller_phone between", value1, value2, "sellerPhone");
             return (Criteria) this;
         }
 
-        public Criteria andSellerPhoneNotBetween(Integer value1, Integer value2) {
+        public Criteria andSellerPhoneNotBetween(String value1, String value2) {
             addCriterion("seller_phone not between", value1, value2, "sellerPhone");
             return (Criteria) this;
         }
@@ -444,52 +454,52 @@ public class SellerInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateEqualTo(Integer value) {
+        public Criteria andSellerStateEqualTo(Boolean value) {
             addCriterion("seller_state =", value, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateNotEqualTo(Integer value) {
+        public Criteria andSellerStateNotEqualTo(Boolean value) {
             addCriterion("seller_state <>", value, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateGreaterThan(Integer value) {
+        public Criteria andSellerStateGreaterThan(Boolean value) {
             addCriterion("seller_state >", value, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSellerStateGreaterThanOrEqualTo(Boolean value) {
             addCriterion("seller_state >=", value, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateLessThan(Integer value) {
+        public Criteria andSellerStateLessThan(Boolean value) {
             addCriterion("seller_state <", value, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateLessThanOrEqualTo(Integer value) {
+        public Criteria andSellerStateLessThanOrEqualTo(Boolean value) {
             addCriterion("seller_state <=", value, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateIn(List<Integer> values) {
+        public Criteria andSellerStateIn(List<Boolean> values) {
             addCriterion("seller_state in", values, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateNotIn(List<Integer> values) {
+        public Criteria andSellerStateNotIn(List<Boolean> values) {
             addCriterion("seller_state not in", values, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateBetween(Integer value1, Integer value2) {
+        public Criteria andSellerStateBetween(Boolean value1, Boolean value2) {
             addCriterion("seller_state between", value1, value2, "sellerState");
             return (Criteria) this;
         }
 
-        public Criteria andSellerStateNotBetween(Integer value1, Integer value2) {
+        public Criteria andSellerStateNotBetween(Boolean value1, Boolean value2) {
             addCriterion("seller_state not between", value1, value2, "sellerState");
             return (Criteria) this;
         }
@@ -504,52 +514,62 @@ public class SellerInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumEqualTo(Integer value) {
+        public Criteria andSellerAlipaynumEqualTo(String value) {
             addCriterion("seller_alipaynum =", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumNotEqualTo(Integer value) {
+        public Criteria andSellerAlipaynumNotEqualTo(String value) {
             addCriterion("seller_alipaynum <>", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumGreaterThan(Integer value) {
+        public Criteria andSellerAlipaynumGreaterThan(String value) {
             addCriterion("seller_alipaynum >", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSellerAlipaynumGreaterThanOrEqualTo(String value) {
             addCriterion("seller_alipaynum >=", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumLessThan(Integer value) {
+        public Criteria andSellerAlipaynumLessThan(String value) {
             addCriterion("seller_alipaynum <", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumLessThanOrEqualTo(Integer value) {
+        public Criteria andSellerAlipaynumLessThanOrEqualTo(String value) {
             addCriterion("seller_alipaynum <=", value, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumIn(List<Integer> values) {
+        public Criteria andSellerAlipaynumLike(String value) {
+            addCriterion("seller_alipaynum like", value, "sellerAlipaynum");
+            return (Criteria) this;
+        }
+
+        public Criteria andSellerAlipaynumNotLike(String value) {
+            addCriterion("seller_alipaynum not like", value, "sellerAlipaynum");
+            return (Criteria) this;
+        }
+
+        public Criteria andSellerAlipaynumIn(List<String> values) {
             addCriterion("seller_alipaynum in", values, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumNotIn(List<Integer> values) {
+        public Criteria andSellerAlipaynumNotIn(List<String> values) {
             addCriterion("seller_alipaynum not in", values, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumBetween(Integer value1, Integer value2) {
+        public Criteria andSellerAlipaynumBetween(String value1, String value2) {
             addCriterion("seller_alipaynum between", value1, value2, "sellerAlipaynum");
             return (Criteria) this;
         }
 
-        public Criteria andSellerAlipaynumNotBetween(Integer value1, Integer value2) {
+        public Criteria andSellerAlipaynumNotBetween(String value1, String value2) {
             addCriterion("seller_alipaynum not between", value1, value2, "sellerAlipaynum");
             return (Criteria) this;
         }

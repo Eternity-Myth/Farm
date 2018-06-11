@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.farm.dao.ConsumerInfoDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.ConsumerInfo">
-        <id column="con_id" jdbcType="INTEGER" property="conId"/>
+        <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="con_phone" jdbcType="VARCHAR" property="conPhone"/>
-        <result column="con_nickname" jdbcType="VARCHAR" property="conNickname"/>
+        <result column="con_name" jdbcType="VARCHAR" property="conName"/>
         <result column="con_state" jdbcType="BIT" property="conState"/>
     </resultMap>
     <sql id="Example_Where_Clause">
@@ -68,7 +68,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    con_id, con_phone, con_nickname, con_state
+    id, con_phone, con_name, con_state
   </sql>
     <select id="selectByExample" parameterType="com.farm.entity.ConsumerInfoExample" resultMap="BaseResultMap">
         select
@@ -88,11 +88,11 @@
         select
         <include refid="Base_Column_List"/>
         from consumerinfo
-        where con_id = #{conId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from consumerinfo
-    where con_id = #{conId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
     <delete id="deleteByExample" parameterType="com.farm.entity.ConsumerInfoExample">
         delete from consumerinfo
@@ -101,36 +101,36 @@
         </if>
     </delete>
     <insert id="insert" parameterType="com.farm.entity.ConsumerInfo">
-    insert into consumerinfo (con_id, con_phone, con_nickname,
+    insert into consumerinfo (id, con_phone, con_name,
       con_state)
-    values (#{conId,jdbcType=INTEGER}, #{conPhone,jdbcType=VARCHAR}, #{conNickname,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER}, #{conPhone,jdbcType=VARCHAR}, #{conName,jdbcType=VARCHAR},
       #{conState,jdbcType=BIT})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.ConsumerInfo">
         insert into consumerinfo
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="conId != null">
-                con_id,
+            <if test="id != null">
+                id,
             </if>
             <if test="conPhone != null">
                 con_phone,
             </if>
-            <if test="conNickname != null">
-                con_nickname,
+            <if test="conName != null">
+                con_name,
             </if>
             <if test="conState != null">
                 con_state,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="conId != null">
-                #{conId,jdbcType=INTEGER},
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
             </if>
             <if test="conPhone != null">
                 #{conPhone,jdbcType=VARCHAR},
             </if>
-            <if test="conNickname != null">
-                #{conNickname,jdbcType=VARCHAR},
+            <if test="conName != null">
+                #{conName,jdbcType=VARCHAR},
             </if>
             <if test="conState != null">
                 #{conState,jdbcType=BIT},
@@ -146,14 +146,14 @@
     <update id="updateByExampleSelective" parameterType="map">
         update consumerinfo
         <set>
-            <if test="record.conId != null">
-                con_id = #{record.conId,jdbcType=INTEGER},
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
             </if>
             <if test="record.conPhone != null">
                 con_phone = #{record.conPhone,jdbcType=VARCHAR},
             </if>
-            <if test="record.conNickname != null">
-                con_nickname = #{record.conNickname,jdbcType=VARCHAR},
+            <if test="record.conName != null">
+                con_name = #{record.conName,jdbcType=VARCHAR},
             </if>
             <if test="record.conState != null">
                 con_state = #{record.conState,jdbcType=BIT},
@@ -165,9 +165,9 @@
     </update>
     <update id="updateByExample" parameterType="map">
         update consumerinfo
-        set con_id = #{record.conId,jdbcType=INTEGER},
+        set id = #{record.id,jdbcType=INTEGER},
         con_phone = #{record.conPhone,jdbcType=VARCHAR},
-        con_nickname = #{record.conNickname,jdbcType=VARCHAR},
+        con_name = #{record.conName,jdbcType=VARCHAR},
         con_state = #{record.conState,jdbcType=BIT}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
@@ -179,20 +179,20 @@
             <if test="conPhone != null">
                 con_phone = #{conPhone,jdbcType=VARCHAR},
             </if>
-            <if test="conNickname != null">
-                con_nickname = #{conNickname,jdbcType=VARCHAR},
+            <if test="conName != null">
+                con_name = #{conName,jdbcType=VARCHAR},
             </if>
             <if test="conState != null">
                 con_state = #{conState,jdbcType=BIT},
             </if>
         </set>
-        where con_id = #{conId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.ConsumerInfo">
     update consumerinfo
     set con_phone = #{conPhone,jdbcType=VARCHAR},
-      con_nickname = #{conNickname,jdbcType=VARCHAR},
+      con_name = #{conName,jdbcType=VARCHAR},
       con_state = #{conState,jdbcType=BIT}
-    where con_id = #{conId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

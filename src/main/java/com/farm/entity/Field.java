@@ -1,6 +1,7 @@
 package com.farm.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Field {
     private Integer id;

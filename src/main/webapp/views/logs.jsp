@@ -89,6 +89,12 @@
                                 <a href="/views/crops.jsp" style="color:#ffffff">农作物信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/plant.jsp" style="color:#ffffff">种植信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/consumerinfo.jsp" style="color: #ffffff">客户信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/sellerinfo.jsp" style="color:#ffffff">商家信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
@@ -257,6 +263,7 @@
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的日志id
             delBtn.attr("del-id", item.id);
+            delBtn=$("<td></td>").append(delBtn);
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
                 .append(logIdTd)

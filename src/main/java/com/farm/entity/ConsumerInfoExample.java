@@ -104,63 +104,63 @@ public class ConsumerInfoExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andConIdIsNull() {
-            addCriterion("con_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andConIdIsNotNull() {
-            addCriterion("con_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andConIdEqualTo(Integer value) {
-            addCriterion("con_id =", value, "conId");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdNotEqualTo(Integer value) {
-            addCriterion("con_id <>", value, "conId");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdGreaterThan(Integer value) {
-            addCriterion("con_id >", value, "conId");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("con_id >=", value, "conId");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdLessThan(Integer value) {
-            addCriterion("con_id <", value, "conId");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdLessThanOrEqualTo(Integer value) {
-            addCriterion("con_id <=", value, "conId");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdIn(List<Integer> values) {
-            addCriterion("con_id in", values, "conId");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdNotIn(List<Integer> values) {
-            addCriterion("con_id not in", values, "conId");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdBetween(Integer value1, Integer value2) {
-            addCriterion("con_id between", value1, value2, "conId");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andConIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("con_id not between", value1, value2, "conId");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -234,73 +234,73 @@ public class ConsumerInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameIsNull() {
-            addCriterion("con_nickname is null");
+        public Criteria andConNameIsNull() {
+            addCriterion("con_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameIsNotNull() {
-            addCriterion("con_nickname is not null");
+        public Criteria andConNameIsNotNull() {
+            addCriterion("con_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameEqualTo(String value) {
-            addCriterion("con_nickname =", value, "conNickname");
+        public Criteria andConNameEqualTo(String value) {
+            addCriterion("con_name =", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameNotEqualTo(String value) {
-            addCriterion("con_nickname <>", value, "conNickname");
+        public Criteria andConNameNotEqualTo(String value) {
+            addCriterion("con_name <>", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameGreaterThan(String value) {
-            addCriterion("con_nickname >", value, "conNickname");
+        public Criteria andConNameGreaterThan(String value) {
+            addCriterion("con_name >", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameGreaterThanOrEqualTo(String value) {
-            addCriterion("con_nickname >=", value, "conNickname");
+        public Criteria andConNameGreaterThanOrEqualTo(String value) {
+            addCriterion("con_name >=", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameLessThan(String value) {
-            addCriterion("con_nickname <", value, "conNickname");
+        public Criteria andConNameLessThan(String value) {
+            addCriterion("con_name <", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameLessThanOrEqualTo(String value) {
-            addCriterion("con_nickname <=", value, "conNickname");
+        public Criteria andConNameLessThanOrEqualTo(String value) {
+            addCriterion("con_name <=", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameLike(String value) {
-            addCriterion("con_nickname like", value, "conNickname");
+        public Criteria andConNameLike(String value) {
+            addCriterion("con_name like", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameNotLike(String value) {
-            addCriterion("con_nickname not like", value, "conNickname");
+        public Criteria andConNameNotLike(String value) {
+            addCriterion("con_name not like", value, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameIn(List<String> values) {
-            addCriterion("con_nickname in", values, "conNickname");
+        public Criteria andConNameIn(List<String> values) {
+            addCriterion("con_name in", values, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameNotIn(List<String> values) {
-            addCriterion("con_nickname not in", values, "conNickname");
+        public Criteria andConNameNotIn(List<String> values) {
+            addCriterion("con_name not in", values, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameBetween(String value1, String value2) {
-            addCriterion("con_nickname between", value1, value2, "conNickname");
+        public Criteria andConNameBetween(String value1, String value2) {
+            addCriterion("con_name between", value1, value2, "conName");
             return (Criteria) this;
         }
 
-        public Criteria andConNicknameNotBetween(String value1, String value2) {
-            addCriterion("con_nickname not between", value1, value2, "conNickname");
+        public Criteria andConNameNotBetween(String value1, String value2) {
+            addCriterion("con_name not between", value1, value2, "conName");
             return (Criteria) this;
         }
 

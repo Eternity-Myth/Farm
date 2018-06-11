@@ -11,7 +11,7 @@ public interface ConsumerInfoDao {
 
     int deleteByExample(ConsumerInfoExample example);
 
-    int deleteByPrimaryKey(Integer conId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(ConsumerInfo record);
 
@@ -19,7 +19,7 @@ public interface ConsumerInfoDao {
 
     List<ConsumerInfo> selectByExample(ConsumerInfoExample example);
 
-    ConsumerInfo selectByPrimaryKey(Integer conId);
+    ConsumerInfo selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") ConsumerInfo record, @Param("example") ConsumerInfoExample example);
 

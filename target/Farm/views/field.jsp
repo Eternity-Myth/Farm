@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">时长/月（默认为3）</label>
+                        <label class="col-sm-2 control-label">时长/月（默认为12）</label>
                         <div class="col-sm-10">
                             <input type="number" name="time" class="form-control" id="time_add_input"
                                    placeholder="Crops">
@@ -188,6 +188,12 @@
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/crops.jsp" style="color:#ffffff">农作物信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/plant.jsp" style="color:#ffffff">种植信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/consumerinfo.jsp" style="color: #ffffff">客户信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/sellerinfo.jsp" style="color:#ffffff">商家信息管理</a>

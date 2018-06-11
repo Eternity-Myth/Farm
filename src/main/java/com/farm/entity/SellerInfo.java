@@ -3,7 +3,7 @@ package com.farm.entity;
 public class SellerInfo {
     private Integer id;
 
-    private Integer sellerPhone;
+    private String sellerPhone;
 
     private String sellerName;
 
@@ -11,9 +11,9 @@ public class SellerInfo {
 
     private String sellerAdd;
 
-    private Integer sellerState;
+    private Boolean sellerState;
 
-    private Integer sellerAlipaynum;
+    private String sellerAlipaynum;
 
     public Integer getId() {
         return id;
@@ -23,12 +23,12 @@ public class SellerInfo {
         this.id = id;
     }
 
-    public Integer getSellerPhone() {
+    public String getSellerPhone() {
         return sellerPhone;
     }
 
-    public void setSellerPhone(Integer sellerPhone) {
-        this.sellerPhone = sellerPhone;
+    public void setSellerPhone(String sellerPhone) {
+        this.sellerPhone = sellerPhone == null ? null : sellerPhone.trim();
     }
 
     public String getSellerName() {
@@ -55,19 +55,19 @@ public class SellerInfo {
         this.sellerAdd = sellerAdd == null ? null : sellerAdd.trim();
     }
 
-    public Integer getSellerState() {
+    public Boolean getSellerState() {
         return sellerState;
     }
 
-    public void setSellerState(Integer sellerState) {
+    public void setSellerState(Boolean sellerState) {
         this.sellerState = sellerState;
     }
 
-    public Integer getSellerAlipaynum() {
+    public String getSellerAlipaynum() {
         return sellerAlipaynum;
     }
 
-    public void setSellerAlipaynum(Integer sellerAlipaynum) {
-        this.sellerAlipaynum = sellerAlipaynum;
+    public void setSellerAlipaynum(String sellerAlipaynum) {
+        this.sellerAlipaynum = sellerAlipaynum == null ? null : sellerAlipaynum.trim();
     }
 }

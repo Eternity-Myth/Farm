@@ -176,6 +176,12 @@
                                 <a href="/views/crops.jsp" style="color:#ffffff">农作物信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/plant.jsp" style="color:#ffffff">种植信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/consumerinfo.jsp" style="color: #ffffff">客户信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/sellerinfo.jsp" style="color:#ffffff">商家信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">

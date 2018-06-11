@@ -5,7 +5,7 @@ import java.util.Date;
 public class Assignment {
     private Integer assiId;
 
-    private Integer assiState;
+    private Boolean assiState;
 
     private String assiType;
 
@@ -25,11 +25,11 @@ public class Assignment {
         this.assiId = assiId;
     }
 
-    public Integer getAssiState() {
+    public Boolean getAssiState() {
         return assiState;
     }
 
-    public void setAssiState(Integer assiState) {
+    public void setAssiState(Boolean assiState) {
         this.assiState = assiState;
     }
 

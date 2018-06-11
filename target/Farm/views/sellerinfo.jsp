@@ -39,7 +39,7 @@
                 <%--表单--%>
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">店铺名</label>
+                        <label class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-10">
                             <input type="text" name="sellerName" class="form-control" id="sellerName_add_input"
                                    placeholder="SellerName">
@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">电话</label>
                         <div class="col-sm-10">
-                            <input type="number" name="sellerPhone" class="form-control" id="sellerPhone_add_input"
+                            <input type="text" name="sellerPhone" class="form-control" id="sellerPhone_add_input"
                                    placeholder="SellerPhone">
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">支付宝</label>
                         <div class="col-sm-10">
-                            <input type="number" name="sellerAlipaynum" class="form-control"
+                            <input type="text" name="sellerAlipaynum" class="form-control"
                                    id="sellerAlipaynum_add_input"
                                    placeholder="SellerAlipaynum">
                         </div>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">店铺名</label>
+                        <label class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-10">
                             <input type="text" name="sellerName" class="form-control" id="sellerName_update_input">
                             <span class="help-block"></span>
@@ -111,7 +111,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">电话</label>
                         <div class="col-sm-10">
-                            <input type="number" name="sellerPhone" class="form-control" id="sellerPhone_update_input">
+                            <input type="text" name="sellerPhone" class="form-control" id="sellerPhone_update_input">
                             <span class="help-block"></span>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">支付宝</label>
                         <div class="col-sm-10">
-                            <input type="number" name="sellerAlipaynum" class="form-control"
+                            <input type="text" name="sellerAlipaynum" class="form-control"
                                    id="sellerAlipaynum_update_input">
                             <span class="help-block"></span>
                         </div>
@@ -210,6 +210,12 @@
                                 <a href="/views/crops.jsp" style="color:#ffffff">农作物信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
+                                <a href="/views/plant.jsp" style="color:#ffffff">种植信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color: transparent">
+                                <a href="/views/consumerinfo.jsp" style="color: #ffffff">客户信息管理</a>
+                            </li>
+                            <li class="list-group-item" style="background-color:transparent">
                                 <a href="/views/sellerinfo.jsp" style="color:#ffffff">商家信息管理</a>
                             </li>
                             <li class="list-group-item" style="background-color:transparent">
@@ -279,7 +285,7 @@
                                                style="background-color:transparent; border-color:#FFFFFF"/>
                                     </th>
                                     <th style="text-align:center">#ID</th>
-                                    <th style="text-align:center">店铺名</th>
+                                    <th style="text-align:center">Name</th>
                                     <th style="text-align:center">电话</th>
                                     <th style="text-align:center">公司名</th>
                                     <th style="text-align:center">地址</th>
