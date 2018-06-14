@@ -1,9 +1,9 @@
 package com.farm.web;
 
 
-import com.farm.entity.Middle;
 import com.farm.entity.Msg;
-import com.farm.service.impl.MiddleServiceImpl;
+import com.farm.entity.Plant;
+import com.farm.service.impl.PlantServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +24,9 @@ import java.util.List;
  */
 
 @Controller
-public class MiddleController {
+public class PlantController {
     @Autowired
-    MiddleServiceImpl middleServiceImpl;
+    PlantServiceImpl middleServiceImpl;
 
     @RequestMapping(value = "/plant-list")
     @ResponseBody
@@ -34,9 +34,10 @@ public class MiddleController {
     public Msg getPlantWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
         //pageSize：10，指每页显示的数据数
         PageHelper.startPage(pn, 10);
-        List<Middle> middles = middleServiceImpl.getAll();
+        List<Plant> plants = middleServiceImpl.getAll();
         //navigatePages：5，指在页面需要连续显示的页码数
-        PageInfo page = new PageInfo(middles, 5);
+        PageInfo page = new PageInfo(plants, 5);
         return Msg.success().add("pageInfo", page);
     }
+
 }

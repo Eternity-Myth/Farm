@@ -97,4 +97,12 @@ public class CropsController {
         Crops crops = cropsServiceImpl.getCrops(id);
         return Msg.success().add("crops", crops);
     }
+
+    //查出所有农作物信息
+    @RequestMapping(value = "/crops", method = RequestMethod.GET)
+    @ResponseBody
+    public Msg getCropsInfos() {
+        List<Crops> list = cropsServiceImpl.getAll();
+        return Msg.success().add("crops", list);
+    }
 }

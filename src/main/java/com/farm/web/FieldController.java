@@ -100,4 +100,12 @@ public class FieldController {
         Field field = fieldServiceImpl.getField(id);
         return Msg.success().add("field", field);
     }
+
+    //查出所有菜地信息
+    @RequestMapping("/fields")
+    @ResponseBody
+    public Msg getFieldInfos() {
+        List<Field> list = fieldServiceImpl.getAll();
+        return Msg.success().add("fields", list);
+    }
 }

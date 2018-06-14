@@ -45,24 +45,17 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">用户名</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="username" class="form-control" id="username_add_input"
-                                   placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">手机号</label>
-                        <div class="col-sm-10">
-                            <input type="number" name="phone" class="form-control" id="phone_add_input"
-                                   placeholder="Phone">
+                        <label class="col-sm-2 control-label">客户名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="username">
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">时长/月（默认为12）</label>
                         <div class="col-sm-10">
                             <input type="number" name="time" class="form-control" id="time_add_input"
-                                   placeholder="Crops">
+                                   placeholder="Time">
                         </div>
                     </div>
                 </form>
@@ -99,17 +92,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">用户名</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="username" class="form-control" id="username_update_input">
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">手机号</label>
-                        <div class="col-sm-10">
-                            <input type="number" name="phone" class="form-control" id="phone_update_input">
-                            <span class="help-block"></span>
+                        <label class="col-sm-2 control-label">客户名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="username">
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -154,7 +140,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">注册时间</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}"
+                                                                           pattern="yyyy-MM-dd HH:mm:ss"/></p>
                         </div>
                     </div>
 
@@ -266,8 +253,7 @@
                                     </th>
                                     <th style="text-align:center">#ID</th>
                                     <th style="text-align:center">Area/平方米</th>
-                                    <th style="text-align:center">用户名</th>
-                                    <th style="text-align:center">手机号</th>
+                                    <th style="text-align:center">客户名</th>
                                     <th style="text-align:center">起始时间</th>
                                     <th style="text-align:center">时长/月</th>
                                     <th style="text-align:center">状态</th>
@@ -308,7 +294,7 @@
                      style="background-color:transparent; color:#FFFFFF; text-align:center">
                     <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                         <li class="list-group-item" style="background-color:transparent">
-                            <a href = "#"  data-toggle="modal" data-target="#infoCheckModal" style="color:#ffffff">信息</a>
+                            <a href="#" data-toggle="modal" data-target="#infoCheckModal" style="color:#ffffff">信息</a>
                         </li>
                         <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()" style="color:#ffffff">注销</a>
@@ -361,7 +347,6 @@
             var fieldIdTd = $("<td></td>").append(item.id);
             var fieldAreaTd = $("<td></td>").append(item.area);
             var usernameTd = $("<td></td>").append(item.username);
-            var phoneTd = $("<td></td>").append(item.phone);
             var startTime = getMyDate(item.startTime)
             var startTimeTd = $("<td></td>").append(startTime);
             var timeTd = $("<td></td>").append(item.time);
@@ -380,7 +365,6 @@
                 .append(fieldIdTd)
                 .append(fieldAreaTd)
                 .append(usernameTd)
-                .append(phoneTd)
                 .append(startTimeTd)
                 .append(timeTd)
                 .append(statusTd)
@@ -479,11 +463,39 @@
         navEle.appendTo("#page_nav_area");
     }
 
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
     $("#field_add_modal_btn").click(function () {
+        reset_form("#fieldAddModal form")
+        getConsumerInfo("#fieldAddModal select");
         $("#fieldAddModal").modal({
             backdrop: "static"
         });
     });
+
+    //查出所有的客户信息并显示在下拉列表中
+    function getConsumerInfo(ele) {
+        //清空之前下拉列表的值
+        $(ele).empty();
+        $.ajax({
+            url: "${APP_PATH}/consumerinfos",
+            type: "GET",
+            success: function (result) {
+                // console.info(result);
+                $.each(result.extend.consumerinfos, function () {
+                    var optionEle = $("<option></option>").append(this.conName);
+                    optionEle.appendTo(ele);
+                });
+            }
+        });
+    }
+
 
     $("#field_save_btn").click(function () {
         // 1、模态框中填写的表单数据提交给服务器进行保存
@@ -567,6 +579,8 @@
         getField($(this).attr("edit-id"));
         //把菜地的id传递给模态框的更新按钮
         $("#field_update_btn").attr("edit-id", $(this).attr("edit-id"));
+        reset_form("#fieldUpdateModal form")
+        getConsumerInfo("#fieldUpdateModal select");
         $("#fieldUpdateModal").modal({
             backdrop: "static"
         });
@@ -580,8 +594,6 @@
                     var fieldData = result.extend.field;
                     $("#fieldID_update_static").text(fieldData.id);
                     $("#area_update_input").val(fieldData.area);
-                    $("#username_update_input").val(fieldData.username);
-                    $("#phone_update_input").val(fieldData.phone);
                     $("#time_update_input").val(fieldData.time);
                 }
             });

@@ -99,4 +99,12 @@ public class ConsumerInfoController {
         ConsumerInfo consumerInfo = consumerInfoServiceImpl.getConsumerInfo(id);
         return Msg.success().add("consumerinfo", consumerInfo);
     }
+
+    //查出所有客户信息
+    @RequestMapping("/consumerinfos")
+    @ResponseBody
+    public Msg getConsumerinfos() {
+        List<ConsumerInfo> list = consumerInfoServiceImpl.getAll();
+        return Msg.success().add("consumerinfos", list);
+    }
 }

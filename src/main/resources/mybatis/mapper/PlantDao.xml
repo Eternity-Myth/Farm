@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.farm.dao.MiddleDao">
-    <resultMap id="BaseResultMap" type="com.farm.entity.Middle">
-        <result column="m_fid" jdbcType="INTEGER" property="mFid"/>
-        <result column="m_cid" jdbcType="INTEGER" property="mCid"/>
-        <result column="m_cname" jdbcType="VARCHAR" property="mCname"/>
-        <result column="m_cprofit" jdbcType="REAL" property="mCprofit"/>
+<mapper namespace="com.farm.dao.PlantDao">
+    <resultMap id="BaseResultMap" type="com.farm.entity.Plant">
+        <result column="fid" jdbcType="INTEGER" property="fid"/>
+        <result column="cname" jdbcType="VARCHAR" property="cname"/>
+        <result column="cprofit" jdbcType="REAL" property="cprofit"/>
         <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+        <result column="total" jdbcType="REAL" property="total"/>
+        <result column="time" jdbcType="INTEGER" property="time"/>
         <result column="status" jdbcType="BIT" property="status"/>
     </resultMap>
     <sql id="Example_Where_Clause">
@@ -70,15 +71,15 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    m_fid, m_cid, m_cname, m_cprofit, quantity, status
+    fid, cname, cprofit, quantity, total, time, status
   </sql>
-    <select id="selectByExample" parameterType="com.farm.entity.MiddleExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="com.farm.entity.PlantExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
         </if>
         <include refid="Base_Column_List"/>
-        from middle
+        from plant
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -86,86 +87,95 @@
             order by ${orderByClause}
         </if>
     </select>
-    <delete id="deleteByExample" parameterType="com.farm.entity.MiddleExample">
-        delete from middle
+    <delete id="deleteByExample" parameterType="com.farm.entity.PlantExample">
+        delete from plant
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.farm.entity.Middle">
-    insert into middle (m_fid, m_cid, m_cname,
-      m_cprofit, quantity, status
-      )
-    values (#{mFid,jdbcType=INTEGER}, #{mCid,jdbcType=INTEGER}, #{mCname,jdbcType=VARCHAR},
-      #{mCprofit,jdbcType=REAL}, #{quantity,jdbcType=INTEGER}, #{status,jdbcType=BIT}
-      )
+    <insert id="insert" parameterType="com.farm.entity.Plant">
+    insert into plant (fid, cname, cprofit,
+      quantity, total, time,
+      status)
+    values (#{fid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{cprofit,jdbcType=REAL},
+      #{quantity,jdbcType=INTEGER}, #{total,jdbcType=REAL}, #{time,jdbcType=INTEGER},
+      #{status,jdbcType=BIT})
   </insert>
-    <insert id="insertSelective" parameterType="com.farm.entity.Middle">
-        insert into middle
+    <insert id="insertSelective" parameterType="com.farm.entity.Plant">
+        insert into plant
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="mFid != null">
-                m_fid,
+            <if test="fid != null">
+                fid,
             </if>
-            <if test="mCid != null">
-                m_cid,
+            <if test="cname != null">
+                cname,
             </if>
-            <if test="mCname != null">
-                m_cname,
-            </if>
-            <if test="mCprofit != null">
-                m_cprofit,
+            <if test="cprofit != null">
+                cprofit,
             </if>
             <if test="quantity != null">
                 quantity,
+            </if>
+            <if test="total != null">
+                total,
+            </if>
+            <if test="time != null">
+                time,
             </if>
             <if test="status != null">
                 status,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="mFid != null">
-                #{mFid,jdbcType=INTEGER},
+            <if test="fid != null">
+                #{fid,jdbcType=INTEGER},
             </if>
-            <if test="mCid != null">
-                #{mCid,jdbcType=INTEGER},
+            <if test="cname != null">
+                #{cname,jdbcType=VARCHAR},
             </if>
-            <if test="mCname != null">
-                #{mCname,jdbcType=VARCHAR},
-            </if>
-            <if test="mCprofit != null">
-                #{mCprofit,jdbcType=REAL},
+            <if test="cprofit != null">
+                #{cprofit,jdbcType=REAL},
             </if>
             <if test="quantity != null">
                 #{quantity,jdbcType=INTEGER},
+            </if>
+            <if test="total != null">
+                #{total,jdbcType=REAL},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=INTEGER},
             </if>
             <if test="status != null">
                 #{status,jdbcType=BIT},
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.farm.entity.MiddleExample" resultType="java.lang.Long">
-        select count(*) from middle
+    <select id="countByExample" parameterType="com.farm.entity.PlantExample" resultType="java.lang.Long">
+        select count(*) from plant
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </select>
     <update id="updateByExampleSelective" parameterType="map">
-        update middle
+        update plant
         <set>
-            <if test="record.mFid != null">
-                m_fid = #{record.mFid,jdbcType=INTEGER},
+            <if test="record.fid != null">
+                fid = #{record.fid,jdbcType=INTEGER},
             </if>
-            <if test="record.mCid != null">
-                m_cid = #{record.mCid,jdbcType=INTEGER},
+            <if test="record.cname != null">
+                cname = #{record.cname,jdbcType=VARCHAR},
             </if>
-            <if test="record.mCname != null">
-                m_cname = #{record.mCname,jdbcType=VARCHAR},
-            </if>
-            <if test="record.mCprofit != null">
-                m_cprofit = #{record.mCprofit,jdbcType=REAL},
+            <if test="record.cprofit != null">
+                cprofit = #{record.cprofit,jdbcType=REAL},
             </if>
             <if test="record.quantity != null">
                 quantity = #{record.quantity,jdbcType=INTEGER},
+            </if>
+            <if test="record.total != null">
+                total = #{record.total,jdbcType=REAL},
+            </if>
+            <if test="record.time != null">
+                time = #{record.time,jdbcType=INTEGER},
             </if>
             <if test="record.status != null">
                 status = #{record.status,jdbcType=BIT},
@@ -176,20 +186,20 @@
         </if>
     </update>
     <update id="updateByExample" parameterType="map">
-        update middle
-        set m_fid = #{record.mFid,jdbcType=INTEGER},
-        m_cid = #{record.mCid,jdbcType=INTEGER},
-        m_cname = #{record.mCname,jdbcType=VARCHAR},
-        m_cprofit = #{record.mCprofit,jdbcType=REAL},
+        update plant
+        set fid = #{record.fid,jdbcType=INTEGER},
+        cname = #{record.cname,jdbcType=VARCHAR},
+        cprofit = #{record.cprofit,jdbcType=REAL},
         quantity = #{record.quantity,jdbcType=INTEGER},
+        total = #{record.total,jdbcType=REAL},
+        time = #{record.time,jdbcType=INTEGER},
         status = #{record.status,jdbcType=BIT}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-
     <update id="synchronize" parameterType="map">
-        UPDATE middle INNER JOIN crops
-        SET middle.`m_cname`=crops.`cropsName`,m_cprofit=crops.`profit` WHERE middle.`m_cid`=crops.`id`;
+        UPDATE plant INNER JOIN crops
+        SET cprofit=crops.`profit`,total=crops.`profit`*quantity,TIME=crops.`cropsTime` WHERE cname=crops.`cropsName`;
     </update>
 </mapper>

@@ -5,7 +5,6 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="area" jdbcType="REAL" property="area"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
-        <result column="phone" jdbcType="INTEGER" property="phone"/>
         <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
         <result column="time" jdbcType="INTEGER" property="time"/>
         <result column="status" jdbcType="BIT" property="status"/>
@@ -71,7 +70,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    id, area, username, phone, start_time, time, status
+    id, area, username, start_time, time, status
   </sql>
     <select id="selectByExample" parameterType="com.farm.entity.FieldExample" resultMap="BaseResultMap">
         select
@@ -105,11 +104,11 @@
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Field">
     insert into field (id, area, username,
-      phone, start_time, time,
-      status)
+      start_time, time, status
+      )
     values (#{id,jdbcType=INTEGER}, #{area,jdbcType=REAL}, #{username,jdbcType=VARCHAR},
-      #{phone,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=INTEGER},
-      #{status,jdbcType=BIT})
+      #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=INTEGER}, #{status,jdbcType=BIT}
+      )
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Field">
         insert into field
@@ -122,9 +121,6 @@
             </if>
             <if test="username != null">
                 username,
-            </if>
-            <if test="phone != null">
-                phone,
             </if>
             <if test="startTime != null">
                 start_time,
@@ -145,9 +141,6 @@
             </if>
             <if test="username != null">
                 #{username,jdbcType=VARCHAR},
-            </if>
-            <if test="phone != null">
-                #{phone,jdbcType=INTEGER},
             </if>
             <if test="startTime != null">
                 #{startTime,jdbcType=TIMESTAMP},
@@ -178,9 +171,6 @@
             <if test="record.username != null">
                 username = #{record.username,jdbcType=VARCHAR},
             </if>
-            <if test="record.phone != null">
-                phone = #{record.phone,jdbcType=INTEGER},
-            </if>
             <if test="record.startTime != null">
                 start_time = #{record.startTime,jdbcType=TIMESTAMP},
             </if>
@@ -200,7 +190,6 @@
         set id = #{record.id,jdbcType=INTEGER},
         area = #{record.area,jdbcType=REAL},
         username = #{record.username,jdbcType=VARCHAR},
-        phone = #{record.phone,jdbcType=INTEGER},
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
         time = #{record.time,jdbcType=INTEGER},
         status = #{record.status,jdbcType=BIT}
@@ -216,9 +205,6 @@
             </if>
             <if test="username != null">
                 username = #{username,jdbcType=VARCHAR},
-            </if>
-            <if test="phone != null">
-                phone = #{phone,jdbcType=INTEGER},
             </if>
             <if test="startTime != null">
                 start_time = #{startTime,jdbcType=TIMESTAMP},
@@ -236,7 +222,6 @@
     update field
     set area = #{area,jdbcType=REAL},
       username = #{username,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=INTEGER},
       start_time = #{startTime,jdbcType=TIMESTAMP},
       time = #{time,jdbcType=INTEGER},
       status = #{status,jdbcType=BIT}

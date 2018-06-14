@@ -1,7 +1,6 @@
 package com.farm.entity;
 
 import java.util.Date;
-import java.util.List;
 
 public class Field {
     private Integer id;
@@ -9,8 +8,6 @@ public class Field {
     private Float area;
 
     private String username;
-
-    private Integer phone;
 
     private Date startTime;
 
@@ -40,14 +37,6 @@ public class Field {
 
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
-    }
-
-    public Integer getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Integer phone) {
-        this.phone = phone;
     }
 
     public Date getStartTime() {

@@ -3,14 +3,14 @@ package com.farm.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MiddleExample {
+public class PlantExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public MiddleExample() {
+    public PlantExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,253 +104,193 @@ public class MiddleExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andMFidIsNull() {
-            addCriterion("m_fid is null");
+        public Criteria andFidIsNull() {
+            addCriterion("fid is null");
             return (Criteria) this;
         }
 
-        public Criteria andMFidIsNotNull() {
-            addCriterion("m_fid is not null");
+        public Criteria andFidIsNotNull() {
+            addCriterion("fid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMFidEqualTo(Integer value) {
-            addCriterion("m_fid =", value, "mFid");
+        public Criteria andFidEqualTo(Integer value) {
+            addCriterion("fid =", value, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidNotEqualTo(Integer value) {
-            addCriterion("m_fid <>", value, "mFid");
+        public Criteria andFidNotEqualTo(Integer value) {
+            addCriterion("fid <>", value, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidGreaterThan(Integer value) {
-            addCriterion("m_fid >", value, "mFid");
+        public Criteria andFidGreaterThan(Integer value) {
+            addCriterion("fid >", value, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("m_fid >=", value, "mFid");
+        public Criteria andFidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("fid >=", value, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidLessThan(Integer value) {
-            addCriterion("m_fid <", value, "mFid");
+        public Criteria andFidLessThan(Integer value) {
+            addCriterion("fid <", value, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidLessThanOrEqualTo(Integer value) {
-            addCriterion("m_fid <=", value, "mFid");
+        public Criteria andFidLessThanOrEqualTo(Integer value) {
+            addCriterion("fid <=", value, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidIn(List<Integer> values) {
-            addCriterion("m_fid in", values, "mFid");
+        public Criteria andFidIn(List<Integer> values) {
+            addCriterion("fid in", values, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidNotIn(List<Integer> values) {
-            addCriterion("m_fid not in", values, "mFid");
+        public Criteria andFidNotIn(List<Integer> values) {
+            addCriterion("fid not in", values, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidBetween(Integer value1, Integer value2) {
-            addCriterion("m_fid between", value1, value2, "mFid");
+        public Criteria andFidBetween(Integer value1, Integer value2) {
+            addCriterion("fid between", value1, value2, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMFidNotBetween(Integer value1, Integer value2) {
-            addCriterion("m_fid not between", value1, value2, "mFid");
+        public Criteria andFidNotBetween(Integer value1, Integer value2) {
+            addCriterion("fid not between", value1, value2, "fid");
             return (Criteria) this;
         }
 
-        public Criteria andMCidIsNull() {
-            addCriterion("m_cid is null");
+        public Criteria andCnameIsNull() {
+            addCriterion("cname is null");
             return (Criteria) this;
         }
 
-        public Criteria andMCidIsNotNull() {
-            addCriterion("m_cid is not null");
+        public Criteria andCnameIsNotNull() {
+            addCriterion("cname is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMCidEqualTo(Integer value) {
-            addCriterion("m_cid =", value, "mCid");
+        public Criteria andCnameEqualTo(String value) {
+            addCriterion("cname =", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidNotEqualTo(Integer value) {
-            addCriterion("m_cid <>", value, "mCid");
+        public Criteria andCnameNotEqualTo(String value) {
+            addCriterion("cname <>", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidGreaterThan(Integer value) {
-            addCriterion("m_cid >", value, "mCid");
+        public Criteria andCnameGreaterThan(String value) {
+            addCriterion("cname >", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("m_cid >=", value, "mCid");
+        public Criteria andCnameGreaterThanOrEqualTo(String value) {
+            addCriterion("cname >=", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidLessThan(Integer value) {
-            addCriterion("m_cid <", value, "mCid");
+        public Criteria andCnameLessThan(String value) {
+            addCriterion("cname <", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidLessThanOrEqualTo(Integer value) {
-            addCriterion("m_cid <=", value, "mCid");
+        public Criteria andCnameLessThanOrEqualTo(String value) {
+            addCriterion("cname <=", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidIn(List<Integer> values) {
-            addCriterion("m_cid in", values, "mCid");
+        public Criteria andCnameLike(String value) {
+            addCriterion("cname like", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidNotIn(List<Integer> values) {
-            addCriterion("m_cid not in", values, "mCid");
+        public Criteria andCnameNotLike(String value) {
+            addCriterion("cname not like", value, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidBetween(Integer value1, Integer value2) {
-            addCriterion("m_cid between", value1, value2, "mCid");
+        public Criteria andCnameIn(List<String> values) {
+            addCriterion("cname in", values, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCidNotBetween(Integer value1, Integer value2) {
-            addCriterion("m_cid not between", value1, value2, "mCid");
+        public Criteria andCnameNotIn(List<String> values) {
+            addCriterion("cname not in", values, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameIsNull() {
-            addCriterion("m_cname is null");
+        public Criteria andCnameBetween(String value1, String value2) {
+            addCriterion("cname between", value1, value2, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameIsNotNull() {
-            addCriterion("m_cname is not null");
+        public Criteria andCnameNotBetween(String value1, String value2) {
+            addCriterion("cname not between", value1, value2, "cname");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameEqualTo(String value) {
-            addCriterion("m_cname =", value, "mCname");
+        public Criteria andCprofitIsNull() {
+            addCriterion("cprofit is null");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameNotEqualTo(String value) {
-            addCriterion("m_cname <>", value, "mCname");
+        public Criteria andCprofitIsNotNull() {
+            addCriterion("cprofit is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameGreaterThan(String value) {
-            addCriterion("m_cname >", value, "mCname");
+        public Criteria andCprofitEqualTo(Float value) {
+            addCriterion("cprofit =", value, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameGreaterThanOrEqualTo(String value) {
-            addCriterion("m_cname >=", value, "mCname");
+        public Criteria andCprofitNotEqualTo(Float value) {
+            addCriterion("cprofit <>", value, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameLessThan(String value) {
-            addCriterion("m_cname <", value, "mCname");
+        public Criteria andCprofitGreaterThan(Float value) {
+            addCriterion("cprofit >", value, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameLessThanOrEqualTo(String value) {
-            addCriterion("m_cname <=", value, "mCname");
+        public Criteria andCprofitGreaterThanOrEqualTo(Float value) {
+            addCriterion("cprofit >=", value, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameLike(String value) {
-            addCriterion("m_cname like", value, "mCname");
+        public Criteria andCprofitLessThan(Float value) {
+            addCriterion("cprofit <", value, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameNotLike(String value) {
-            addCriterion("m_cname not like", value, "mCname");
+        public Criteria andCprofitLessThanOrEqualTo(Float value) {
+            addCriterion("cprofit <=", value, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameIn(List<String> values) {
-            addCriterion("m_cname in", values, "mCname");
+        public Criteria andCprofitIn(List<Float> values) {
+            addCriterion("cprofit in", values, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameNotIn(List<String> values) {
-            addCriterion("m_cname not in", values, "mCname");
+        public Criteria andCprofitNotIn(List<Float> values) {
+            addCriterion("cprofit not in", values, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameBetween(String value1, String value2) {
-            addCriterion("m_cname between", value1, value2, "mCname");
+        public Criteria andCprofitBetween(Float value1, Float value2) {
+            addCriterion("cprofit between", value1, value2, "cprofit");
             return (Criteria) this;
         }
 
-        public Criteria andMCnameNotBetween(String value1, String value2) {
-            addCriterion("m_cname not between", value1, value2, "mCname");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitIsNull() {
-            addCriterion("m_cprofit is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitIsNotNull() {
-            addCriterion("m_cprofit is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitEqualTo(Float value) {
-            addCriterion("m_cprofit =", value, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitNotEqualTo(Float value) {
-            addCriterion("m_cprofit <>", value, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitGreaterThan(Float value) {
-            addCriterion("m_cprofit >", value, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitGreaterThanOrEqualTo(Float value) {
-            addCriterion("m_cprofit >=", value, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitLessThan(Float value) {
-            addCriterion("m_cprofit <", value, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitLessThanOrEqualTo(Float value) {
-            addCriterion("m_cprofit <=", value, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitIn(List<Float> values) {
-            addCriterion("m_cprofit in", values, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitNotIn(List<Float> values) {
-            addCriterion("m_cprofit not in", values, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitBetween(Float value1, Float value2) {
-            addCriterion("m_cprofit between", value1, value2, "mCprofit");
-            return (Criteria) this;
-        }
-
-        public Criteria andMCprofitNotBetween(Float value1, Float value2) {
-            addCriterion("m_cprofit not between", value1, value2, "mCprofit");
+        public Criteria andCprofitNotBetween(Float value1, Float value2) {
+            addCriterion("cprofit not between", value1, value2, "cprofit");
             return (Criteria) this;
         }
 
@@ -411,6 +351,126 @@ public class MiddleExample {
 
         public Criteria andQuantityNotBetween(Integer value1, Integer value2) {
             addCriterion("quantity not between", value1, value2, "quantity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIsNull() {
+            addCriterion("total is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIsNotNull() {
+            addCriterion("total is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalEqualTo(Float value) {
+            addCriterion("total =", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotEqualTo(Float value) {
+            addCriterion("total <>", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalGreaterThan(Float value) {
+            addCriterion("total >", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalGreaterThanOrEqualTo(Float value) {
+            addCriterion("total >=", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalLessThan(Float value) {
+            addCriterion("total <", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalLessThanOrEqualTo(Float value) {
+            addCriterion("total <=", value, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalIn(List<Float> values) {
+            addCriterion("total in", values, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotIn(List<Float> values) {
+            addCriterion("total not in", values, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalBetween(Float value1, Float value2) {
+            addCriterion("total between", value1, value2, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalNotBetween(Float value1, Float value2) {
+            addCriterion("total not between", value1, value2, "total");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeIsNull() {
+            addCriterion("time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeIsNotNull() {
+            addCriterion("time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeEqualTo(Integer value) {
+            addCriterion("time =", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeNotEqualTo(Integer value) {
+            addCriterion("time <>", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeGreaterThan(Integer value) {
+            addCriterion("time >", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("time >=", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeLessThan(Integer value) {
+            addCriterion("time <", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeLessThanOrEqualTo(Integer value) {
+            addCriterion("time <=", value, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeIn(List<Integer> values) {
+            addCriterion("time in", values, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeNotIn(List<Integer> values) {
+            addCriterion("time not in", values, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeBetween(Integer value1, Integer value2) {
+            addCriterion("time between", value1, value2, "time");
+            return (Criteria) this;
+        }
+
+        public Criteria andTimeNotBetween(Integer value1, Integer value2) {
+            addCriterion("time not between", value1, value2, "time");
             return (Criteria) this;
         }
 

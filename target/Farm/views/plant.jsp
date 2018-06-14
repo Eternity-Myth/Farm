@@ -26,7 +26,47 @@
     <script src="../js/sign.js"></script>
 </head>
 <body style="background-image:url(../agro/UIpic/managementbackground.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
-
+<!-- 种植信息添加的模态框 -->
+<div class="modal fade" id="plantAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">种植添加</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">菜地ID</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="fid" id="fieldIdSelect">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">农作物名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="cname" id="cropSelect">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="quantity" class="form-control" id="quantity_add_input"
+                                   placeholder="Time">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="plant_save_btn" style="color: #0f0f0f">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
 <%--显示用户信息的模态框--%>
 <div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
@@ -169,6 +209,7 @@
                                     <th style="text-align:center">单株利润（元）</th>
                                     <th style="text-align:center">种植数量（株）</th>
                                     <th style="text-align:center">合计（元）</th>
+                                    <th style="text-align:center">时长（月）</th>
                                     <th style="text-align:center">状态</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
@@ -254,11 +295,12 @@
         var plant = result.extend.pageInfo.list;
         $.each(plant, function (index, item) {
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
-            var fieldIdTd = $("<td></td>").append(item.mFid);
-            var cropsNameTd = $("<td></td>").append(item.mCname);
-            var cropsProfitTd = $("<td></td>").append(item.mCprofit);
+            var fieldIdTd = $("<td></td>").append(item.fid);
+            var cropsNameTd = $("<td></td>").append(item.cname);
+            var cropsProfitTd = $("<td></td>").append(item.cprofit);
             var quantityTd = $("<td></td>").append(item.quantity);
-            var totalTd = $("<td></td>").append(item.quantity * item.mCprofit);
+            var totalTd = $("<td></td>").append(item.total);
+            var timeTd = $("<td></td>").append(item.time);
             var statusTd = $("<td></td>").append(item.status ? "正常" : "异常");
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
@@ -276,6 +318,7 @@
                 .append(cropsProfitTd)
                 .append(quantityTd)
                 .append(totalTd)
+                .append(timeTd)
                 .append(statusTd)
                 .append(btnTd)
                 .appendTo("#plant_table tbody");
@@ -349,6 +392,57 @@
         //把ul加入到nav
         var navEle = $("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
+    }
+
+    //清空表单样式及内容
+    function reset_form(ele) {
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    $("#plant_add_modal_btn").click(function () {
+        reset_form("#plantAddModal form")
+        getFieldInfo("#fieldIdSelect");
+        getCropsInfo("#cropSelect");
+        $("#plantAddModal").modal({
+            backdrop: "static"
+        });
+    });
+
+    //查出所有的菜地信息并显示在下拉列表中
+    function getFieldInfo(ele) {
+        //清空之前下拉列表的值
+        $(ele).empty();
+        $.ajax({
+            url: "${APP_PATH}/fields",
+            type: "GET",
+            success: function (result) {
+                // console.info(result);
+                $.each(result.extend.fields, function () {
+                    var optionEle = $("<option></option>").append(this.id);
+                    optionEle.appendTo(ele);
+                });
+            }
+        });
+    }
+
+    //查出所有的农作物信息并显示在下拉列表中
+    function getCropsInfo(ele) {
+        //清空之前下拉列表的值
+        $(ele).empty();
+        $.ajax({
+            url: "${APP_PATH}/crops",
+            type: "GET",
+            success: function (result) {
+                console.info(result);
+                $.each(result.extend.crops, function () {
+                    var optionEle = $("<option></option>").append(this.cropsname);
+                    optionEle.appendTo(ele);
+                });
+            }
+        });
     }
 </script>
 </body>
