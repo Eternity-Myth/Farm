@@ -11,7 +11,7 @@ public interface AssignmentDao {
 
     int deleteByExample(AssignmentExample example);
 
-    int deleteByPrimaryKey(Integer assiId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Assignment record);
 
@@ -19,7 +19,7 @@ public interface AssignmentDao {
 
     List<Assignment> selectByExample(AssignmentExample example);
 
-    Assignment selectByPrimaryKey(Integer assiId);
+    Assignment selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Assignment record, @Param("example") AssignmentExample example);
 

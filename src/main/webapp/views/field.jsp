@@ -38,7 +38,7 @@
             <div class="modal-body">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">菜地面积</label>
+                        <label class="col-sm-2 control-label">菜地面积（平方米）</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="fieldArea_add_input"
                                    placeholder="Area">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Area</label>
+                        <label class="col-sm-2 control-label">菜地面积（平方米）</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="area_update_input">
                             <span class="help-block"></span>
@@ -145,6 +145,44 @@
                         </div>
                     </div>
 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%--显示推荐最佳方案的模态框--%>
+<div class="modal fade" id="planRecommendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLable2">最佳方案</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">菜地面积（平方米）</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="area_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">种植时长（默认为12）</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="time_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">推荐方案</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="plan"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <%--<button type="button" class="btn btn-primary" id="plan_recommend_btn" style="color: #0f0f0f">显示推荐方案</button>--%>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -252,7 +290,7 @@
                                                style="background-color:transparent; border-color:#FFFFFF"/>
                                     </th>
                                     <th style="text-align:center">#ID</th>
-                                    <th style="text-align:center">Area/平方米</th>
+                                    <th style="text-align:center">面积/平方米</th>
                                     <th style="text-align:center">客户名</th>
                                     <th style="text-align:center">起始时间</th>
                                     <th style="text-align:center">时长/月</th>
@@ -351,6 +389,9 @@
             var startTimeTd = $("<td></td>").append(startTime);
             var timeTd = $("<td></td>").append(item.time);
             var statusTd = $("<td></td>").append(item.status ? "正常" : "异常");
+            var recBtn = $("<button></button>").addClass("btn btn-primary btn-sm rec_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-asterisk")).append("推荐")
+            recBtn.attr("rec-id", item.id);
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
             //为编辑按钮添加一个自定义的属性，来表示当前菜地id
@@ -359,7 +400,7 @@
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的菜地id
             delBtn.attr("del-id", item.id);
-            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            var btnTd = $("<td></td>").append(recBtn).append(" ").append(editBtn).append(" ").append(delBtn);
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
                 .append(fieldIdTd)
@@ -464,7 +505,7 @@
     }
 
     //清空表单样式及内容
-    function reset_form(ele){
+    function reset_form(ele) {
         $(ele)[0].reset();
         //清空表单样式
         $(ele).find("*").removeClass("has-error has-success");
@@ -571,6 +612,36 @@
             });
         }
     });
+
+    $(document).on("click", ".rec_btn", function () {
+        getField($(this).attr("rec-id"));
+        $("#plan_recommend_btn").attr("rec-id", $(this).attr("rec-id"));
+        $("#planRecommendModal").modal({
+            backdrop: "static"
+        });
+        $.ajax({
+            url: "../field/" + $(this).attr("rec-id"),
+            type: "POST",
+            success: function (plan) {
+                $("#plan").text(plan)
+            }
+        });
+
+        function getField(id) {
+            $.ajax({
+                url: "${APP_PATH}/field/" + id,
+                type: "GET",
+                dataType: "json",
+                success: function (result) {
+                    // console.log(result);
+                    var fieldData = result.extend.field;
+                    $("#area_static").text(fieldData.area);
+                    $("#time_static").text(fieldData.time);
+                }
+            });
+        }
+    })
+
     //1、我们是按钮创建之前就绑定了click，所以绑定不上。
     //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
     //jquery新版没有live，使用on进行替代

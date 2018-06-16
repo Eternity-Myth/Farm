@@ -26,7 +26,94 @@
     <script src="../js/sign.js"></script>
 </head>
 <body style="background-image:url(../agro/UIpic/managementbackground.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: 100%">
-
+<!-- 订单添加的模态框 -->
+<div class="modal fade" id="orderAddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">订单添加</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">客户名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="userName" id="userNameSelect">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">商品名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="itemName" id="itemNameSelect">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="quantity" class="form-control" id="quantity_add_input"
+                                   placeholder="Quantity">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="order_save_btn" style="color: #0f0f0f">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 订单修改的模态框 -->
+<div class="modal fade" id="orderUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">订单信息修改</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="orderID_update_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">客户名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="userName" id="userNameSelect_update">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">商品名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="itemName" id="itemNameSelect_update">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="quantity" class="form-control" id="quantity_update_input">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="order_update_btn" style="color: #0f0f0f">更新</button>
+            </div>
+        </div>
+    </div>
+</div>
 <%--显示用户信息的模态框--%>
 <div class="modal fade" id="infoCheckModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
@@ -57,7 +144,6 @@
                                                                            pattern="yyyy-MM-dd HH:mm:ss"/></p>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -165,8 +251,7 @@
                                                style="background-color:transparent; border-color:#FFFFFF"/>
                                     </th>
                                     <th style="text-align:center">#ID</th>
-                                    <th style="text-align:center">用户名</th>
-                                    <th style="text-align:center">手机号</th>
+                                    <th style="text-align:center">客户名</th>
                                     <th style="text-align:center">商品名</th>
                                     <th style="text-align:center">数量</th>
                                     <th style="text-align:center">支付金额</th>
@@ -226,6 +311,326 @@
 </div>
 <script type="text/javascript">
 
+    var totalPages, currentPage;
+    //1、页面加载完成以后，直接去发送ajax请求,要到分页数据
+    $(function () {
+        //去首页
+        to_page(1);
+    });
+
+    function to_page(pn) {
+        $.ajax({
+            url: "${APP_PATH}/order-list",
+            data: "pn=" + pn,
+            type: "GET",
+            success: function (result) {
+                //1、解析并显示订单信息
+                build_order_table(result);
+                // console.info(result);
+                //2、解析并显示分页信息
+                build_page_info(result);
+                //3、解析显示分页条数据
+                build_page_nav(result);
+            }
+        });
+    }
+
+    function build_order_table(result) {
+        //清空table表格
+        $("#orders_table tbody").empty();
+        var order = result.extend.pageInfo.list;
+        $.each(order, function (index, item) {
+            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+            var IdTd = $("<td></td>").append(item.id);
+            var userNameTd = $("<td></td>").append(item.userName);
+            var itemNameTd = $("<td></td>").append(item.itemName);
+            var quantityTd = $("<td></td>").append(item.quantity);
+            var totalTd = $("<td></td>").append(item.total);
+            var createTime = getMyDate(item.createTime);
+            var createTimeTd = $("<td></td>").append(createTime);
+            var statusTd = $("<td></td>").append(item.status ? "已支付" : "未支付");
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
+            //为编辑按钮添加一个自定义的属性，来表示当前id
+            editBtn.attr("edit-id", item.id);
+            var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+            //为删除按钮添加一个自定义的属性来表示当前删除的id
+            delBtn.attr("del-id", item.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            //append方法执行完成以后还是返回原来的元素
+            $("<tr></tr>").append(checkBoxTd)
+                .append(IdTd)
+                .append(userNameTd)
+                .append(itemNameTd)
+                .append(quantityTd)
+                .append(totalTd)
+                .append(createTimeTd)
+                .append(statusTd)
+                .append(btnTd)
+                .appendTo("#orders_table tbody");
+        });
+    }
+
+    //获得年月日      得到日期oTime
+    function getMyDate(str) {
+        var oDate = new Date(str),
+            oYear = oDate.getFullYear(),
+            oMonth = oDate.getMonth() + 1,
+            oDay = oDate.getDate(),
+            oHour = oDate.getHours(),
+            oMin = oDate.getMinutes(),
+            oSen = oDate.getSeconds(),
+            oTime = oYear + '-' + getzf(oMonth) + '-' + getzf(oDay) + ' ' + getzf(oHour) + ':' + getzf(oMin) + ':' + getzf(oSen);//最后拼接时间
+        return oTime;
+    };
+
+    //补0操作
+    function getzf(num) {
+        if (parseInt(num) < 10) {
+            num = '0' + num;
+        }
+        return num;
+    }
+
+    //解析显示分页信息
+    function build_page_info(result) {
+        $("#page_info_area").empty();
+        $("#page_info_area").append("当前第" + result.extend.pageInfo.pageNum + "页,总" +
+            result.extend.pageInfo.pages + "页,总" +
+            result.extend.pageInfo.total + "条记录");
+        totalPages = result.extend.pageInfo.pages;
+        currentPage = result.extend.pageInfo.pageNum;
+    }
+
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_nav(result) {
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href", "#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if (result.extend.pageInfo.hasPreviousPage == false) {
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        } else {
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function () {
+                to_page(1);
+            });
+            prePageLi.click(function () {
+                to_page(result.extend.pageInfo.pageNum - 1);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href", "#"));
+        if (result.extend.pageInfo.hasNextPage == false) {
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        } else {
+            nextPageLi.click(function () {
+                to_page(result.extend.pageInfo.pageNum + 1);
+            });
+            lastPageLi.click(function () {
+                to_page(result.extend.pageInfo.pages);
+            });
+        }
+
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums, function (index, item) {
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if (result.extend.pageInfo.pageNum == item) {
+                numLi.addClass("active");
+            }
+            numLi.click(function () {
+                to_page(item);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
+
+    //清空表单样式及内容
+    function reset_form(ele) {
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    $("#orders_add_modal_btn").click(function () {
+        reset_form("#orderAddModal form")
+        getConsumerInfo("#userNameSelect");
+        getItemsInfo("#itemNameSelect");
+        $("#orderAddModal").modal({
+            backdrop: "static"
+        });
+    });
+
+    //查出所有的客户信息并显示在下拉列表中
+    function getConsumerInfo(ele) {
+        //清空之前下拉列表的值
+        $(ele).empty();
+        $.ajax({
+            url: "${APP_PATH}/consumerinfos",
+            type: "GET",
+            success: function (result) {
+                // console.info(result);
+                $.each(result.extend.consumerinfos, function () {
+                    var optionEle = $("<option></option>").append(this.conName);
+                    optionEle.appendTo(ele);
+                });
+            }
+        });
+    }
+
+    //查出所有的商品信息并显示在下拉列表中
+    function getItemsInfo(ele) {
+        //清空之前下拉列表的值
+        $(ele).empty();
+        $.ajax({
+            url: "${APP_PATH}/items",
+            type: "GET",
+            success: function (result) {
+                // console.info(result);
+                $.each(result.extend.items, function () {
+                    var optionEle = $("<option></option>").append(this.name);
+                    optionEle.appendTo(ele);
+                });
+            }
+        });
+    }
+
+    $("#order_save_btn").click(function () {
+        // 1、模态框中填写的表单数据提交给服务器进行保存
+        // 2、发送ajax请求保存订单信息
+        $.ajax({
+            url: "${APP_PATH}/order",
+            type: "POST",
+            data: $("#orderAddModal form").serialize(),
+            success: function (result) {
+                //订单信息保存成功
+                //1、关闭模态框
+                $("#orderAddModal").modal('hide');
+                //2、来到最后一页，显示刚才保存的数据
+                //发送ajax请求显示最后一页数据即可
+                to_page(totalPages);
+            }
+        });
+    });
+
+    //单个删除
+    $(document).on("click", ".delete_btn", function () {
+        //1、弹出是否确认删除对话框
+        var OrderId = $(this).attr("del-id");
+        if (confirm("确认删除吗？")) {
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url: "${APP_PATH}/order/" + OrderId,
+                type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到本页
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //完成全选/全不选功能
+    $("#check_all").click(function () {
+        //attr获取checked是undefined;
+        //我们这些dom原生的属性；attr获取自定义属性的值；
+        //prop修改和读取dom原生属性的值
+        $(".check_item").prop("checked", $(this).prop("checked"));
+    });
+
+    //check_item
+    $(document).on("click", ".check_item", function () {
+        //判断当前选择中的元素是否该页所有元素
+        var flag = $(".check_item:checked").length == $(".check_item").length;
+        $("#check_all").prop("checked", flag);
+    });
+
+    //点击全部删除，就批量删除
+    $("#orders_delete_all_btn").click(function () {
+        var del_idstr = "";
+        $.each($(".check_item:checked"), function () {
+            //组装id字符串
+            del_idstr += $(this).parents("tr").find("td:eq(1)").text() + "-";
+        });
+        //去除删除的id多余的-
+        del_idstr = del_idstr.substring(0, del_idstr.length - 1);
+        if (confirm("确认删除吗？")) {
+            //发送ajax请求删除
+            $.ajax({
+                url: "${APP_PATH}/order/" + del_idstr,
+                type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到当前页面
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //1、我们是按钮创建之前就绑定了click，所以绑定不上。
+    //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
+    //jquery新版没有live，使用on进行替代
+    $(document).on("click", ".edit_btn", function () {
+        //查出订单信息，显示订单信息
+        getOrder($(this).attr("edit-id"));
+        //把id传递给模态框的更新按钮
+        $("#order_update_btn").attr("edit-id", $(this).attr("edit-id"));
+        reset_form("#orderUpdateModal form")
+        getConsumerInfo("#userNameSelect_update");
+        getItemsInfo("#itemNameSelect_update");
+        $("#orderUpdateModal").modal({
+            backdrop: "static"
+        });
+
+        function getOrder(id) {
+            $.ajax({
+                url: "${APP_PATH}/order/" + id,
+                type: "GET",
+                success: function (result) {
+                    // console.log(result);
+                    var orderData = result.extend.order;
+                    $("#orderID_update_static").text(orderData.id);
+                    $("#quantity_update_input").val(orderData.quantity);
+                }
+            });
+        }
+
+        $("#order_update_btn").click(function () {
+            //发送ajax请求保存更新的种植信息数据
+            $.ajax({
+                url: "${APP_PATH}/order/" + $(this).attr("edit-id"),
+                type: "PUT",
+                data: $("#orderUpdateModal form").serialize(),
+                success: function (result) {
+                    //alert(result.msg);
+                    //1、关闭对话框
+                    $("#orderUpdateModal").modal("hide");
+                    //2、回到本页面
+                    to_page(currentPage);
+                }
+            });
+        });
+    });
 </script>
 </body>
 <style type="text/css">

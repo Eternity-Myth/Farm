@@ -1,14 +1,14 @@
 package com.farm.web;
 
-
-import com.farm.entity.Assignment;
 import com.farm.entity.Msg;
-import com.farm.service.impl.AssignmentServiceImpl;
+import com.farm.entity.Order;
+import com.farm.entity.OrderExample;
+import com.farm.service.impl.OrderServiceImpl;
 import com.farm.util.LogUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import javafx.scene.chart.ValueAxis;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,47 +17,39 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 处理任务CRUD请求
- *
- * @author 关文聪
- * @version 1.0
- * @email 530711667@qq.com
- */
-
 @Controller
-public class AssignmentController {
+public class OrderController {
     @Autowired
-    AssignmentServiceImpl assignmentServiceImpl;
+    OrderServiceImpl orderServiceImpl;
 
-    @RequestMapping("/assignment-list")
+    @RequestMapping(value = "/order-list")
     @ResponseBody
     //pn:pagenumber，即当前页数
-    public Msg getAssignmentsWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
+    public Msg getOrdersWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model) {
         //pageSize：10，指每页显示的数据数
         PageHelper.startPage(pn, 10);
-        List<Assignment> assignments = assignmentServiceImpl.getAll();
+        List<Order> orders = orderServiceImpl.getAll();
         //navigatePages：5，指在页面需要连续显示的页码数
-        PageInfo page = new PageInfo(assignments, 5);
+        PageInfo page = new PageInfo(orders, 5);
         return Msg.success().add("pageInfo", page);
     }
 
-    //任务保存
-    @RequestMapping(value = "/assignment", method = RequestMethod.POST)
+    //订单信息保存
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
     @ResponseBody
-    public Msg saveAssignment(Assignment assignment) {
-        assignmentServiceImpl.saveAssignment(assignment);
+    public Msg saveOrder(Order order) {
+        orderServiceImpl.saveOrder(order);
         LogUtil.writeLogs(this.getClass().getName(),
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
                 "");
         return Msg.success();
     }
 
-    //任务编辑
+    //订单信息更新
+    @RequestMapping(value = "/order/{id}", method = RequestMethod.PUT)
     @ResponseBody
-    @RequestMapping(value = "/assignment/{id}", method = RequestMethod.PUT)
-    public Msg updateAssignment(Assignment assignment, HttpServletRequest request) {
-        assignmentServiceImpl.updateAssignment(assignment);
+    public Msg updateOrder(Order order, HttpServletRequest request) {
+        orderServiceImpl.updateOrder(order);
         LogUtil.writeLogs(this.getClass().getName(),
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
                 "");
@@ -69,9 +61,9 @@ public class AssignmentController {
      * 批量删除：1-2-3
      * 单个删除：1
      */
-    @RequestMapping(value = "/assignment/{ids}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/order/{ids}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Msg deleteAssignment(@PathVariable("ids") String ids) {
+    public Msg deleteOrder(@PathVariable("ids") String ids) {
         //批量删除
         if (ids.contains("-")) {
             List<Integer> del_ids = new ArrayList<>();
@@ -80,13 +72,13 @@ public class AssignmentController {
             for (String string : str_ids) {
                 del_ids.add(Integer.parseInt(string));
             }
-            assignmentServiceImpl.deleteBatch(del_ids);
+            orderServiceImpl.deleteBatch(del_ids);
             LogUtil.writeLogs(this.getClass().getName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName(),
                     "");
         } else {
             Integer id = Integer.parseInt(ids);
-            assignmentServiceImpl.deleteAssignment(id);
+            orderServiceImpl.deleteOrder(id);
             LogUtil.writeLogs(this.getClass().getName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName(),
                     "");
@@ -94,11 +86,11 @@ public class AssignmentController {
         return Msg.success();
     }
 
-    //根据id查询任务信息
-    @RequestMapping(value = "/assignment/{id}", method = RequestMethod.GET)
+    //根据ID查询订单信息
+    @RequestMapping(value = "/order/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Msg getAssignment(@PathVariable("id") Integer id) {
-        Assignment assignment = assignmentServiceImpl.getAssignment(id);
-        return Msg.success().add("assignment", assignment);
+    public Msg getOrder(@PathVariable("id") Integer id) {
+        Order order = orderServiceImpl.getOrder(id);
+        return Msg.success().add("order", order);
     }
 }

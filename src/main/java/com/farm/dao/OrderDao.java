@@ -11,7 +11,7 @@ public interface OrderDao {
 
     int deleteByExample(OrderExample example);
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Order record);
 
@@ -19,7 +19,7 @@ public interface OrderDao {
 
     List<Order> selectByExample(OrderExample example);
 
-    Order selectByPrimaryKey(Long id);
+    Order selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Order record, @Param("example") OrderExample example);
 
@@ -28,4 +28,6 @@ public interface OrderDao {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
+
+    void synchronize();
 }

@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.farm.dao.OrderDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.Order">
-        <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="payment_id" jdbcType="INTEGER" property="paymentId"/>
-        <result column="user_id" jdbcType="INTEGER" property="userId"/>
-        <result column="item_id" jdbcType="INTEGER" property="itemId"/>
-        <result column="item_number" jdbcType="INTEGER" property="itemNumber"/>
-        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
-        <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime"/>
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="item_name" jdbcType="VARCHAR" property="itemName"/>
+        <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+        <result column="total" jdbcType="REAL" property="total"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="status" jdbcType="BIT" property="status"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -71,7 +71,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    id, payment_id, user_id, item_id, item_number, start_time, finish_time
+    id, user_name, item_name, quantity, total, create_time, status
   </sql>
     <select id="selectByExample" parameterType="com.farm.entity.OrderExample" resultMap="BaseResultMap">
         select
@@ -79,7 +79,7 @@
             distinct
         </if>
         <include refid="Base_Column_List"/>
-        from order
+        from ordertable
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -87,108 +87,108 @@
             order by ${orderByClause}
         </if>
     </select>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from order
-        where id = #{id,jdbcType=BIGINT}
+        from ordertable
+        where id = #{id,jdbcType=INTEGER}
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from order
-    where id = #{id,jdbcType=BIGINT}
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ordertable
+    where id = #{id,jdbcType=INTEGER}
   </delete>
     <delete id="deleteByExample" parameterType="com.farm.entity.OrderExample">
-        delete from order
+        delete from ordertable
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Order">
-    insert into order (id, payment_id, user_id,
-      item_id, item_number, start_time,
-      finish_time)
-    values (#{id,jdbcType=BIGINT}, #{paymentId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER},
-      #{itemId,jdbcType=INTEGER}, #{itemNumber,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP},
-      #{finishTime,jdbcType=TIMESTAMP})
+    insert into ordertable (id, user_name, item_name,
+      quantity, total, create_time,
+      status)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR},
+      #{quantity,jdbcType=INTEGER}, #{total,jdbcType=REAL}, #{createTime,jdbcType=TIMESTAMP},
+      #{status,jdbcType=BIT})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Order">
-        insert into order
+        insert into ordertable
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
                 id,
             </if>
-            <if test="paymentId != null">
-                payment_id,
+            <if test="userName != null">
+                user_name,
             </if>
-            <if test="userId != null">
-                user_id,
+            <if test="itemName != null">
+                item_name,
             </if>
-            <if test="itemId != null">
-                item_id,
+            <if test="quantity != null">
+                quantity,
             </if>
-            <if test="itemNumber != null">
-                item_number,
+            <if test="total != null">
+                total,
             </if>
-            <if test="startTime != null">
-                start_time,
+            <if test="createTime != null">
+                create_time,
             </if>
-            <if test="finishTime != null">
-                finish_time,
+            <if test="status != null">
+                status,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
-                #{id,jdbcType=BIGINT},
+                #{id,jdbcType=INTEGER},
             </if>
-            <if test="paymentId != null">
-                #{paymentId,jdbcType=INTEGER},
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
             </if>
-            <if test="userId != null">
-                #{userId,jdbcType=INTEGER},
+            <if test="itemName != null">
+                #{itemName,jdbcType=VARCHAR},
             </if>
-            <if test="itemId != null">
-                #{itemId,jdbcType=INTEGER},
+            <if test="quantity != null">
+                #{quantity,jdbcType=INTEGER},
             </if>
-            <if test="itemNumber != null">
-                #{itemNumber,jdbcType=INTEGER},
+            <if test="total != null">
+                #{total,jdbcType=REAL},
             </if>
-            <if test="startTime != null">
-                #{startTime,jdbcType=TIMESTAMP},
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="finishTime != null">
-                #{finishTime,jdbcType=TIMESTAMP},
+            <if test="status != null">
+                #{status,jdbcType=BIT},
             </if>
         </trim>
     </insert>
     <select id="countByExample" parameterType="com.farm.entity.OrderExample" resultType="java.lang.Long">
-        select count(*) from order
+        select count(*) from ordertable
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </select>
     <update id="updateByExampleSelective" parameterType="map">
-        update order
+        update ordertable
         <set>
             <if test="record.id != null">
-                id = #{record.id,jdbcType=BIGINT},
+                id = #{record.id,jdbcType=INTEGER},
             </if>
-            <if test="record.paymentId != null">
-                payment_id = #{record.paymentId,jdbcType=INTEGER},
+            <if test="record.userName != null">
+                user_name = #{record.userName,jdbcType=VARCHAR},
             </if>
-            <if test="record.userId != null">
-                user_id = #{record.userId,jdbcType=INTEGER},
+            <if test="record.itemName != null">
+                item_name = #{record.itemName,jdbcType=VARCHAR},
             </if>
-            <if test="record.itemId != null">
-                item_id = #{record.itemId,jdbcType=INTEGER},
+            <if test="record.quantity != null">
+                quantity = #{record.quantity,jdbcType=INTEGER},
             </if>
-            <if test="record.itemNumber != null">
-                item_number = #{record.itemNumber,jdbcType=INTEGER},
+            <if test="record.total != null">
+                total = #{record.total,jdbcType=REAL},
             </if>
-            <if test="record.startTime != null">
-                start_time = #{record.startTime,jdbcType=TIMESTAMP},
+            <if test="record.createTime != null">
+                create_time = #{record.createTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="record.finishTime != null">
-                finish_time = #{record.finishTime,jdbcType=TIMESTAMP},
+            <if test="record.status != null">
+                status = #{record.status,jdbcType=BIT},
             </if>
         </set>
         <if test="_parameter != null">
@@ -196,50 +196,54 @@
         </if>
     </update>
     <update id="updateByExample" parameterType="map">
-        update order
-        set id = #{record.id,jdbcType=BIGINT},
-        payment_id = #{record.paymentId,jdbcType=INTEGER},
-        user_id = #{record.userId,jdbcType=INTEGER},
-        item_id = #{record.itemId,jdbcType=INTEGER},
-        item_number = #{record.itemNumber,jdbcType=INTEGER},
-        start_time = #{record.startTime,jdbcType=TIMESTAMP},
-        finish_time = #{record.finishTime,jdbcType=TIMESTAMP}
+        update ordertable
+        set id = #{record.id,jdbcType=INTEGER},
+        user_name = #{record.userName,jdbcType=VARCHAR},
+        item_name = #{record.itemName,jdbcType=VARCHAR},
+        quantity = #{record.quantity,jdbcType=INTEGER},
+        total = #{record.total,jdbcType=REAL},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+        status = #{record.status,jdbcType=BIT}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
     <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.Order">
-        update order
+        update ordertable
         <set>
-            <if test="paymentId != null">
-                payment_id = #{paymentId,jdbcType=INTEGER},
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
             </if>
-            <if test="userId != null">
-                user_id = #{userId,jdbcType=INTEGER},
+            <if test="itemName != null">
+                item_name = #{itemName,jdbcType=VARCHAR},
             </if>
-            <if test="itemId != null">
-                item_id = #{itemId,jdbcType=INTEGER},
+            <if test="quantity != null">
+                quantity = #{quantity,jdbcType=INTEGER},
             </if>
-            <if test="itemNumber != null">
-                item_number = #{itemNumber,jdbcType=INTEGER},
+            <if test="total != null">
+                total = #{total,jdbcType=REAL},
             </if>
-            <if test="startTime != null">
-                start_time = #{startTime,jdbcType=TIMESTAMP},
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="finishTime != null">
-                finish_time = #{finishTime,jdbcType=TIMESTAMP},
+            <if test="status != null">
+                status = #{status,jdbcType=BIT},
             </if>
         </set>
-        where id = #{id,jdbcType=BIGINT}
+        where id = #{id,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.Order">
-    update order
-    set payment_id = #{paymentId,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=INTEGER},
-      item_id = #{itemId,jdbcType=INTEGER},
-      item_number = #{itemNumber,jdbcType=INTEGER},
-      start_time = #{startTime,jdbcType=TIMESTAMP},
-      finish_time = #{finishTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
+    update ordertable
+    set user_name = #{userName,jdbcType=VARCHAR},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      total = #{total,jdbcType=REAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
   </update>
+    <update id="synchronize" parameterType="map">
+        UPDATE ordertable INNER	JOIN items
+        SET total=ordertable.quantity*items.`unit_price` WHERE ordertable.`item_name`=items.`name`;
+    </update>
 </mapper>

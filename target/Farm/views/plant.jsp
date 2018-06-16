@@ -55,7 +55,7 @@
                         <label class="col-sm-2 control-label">数量</label>
                         <div class="col-sm-10">
                             <input type="number" name="quantity" class="form-control" id="quantity_add_input"
-                                   placeholder="Time">
+                                   placeholder="Quantity">
                         </div>
                     </div>
                 </form>
@@ -63,6 +63,53 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-primary" id="plant_save_btn" style="color: #0f0f0f">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 种植信息修改的模态框 -->
+<div class="modal fade" id="plantUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">种植信息修改</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">记录号</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" id="ID_update_static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">菜地ID</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="fid" id="fieldIdSelect_update">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">农作物名</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="cname" id="cropSelect_update">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="quantity" class="form-control" id="quantity_update_input"
+                                   placeholder="Quantity">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="plant_update_btn" style="color: #0f0f0f">更新</button>
             </div>
         </div>
     </div>
@@ -204,6 +251,7 @@
                                         <input type="checkbox" id="check_all"
                                                style="background-color:transparent; border-color:#FFFFFF"/>
                                     </th>
+                                    <th style="text-align:center">记录号</th>
                                     <th style="text-align:center">菜地ID</th>
                                     <th style="text-align:center">种植作物名</th>
                                     <th style="text-align:center">单株利润（元）</th>
@@ -295,6 +343,7 @@
         var plant = result.extend.pageInfo.list;
         $.each(plant, function (index, item) {
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+            var IdTd = $("<td></td>").append(item.id);
             var fieldIdTd = $("<td></td>").append(item.fid);
             var cropsNameTd = $("<td></td>").append(item.cname);
             var cropsProfitTd = $("<td></td>").append(item.cprofit);
@@ -313,6 +362,7 @@
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
+                .append(IdTd)
                 .append(fieldIdTd)
                 .append(cropsNameTd)
                 .append(cropsProfitTd)
@@ -444,6 +494,148 @@
             }
         });
     }
+
+    $("#plant_save_btn").click(function () {
+        // 1、模态框中填写的表单数据提交给服务器进行保存
+        // 2、发送ajax请求保存种植信息
+        $.ajax({
+            url: "${APP_PATH}/plant",
+            type: "POST",
+            data: $("#plantAddModal form").serialize(),
+            success: function (result) {
+                //种植信息保存成功
+                //1、关闭模态框
+                $("#plantAddModal").modal('hide');
+                //2、来到最后一页，显示刚才保存的数据
+                //发送ajax请求显示最后一页数据即可
+                to_page(totalPages);
+            }
+        });
+    });
+
+    //单个删除
+    $(document).on("click", ".delete_btn", function () {
+        //1、弹出是否确认删除对话框
+        var PlantId = $(this).attr("del-id");
+        if (confirm("确认删除吗？")) {
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url: "${APP_PATH}/plant/" + PlantId,
+                type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到本页
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //完成全选/全不选功能
+    $("#check_all").click(function () {
+        //attr获取checked是undefined;
+        //我们这些dom原生的属性；attr获取自定义属性的值；
+        //prop修改和读取dom原生属性的值
+        $(".check_item").prop("checked", $(this).prop("checked"));
+    });
+
+    //check_item
+    $(document).on("click", ".check_item", function () {
+        //判断当前选择中的元素是否该页所有元素
+        var flag = $(".check_item:checked").length == $(".check_item").length;
+        $("#check_all").prop("checked", flag);
+    });
+
+    //点击全部删除，就批量删除
+    $("#plant_delete_all_btn").click(function () {
+        var del_idstr = "";
+        $.each($(".check_item:checked"), function () {
+            //组装id字符串
+            del_idstr += $(this).parents("tr").find("td:eq(1)").text() + "-";
+        });
+        //去除删除的id多余的-
+        del_idstr = del_idstr.substring(0, del_idstr.length - 1);
+        if (confirm("确认删除吗？")) {
+            //发送ajax请求删除
+            $.ajax({
+                url: "${APP_PATH}/plant/" + del_idstr,
+                type: "DELETE",
+                success: function (result) {
+                    alert(result.msg);
+                    //回到当前页面
+                    to_page(currentPage);
+                }
+            });
+        }
+    });
+
+    //1、我们是按钮创建之前就绑定了click，所以绑定不上。
+    //1）、可以在创建按钮的时候绑定。    2）、绑定点击.live()
+    //jquery新版没有live，使用on进行替代
+    $(document).on("click", ".edit_btn", function () {
+        //查出种植信息，显示种植信息
+        getPlant($(this).attr("edit-id"));
+        //把id传递给模态框的更新按钮
+        $("#plant_update_btn").attr("edit-id", $(this).attr("edit-id"));
+        reset_form("#plantUpdateModal form")
+        getFieldInfo("#fieldIdSelect_update");
+        getCropsInfo("#cropSelect_update");
+        $("#plantUpdateModal").modal({
+            backdrop: "static"
+        });
+
+        function getPlant(id) {
+            $.ajax({
+                url: "${APP_PATH}/plant/" + id,
+                type: "GET",
+                success: function (result) {
+                    // console.log(result);
+                    var plantData = result.extend.plant;
+                    $("#ID_update_static").text(plantData.id);
+                    $("#quantity_update_input").val(plantData.quantity);
+                }
+            });
+        }
+
+        $("#plant_update_btn").click(function () {
+            //发送ajax请求保存更新的种植信息数据
+            $.ajax({
+                url: "${APP_PATH}/plant/" + $(this).attr("edit-id"),
+                type: "PUT",
+                data: $("#plantUpdateModal form").serialize(),
+                success: function (result) {
+                    //alert(result.msg);
+                    //1、关闭对话框
+                    $("#plantUpdateModal").modal("hide");
+                    //2、回到本页面
+                    to_page(currentPage);
+                }
+            });
+        });
+    });
 </script>
 </body>
+<style type="text/css">
+    p {
+        border-right: thin solid #FFFFFF;
+    }
+
+    p1 {
+    }
+
+    nav {
+        font-family: bradleyhanditcttbold;
+        font-size: 15px;
+    }
+</style>
+
+<script>
+    $(function () {
+        $(".panel-heading").click(function (e) {
+            /*切换折叠指示图标*/
+            $(this).find("span").toggleClass("glyphicon-chevron-down");
+            $(this).find("span").toggleClass("glyphicon-chevron-up");
+        });
+    });
+</script>
 </html>

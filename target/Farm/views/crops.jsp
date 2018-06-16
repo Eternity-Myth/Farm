@@ -50,21 +50,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">占用面积</label>
+                        <label class="col-sm-2 control-label">占用面积（株/平方米）</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="corpsArea_add_input"
                                    placeholder="Area">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">利润</label>
+                        <label class="col-sm-2 control-label">利润（元/株）</label>
                         <div class="col-sm-10">
                             <input type="number" name="profit" class="form-control" id="cropsProfit_add_input"
                                    placeholder="Profit">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">种植时间</label>
+                        <label class="col-sm-2 control-label">种植时间（月）</label>
                         <div class="col-sm-10">
                             <input type="number" name="cropstime" class="form-control" id="cropsTime_add_input"
                                    placeholder="Time">
@@ -97,27 +97,27 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Name</label>
+                        <label class="col-sm-2 control-label">作物名</label>
                         <div class="col-sm-10">
                             <p class="form-control-static" id="cropsName_update_static"></p>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Area</label>
+                        <label class="col-sm-2 control-label">面积（株/平方米）</label>
                         <div class="col-sm-10">
                             <input type="number" name="area" class="form-control" id="area_update_input">
                             <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Profit</label>
+                        <label class="col-sm-2 control-label">利润（元/株）</label>
                         <div class="col-sm-10">
                             <input type="number" name="profit" class="form-control" id="profit_update_input">
                             <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Time</label>
+                        <label class="col-sm-2 control-label">时长（月）</label>
                         <div class="col-sm-10">
                             <input type="number" name="cropstime" class="form-control" id="cropsTime_update_input">
                             <span class="help-block"></span>

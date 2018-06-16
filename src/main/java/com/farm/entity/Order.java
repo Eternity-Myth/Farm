@@ -3,73 +3,73 @@ package com.farm.entity;
 import java.util.Date;
 
 public class Order {
-    private Long id;
+    private Integer id;
 
-    private Integer paymentId;
+    private String userName;
 
-    private Integer userId;
+    private String itemName;
 
-    private Integer itemId;
+    private Integer quantity;
 
-    private Integer itemNumber;
+    private Float total;
 
-    private Date startTime;
+    private Date createTime;
 
-    private Date finishTime;
+    private Boolean status;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Integer getPaymentId() {
-        return paymentId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPaymentId(Integer paymentId) {
-        this.paymentId = paymentId;
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setItemName(String itemName) {
+        this.itemName = itemName == null ? null : itemName.trim();
     }
 
-    public Integer getItemId() {
-        return itemId;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public Integer getItemNumber() {
-        return itemNumber;
+    public Float getTotal() {
+        return total;
     }
 
-    public void setItemNumber(Integer itemNumber) {
-        this.itemNumber = itemNumber;
+    public void setTotal(Float total) {
+        this.total = total;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getFinishTime() {
-        return finishTime;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setFinishTime(Date finishTime) {
-        this.finishTime = finishTime;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

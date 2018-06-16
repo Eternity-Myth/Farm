@@ -85,7 +85,7 @@ To change this template use File | Settings | File Templates.
              style="background-color:rgba(80,77,77,0.9);height:300px;color:#FFFFFF;padding-left:30px">
             <br>Agro农场信息管理系统<br><br>作者：<br>关文聪、许亘成、吴金辰、黄捷敏、王明义<br><br>项目开源地址：<br><a
                 href="https://github.com/Eternity-Myth/Farm" style="color:#ffffff">https://github.com/Eternity-Myth/Farm</a> <br><br>基本开发环境：JDK
-            1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
+            1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.22 Community Server<br><br>使用框架：Spring+SpringMVC+Mybatis（主要）,Maven（项目依赖管理）,Bootstrap（前端框架）<br><br>逆向工程：MyBatis-Generator
         </div>
     </div>
     <div class="row" style="height:80px">

@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.farm.dao.PlantDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.Plant">
+        <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="fid" jdbcType="INTEGER" property="fid"/>
         <result column="cname" jdbcType="VARCHAR" property="cname"/>
         <result column="cprofit" jdbcType="REAL" property="cprofit"/>
@@ -71,7 +72,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    fid, cname, cprofit, quantity, total, time, status
+    id, fid, cname, cprofit, quantity, total, time, status
   </sql>
     <select id="selectByExample" parameterType="com.farm.entity.PlantExample" resultMap="BaseResultMap">
         select
@@ -87,6 +88,16 @@
             order by ${orderByClause}
         </if>
     </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from plant
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from plant
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
     <delete id="deleteByExample" parameterType="com.farm.entity.PlantExample">
         delete from plant
         <if test="_parameter != null">
@@ -94,16 +105,19 @@
         </if>
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Plant">
-    insert into plant (fid, cname, cprofit,
-      quantity, total, time,
-      status)
-    values (#{fid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{cprofit,jdbcType=REAL},
-      #{quantity,jdbcType=INTEGER}, #{total,jdbcType=REAL}, #{time,jdbcType=INTEGER},
-      #{status,jdbcType=BIT})
+    insert into plant (id, fid, cname,
+      cprofit, quantity, total,
+      time, status)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR},
+      #{cprofit,jdbcType=REAL}, #{quantity,jdbcType=INTEGER}, #{total,jdbcType=REAL},
+      #{time,jdbcType=INTEGER}, #{status,jdbcType=BIT})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Plant">
         insert into plant
         <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
             <if test="fid != null">
                 fid,
             </if>
@@ -127,6 +141,9 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
             <if test="fid != null">
                 #{fid,jdbcType=INTEGER},
             </if>
@@ -159,6 +176,9 @@
     <update id="updateByExampleSelective" parameterType="map">
         update plant
         <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
             <if test="record.fid != null">
                 fid = #{record.fid,jdbcType=INTEGER},
             </if>
@@ -187,7 +207,8 @@
     </update>
     <update id="updateByExample" parameterType="map">
         update plant
-        set fid = #{record.fid,jdbcType=INTEGER},
+        set id = #{record.id,jdbcType=INTEGER},
+        fid = #{record.fid,jdbcType=INTEGER},
         cname = #{record.cname,jdbcType=VARCHAR},
         cprofit = #{record.cprofit,jdbcType=REAL},
         quantity = #{record.quantity,jdbcType=INTEGER},
@@ -198,6 +219,44 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.farm.entity.Plant">
+        update plant
+        <set>
+            <if test="fid != null">
+                fid = #{fid,jdbcType=INTEGER},
+            </if>
+            <if test="cname != null">
+                cname = #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="cprofit != null">
+                cprofit = #{cprofit,jdbcType=REAL},
+            </if>
+            <if test="quantity != null">
+                quantity = #{quantity,jdbcType=INTEGER},
+            </if>
+            <if test="total != null">
+                total = #{total,jdbcType=REAL},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=BIT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.farm.entity.Plant">
+    update plant
+    set fid = #{fid,jdbcType=INTEGER},
+      cname = #{cname,jdbcType=VARCHAR},
+      cprofit = #{cprofit,jdbcType=REAL},
+      quantity = #{quantity,jdbcType=INTEGER},
+      total = #{total,jdbcType=REAL},
+      time = #{time,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
     <update id="synchronize" parameterType="map">
         UPDATE plant INNER JOIN crops
         SET cprofit=crops.`profit`,total=crops.`profit`*quantity,TIME=crops.`cropsTime` WHERE cname=crops.`cropsName`;

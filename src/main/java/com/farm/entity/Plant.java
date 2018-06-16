@@ -1,6 +1,8 @@
 package com.farm.entity;
 
 public class Plant {
+    private Integer id;
+
     private Integer fid;
 
     private String cname;
@@ -14,6 +16,14 @@ public class Plant {
     private Integer time;
 
     private Boolean status;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getFid() {
         return fid;

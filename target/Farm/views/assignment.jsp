@@ -39,9 +39,9 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">任务类型</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="assiType" class="form-control" id="assiType_add_input"
-                                   placeholder="Type">
+                        <div class="col-sm-4">
+                            <select class="form-control" name="assiType" id="assiTypeSelect">
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -53,23 +53,17 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">用户名</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="assiNickname" class="form-control" id="assiNickname_add_input"
-                                   placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">手机号</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="assiPhone" class="form-control" id="assiPhone_add_input"
-                                   placeholder="Phone">
+                        <div class="col-sm-4">
+                            <select class="form-control" name="assiNickname" id="assiNicknameSelect">
+                            </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" id="assignment_save_btn" style="color: #0f0f0f">保存</button>
+                <button type="button" class="btn btn-primary" id="assignment_save_btn" style="color: #0f0f0f">保存
+                </button>
             </div>
         </div>
     </div>
@@ -88,7 +82,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">ID</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" id="assiId_update_static"></p>
+                            <p class="form-control-static" id="Id_update_static"></p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -99,9 +93,9 @@
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">任务类型</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="assiType" class="form-control" id="assiType_update_input">
-                            <span class="help-block"></span>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="assiType" id="assiTypeSelect_update">
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -112,24 +106,18 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">手机号</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="assiPhone" class="form-control" id="assiPhone_update_input">
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="col-sm-2 control-label">用户名</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="assiNickname" class="form-control" id="assiNickname_update_input">
-                            <span class="help-block"></span>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="assiNickname" id="assiNicknameSelect_update">
+                            </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" id="assignment_update_btn" style="color: #0f0f0f">更新</button>
+                <button type="button" class="btn btn-primary" id="assignment_update_btn" style="color: #0f0f0f">更新
+                </button>
             </div>
         </div>
     </div>
@@ -160,7 +148,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">注册时间</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+                            <p class="form-control-static"><fmt:formatDate value="${sessionScope.registerTime}"
+                                                                           pattern="yyyy-MM-dd HH:mm:ss"/></p>
                         </div>
                     </div>
 
@@ -275,7 +264,6 @@
                                     <th style="text-align:center">任务类型</th>
                                     <th style="text-align:center">任务数据</th>
                                     <th style="text-align:center">用户名</th>
-                                    <th style="text-align:center">手机号</th>
                                     <th style="text-align:center">创建时间</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
@@ -314,7 +302,7 @@
                      style="background-color:transparent; color:#FFFFFF; text-align:center">
                     <ul class="list-group" style="background-color:rgba(95,95,95,0.6)">
                         <li class="list-group-item" style="background-color:transparent">
-                            <a href = "#"  data-toggle="modal" data-target="#infoCheckModal" style="color:#ffffff">信息</a>
+                            <a href="#" data-toggle="modal" data-target="#infoCheckModal" style="color:#ffffff">信息</a>
                         </li>
                         <li class="list-group-item" style="background-color:transparent">
                             <a href="#" onclick="sign_out()" style="color:#ffffff">注销</a>
@@ -364,31 +352,29 @@
         var assignment = result.extend.pageInfo.list;
         $.each(assignment, function (index, item) {
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
-            var assiIdTd = $("<td></td>").append(item.assiId);
-            var assiStateTd = $("<td></td>").append(item.assiState ? "正常" : "异常");
+            var IdTd = $("<td></td>").append(item.id);
+            var assiStateTd = $("<td></td>").append(item.assiState ? "正常" : "完成");
             var assiTypeTd = $("<td></td>").append(item.assiType);
             var assiDataTd = $("<td></td>").append(item.assiData);
             var assiNicknameTd = $("<td></td>").append(item.assiNickname);
-            var assiPhoneTd = $("<td></td>").append(item.assiPhone);
             var assiCreatetime = getMyDate(item.assiCreatetime);
             var assiCreatetimeTd = $("<td></td>").append(assiCreatetime);
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
             //为编辑按钮添加一个自定义的属性，来表示当前任务id
-            editBtn.attr("edit-id", item.assiId);
+            editBtn.attr("edit-id", item.id);
             var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的任务id
-            delBtn.attr("del-id", item.assiId);
+            delBtn.attr("del-id", item.id);
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
-                .append(assiIdTd)
+                .append(IdTd)
                 .append(assiStateTd)
                 .append(assiTypeTd)
                 .append(assiDataTd)
                 .append(assiNicknameTd)
-                .append(assiPhoneTd)
                 .append(assiCreatetimeTd)
                 .append(btnTd)
                 .appendTo("#assignment_table tbody");
@@ -485,11 +471,53 @@
         navEle.appendTo("#page_nav_area");
     }
 
+    //清空表单样式及内容
+    function reset_form(ele) {
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
     $("#assignment_add_modal_btn").click(function () {
+        reset_form("#assignmentAddModal form")
+        $("#assiTypeSelect").empty();
+        var optionEle = $("<option></option>").append("播种");
+        optionEle.appendTo("#assiTypeSelect");
+        optionEle = $("<option></option>").append("浇灌");
+        optionEle.appendTo("#assiTypeSelect");
+        optionEle = $("<option></option>").append("施肥");
+        optionEle.appendTo("#assiTypeSelect");
+        optionEle = $("<option></option>").append("除草");
+        optionEle.appendTo("#assiTypeSelect");
+        optionEle = $("<option></option>").append("杀虫");
+        optionEle.appendTo("#assiTypeSelect");
+        optionEle = $("<option></option>").append("收割");
+        optionEle.appendTo("#assiTypeSelect");
+        optionEle = $("<option></option>").append("翻耕");
+        optionEle.appendTo("#assiTypeSelect");
+        getConsumerInfo("#assiNicknameSelect");
         $("#assignmentAddModal").modal({
             backdrop: "static"
         });
     });
+
+    //查出所有的客户信息并显示在下拉列表中
+    function getConsumerInfo(ele) {
+        //清空之前下拉列表的值
+        $(ele).empty();
+        $.ajax({
+            url: "${APP_PATH}/consumerinfos",
+            type: "GET",
+            success: function (result) {
+                // console.info(result);
+                $.each(result.extend.consumerinfos, function () {
+                    var optionEle = $("<option></option>").append(this.conName);
+                    optionEle.appendTo(ele);
+                });
+            }
+        });
+    }
 
     $("#assignment_save_btn").click(function () {
         // 1、模态框中填写的表单数据提交给服务器进行保存
@@ -574,6 +602,23 @@
         getAssignment($(this).attr("edit-id"));
         //把任务的id传递给模态框的更新按钮
         $("#assignment_update_btn").attr("edit-id", $(this).attr("edit-id"));
+        reset_form("#assignmentUpdateModal form")
+        $("#assiTypeSelect_update").empty();
+        var optionEle = $("<option></option>").append("播种");
+        optionEle.appendTo("#assiTypeSelect_update");
+        optionEle = $("<option></option>").append("浇灌");
+        optionEle.appendTo("#assiTypeSelect_update");
+        optionEle = $("<option></option>").append("施肥");
+        optionEle.appendTo("#assiTypeSelect_update");
+        optionEle = $("<option></option>").append("除草");
+        optionEle.appendTo("#assiTypeSelect_update");
+        optionEle = $("<option></option>").append("杀虫");
+        optionEle.appendTo("#assiTypeSelect_update");
+        optionEle = $("<option></option>").append("收割");
+        optionEle.appendTo("#assiTypeSelect_update");
+        optionEle = $("<option></option>").append("翻耕");
+        optionEle.appendTo("#assiTypeSelect_update");
+        getConsumerInfo("#assiNicknameSelect_update");
         $("#assignmentUpdateModal").modal({
             backdrop: "static"
         });
@@ -585,7 +630,7 @@
                 success: function (result) {
                     // console.log(result);
                     var assignmentData = result.extend.assignment;
-                    $("#assiId_update_static").text(assignmentData.assiId);
+                    $("#Id_update_static").text(assignmentData.id);
                     $("#assiState_update_static").text(assignmentData.assiState ? "正常" : "异常");
                     $("#assiType_update_input").val(assignmentData.assiType);
                     $("#assiData_update_input").val(assignmentData.assiData);

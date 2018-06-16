@@ -105,63 +105,63 @@ public class AssignmentExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andAssiIdIsNull() {
-            addCriterion("assi_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdIsNotNull() {
-            addCriterion("assi_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdEqualTo(Integer value) {
-            addCriterion("assi_id =", value, "assiId");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdNotEqualTo(Integer value) {
-            addCriterion("assi_id <>", value, "assiId");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdGreaterThan(Integer value) {
-            addCriterion("assi_id >", value, "assiId");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("assi_id >=", value, "assiId");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdLessThan(Integer value) {
-            addCriterion("assi_id <", value, "assiId");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdLessThanOrEqualTo(Integer value) {
-            addCriterion("assi_id <=", value, "assiId");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdIn(List<Integer> values) {
-            addCriterion("assi_id in", values, "assiId");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdNotIn(List<Integer> values) {
-            addCriterion("assi_id not in", values, "assiId");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdBetween(Integer value1, Integer value2) {
-            addCriterion("assi_id between", value1, value2, "assiId");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAssiIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("assi_id not between", value1, value2, "assiId");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -362,76 +362,6 @@ public class AssignmentExample {
 
         public Criteria andAssiDataNotBetween(String value1, String value2) {
             addCriterion("assi_data not between", value1, value2, "assiData");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneIsNull() {
-            addCriterion("assi_phone is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneIsNotNull() {
-            addCriterion("assi_phone is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneEqualTo(String value) {
-            addCriterion("assi_phone =", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneNotEqualTo(String value) {
-            addCriterion("assi_phone <>", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneGreaterThan(String value) {
-            addCriterion("assi_phone >", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneGreaterThanOrEqualTo(String value) {
-            addCriterion("assi_phone >=", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneLessThan(String value) {
-            addCriterion("assi_phone <", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneLessThanOrEqualTo(String value) {
-            addCriterion("assi_phone <=", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneLike(String value) {
-            addCriterion("assi_phone like", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneNotLike(String value) {
-            addCriterion("assi_phone not like", value, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneIn(List<String> values) {
-            addCriterion("assi_phone in", values, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneNotIn(List<String> values) {
-            addCriterion("assi_phone not in", values, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneBetween(String value1, String value2) {
-            addCriterion("assi_phone between", value1, value2, "assiPhone");
-            return (Criteria) this;
-        }
-
-        public Criteria andAssiPhoneNotBetween(String value1, String value2) {
-            addCriterion("assi_phone not between", value1, value2, "assiPhone");
             return (Criteria) this;
         }
 

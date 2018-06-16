@@ -1,7 +1,9 @@
 package com.farm.web;
 
+import com.farm.entity.Crops;
 import com.farm.entity.Field;
 import com.farm.entity.Msg;
+import com.farm.service.impl.CropsServiceImpl;
 import com.farm.service.impl.FieldServiceImpl;
 
 import com.farm.util.LogUtil;
@@ -13,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +30,8 @@ import java.util.List;
 public class FieldController {
     @Autowired
     FieldServiceImpl fieldServiceImpl;
+    @Autowired
+    CropsServiceImpl cropsServiceImpl;
 
     @RequestMapping("/field-list")
     @ResponseBody
@@ -60,6 +65,99 @@ public class FieldController {
                 Thread.currentThread().getStackTrace()[1].getMethodName(),
                 "");
         return Msg.success();
+    }
+
+    //    约束条件：
+//    n1a1+n2a2+……+ nnan  <= A
+//    tn<=T
+//
+//    目标函数: maxprofit=n1p1+n2p2+……+nnpn
+
+    @ResponseBody
+    @RequestMapping(value = "/field/{id}", produces = "text/html;charset=UTF-8", method = RequestMethod.POST)
+    public String recommendPlan(@PathVariable("id") Integer id, Model model, HttpSession session, HttpServletRequest request) {
+
+
+        List<Crops> crops = cropsServiceImpl.getAll();
+        int number = crops.size();//农作物的数量
+        Field f = fieldServiceImpl.getField(id);
+        float area = f.getArea();
+        int time = f.getTime();
+        String plan = null;//传入的方案
+        float maxprofit;//目标函数
+        String[] names = new String[number];
+        int[] n = new int[number];
+        float[] p = new float[number + 1];
+        float[] a = new float[number + 1];
+        for (int i = 0; i < number; i++) {
+            a[i] = crops.get(i).getArea();
+        }
+        for (int j = 0; j < number; j++) {
+            p[j] = crops.get(j).getProfit();
+        }
+        for (int j = 0; j < number; j++) {
+            names[j] = crops.get(j).getCropsname();
+        }
+        //算法开始
+        //设置松弛变量，【0，0，……，A】
+        boolean flag = false;
+        float[] s = new float[number + 1];//因为只有一个约束
+        s[number] = area;
+        float[] theta = new float[number + 1]; //检验数
+        float x = 0;//基变量的系数,一开始是0
+        float maxtheta = 0;
+        int maxthetaindex = 0;
+        float[] c = new float[number + 1];
+        float t = 0;
+        for (int j = 0; j < number; j++) {
+            c[j] = crops.get(j).getProfit();
+        }
+        c[number] = 1;
+        //算法循环
+        while (flag == false) {
+            for (int i = 0; i < number + 1; i++) {
+                theta[i] = p[i] - x * a[i];
+            }
+            for (int i = 0; i < number + 1; i++) { //检验是否有大于零的检验数，即基可行解不是最优解
+                if (theta[i] > 0) {
+                    flag = false;
+                    break;
+                } else {
+                    flag = true;
+                }
+            }
+            if (flag == false) {
+                for (int i = 0; i < number + 1; i++) {//确定最大的检验数
+                    if (theta[i] > maxtheta) {
+                        maxtheta = theta[i];
+                        maxthetaindex = i;
+                    }
+                }
+                //换基变量
+                t = c[maxthetaindex];//更新系数
+                for (int i = 0; i < number + 1; i++) {
+                    c[i] = c[i] / t;
+                }
+                area = area / t;
+                x = p[maxthetaindex];
+            } else {     //每个检验数都大于零
+                n[maxthetaindex] = (int) area;
+                break;
+            }
+        }
+
+        //输出
+//       for (int i=0;i<number;i++){
+//            plan = plan+names[i]+":"+n[i]+"株   ";
+//       }
+        plan = names[maxthetaindex] + ":   " + n[maxthetaindex] + " 株   ";
+
+        model.addAttribute("plan", plan);
+//        session.setAttribute("plan",plan);
+        LogUtil.writeLogs(this.getClass().getName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName(),
+                "");
+        return plan;
     }
 
 

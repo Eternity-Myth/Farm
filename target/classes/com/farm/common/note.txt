@@ -1,4 +1,0 @@
-公共类包：存放公共工具类
-@author 关文聪
-@version 1.0
-@email 530711667@qq.com

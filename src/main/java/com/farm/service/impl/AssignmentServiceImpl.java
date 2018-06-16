@@ -32,7 +32,7 @@ public class AssignmentServiceImpl implements AssignmentService {
         AssignmentExample example = new AssignmentExample();
         AssignmentExample.Criteria criteria = example.createCriteria();
         //delete from xxx where id in(1,2,3)
-        criteria.andAssiIdIn(ids);
+        criteria.andIdIn(ids);
         assignmentDao.deleteByExample(example);
     }
 

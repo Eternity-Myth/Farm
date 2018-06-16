@@ -100,4 +100,12 @@ public class ItemsController {
         Items items = itemsServiceImpl.getItems(id);
         return Msg.success().add("items", items);
     }
+
+    //查出所有商品信息
+    @RequestMapping(value = "/items", method = RequestMethod.GET)
+    @ResponseBody
+    public Msg getItemsInfos() {
+        List<Items> items = itemsServiceImpl.getAll();
+        return Msg.success().add("items", items);
+    }
 }

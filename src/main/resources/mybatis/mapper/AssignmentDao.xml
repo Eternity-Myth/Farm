@@ -2,11 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.farm.dao.AssignmentDao">
     <resultMap id="BaseResultMap" type="com.farm.entity.Assignment">
-        <id column="assi_id" jdbcType="INTEGER" property="assiId"/>
+        <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="assi_state" jdbcType="BIT" property="assiState"/>
         <result column="assi_type" jdbcType="VARCHAR" property="assiType"/>
         <result column="assi_data" jdbcType="VARCHAR" property="assiData"/>
-        <result column="assi_phone" jdbcType="VARCHAR" property="assiPhone"/>
         <result column="assi_nickname" jdbcType="VARCHAR" property="assiNickname"/>
         <result column="assi_createtime" jdbcType="TIMESTAMP" property="assiCreatetime"/>
     </resultMap>
@@ -71,7 +70,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    assi_id, assi_state, assi_type, assi_data, assi_phone, assi_nickname, assi_createtime
+    id, assi_state, assi_type, assi_data, assi_nickname, assi_createtime
   </sql>
     <select id="selectByExample" parameterType="com.farm.entity.AssignmentExample" resultMap="BaseResultMap">
         select
@@ -91,11 +90,11 @@
         select
         <include refid="Base_Column_List"/>
         from assignment
-        where assi_id = #{assiId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from assignment
-    where assi_id = #{assiId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
     <delete id="deleteByExample" parameterType="com.farm.entity.AssignmentExample">
         delete from assignment
@@ -104,18 +103,18 @@
         </if>
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Assignment">
-    insert into assignment (assi_id, assi_state, assi_type,
-      assi_data, assi_phone, assi_nickname,
-      assi_createtime)
-    values (#{assiId,jdbcType=INTEGER}, #{assiState,jdbcType=BIT}, #{assiType,jdbcType=VARCHAR},
-      #{assiData,jdbcType=VARCHAR}, #{assiPhone,jdbcType=VARCHAR}, #{assiNickname,jdbcType=VARCHAR},
-      #{assiCreatetime,jdbcType=TIMESTAMP})
+    insert into assignment (id, assi_state, assi_type,
+      assi_data, assi_nickname, assi_createtime
+      )
+    values (#{id,jdbcType=INTEGER}, #{assiState,jdbcType=BIT}, #{assiType,jdbcType=VARCHAR},
+      #{assiData,jdbcType=VARCHAR}, #{assiNickname,jdbcType=VARCHAR}, #{assiCreatetime,jdbcType=TIMESTAMP}
+      )
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Assignment">
         insert into assignment
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="assiId != null">
-                assi_id,
+            <if test="id != null">
+                id,
             </if>
             <if test="assiState != null">
                 assi_state,
@@ -126,9 +125,6 @@
             <if test="assiData != null">
                 assi_data,
             </if>
-            <if test="assiPhone != null">
-                assi_phone,
-            </if>
             <if test="assiNickname != null">
                 assi_nickname,
             </if>
@@ -137,8 +133,8 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="assiId != null">
-                #{assiId,jdbcType=INTEGER},
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
             </if>
             <if test="assiState != null">
                 #{assiState,jdbcType=BIT},
@@ -148,9 +144,6 @@
             </if>
             <if test="assiData != null">
                 #{assiData,jdbcType=VARCHAR},
-            </if>
-            <if test="assiPhone != null">
-                #{assiPhone,jdbcType=VARCHAR},
             </if>
             <if test="assiNickname != null">
                 #{assiNickname,jdbcType=VARCHAR},
@@ -169,8 +162,8 @@
     <update id="updateByExampleSelective" parameterType="map">
         update assignment
         <set>
-            <if test="record.assiId != null">
-                assi_id = #{record.assiId,jdbcType=INTEGER},
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
             </if>
             <if test="record.assiState != null">
                 assi_state = #{record.assiState,jdbcType=BIT},
@@ -180,9 +173,6 @@
             </if>
             <if test="record.assiData != null">
                 assi_data = #{record.assiData,jdbcType=VARCHAR},
-            </if>
-            <if test="record.assiPhone != null">
-                assi_phone = #{record.assiPhone,jdbcType=VARCHAR},
             </if>
             <if test="record.assiNickname != null">
                 assi_nickname = #{record.assiNickname,jdbcType=VARCHAR},
@@ -197,11 +187,10 @@
     </update>
     <update id="updateByExample" parameterType="map">
         update assignment
-        set assi_id = #{record.assiId,jdbcType=INTEGER},
+        set id = #{record.id,jdbcType=INTEGER},
         assi_state = #{record.assiState,jdbcType=BIT},
         assi_type = #{record.assiType,jdbcType=VARCHAR},
         assi_data = #{record.assiData,jdbcType=VARCHAR},
-        assi_phone = #{record.assiPhone,jdbcType=VARCHAR},
         assi_nickname = #{record.assiNickname,jdbcType=VARCHAR},
         assi_createtime = #{record.assiCreatetime,jdbcType=TIMESTAMP}
         <if test="_parameter != null">
@@ -220,9 +209,6 @@
             <if test="assiData != null">
                 assi_data = #{assiData,jdbcType=VARCHAR},
             </if>
-            <if test="assiPhone != null">
-                assi_phone = #{assiPhone,jdbcType=VARCHAR},
-            </if>
             <if test="assiNickname != null">
                 assi_nickname = #{assiNickname,jdbcType=VARCHAR},
             </if>
@@ -230,16 +216,15 @@
                 assi_createtime = #{assiCreatetime,jdbcType=TIMESTAMP},
             </if>
         </set>
-        where assi_id = #{assiId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.farm.entity.Assignment">
     update assignment
     set assi_state = #{assiState,jdbcType=BIT},
       assi_type = #{assiType,jdbcType=VARCHAR},
       assi_data = #{assiData,jdbcType=VARCHAR},
-      assi_phone = #{assiPhone,jdbcType=VARCHAR},
       assi_nickname = #{assiNickname,jdbcType=VARCHAR},
       assi_createtime = #{assiCreatetime,jdbcType=TIMESTAMP}
-    where assi_id = #{assiId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

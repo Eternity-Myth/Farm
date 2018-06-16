@@ -3,7 +3,7 @@ package com.farm.entity;
 import java.util.Date;
 
 public class Assignment {
-    private Integer assiId;
+    private Integer id;
 
     private Boolean assiState;
 
@@ -11,18 +11,16 @@ public class Assignment {
 
     private String assiData;
 
-    private String assiPhone;
-
     private String assiNickname;
 
     private Date assiCreatetime;
 
-    public Integer getAssiId() {
-        return assiId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAssiId(Integer assiId) {
-        this.assiId = assiId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Boolean getAssiState() {
@@ -47,14 +45,6 @@ public class Assignment {
 
     public void setAssiData(String assiData) {
         this.assiData = assiData == null ? null : assiData.trim();
-    }
-
-    public String getAssiPhone() {
-        return assiPhone;
-    }
-
-    public void setAssiPhone(String assiPhone) {
-        this.assiPhone = assiPhone == null ? null : assiPhone.trim();
     }
 
     public String getAssiNickname() {
