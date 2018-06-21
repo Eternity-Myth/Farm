@@ -33,7 +33,7 @@ CREATE TABLE `assignment` (
 /*Data for the table `assignment` */
 
 insert  into `assignment`(`id`,`assi_state`,`assi_type`,`assi_data`,`assi_nickname`,`assi_createtime`) values 
-(1,1,'播种','1-水稻','test','2018-06-15 11:05:26');
+(1,1,'播种','1-玉米','test','2018-06-15 11:05:26');
 
 /*Table structure for table `consumerinfo` */
 
@@ -93,17 +93,18 @@ CREATE TABLE `field` (
   `start_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '起始时间',
   `time` int(3) NOT NULL DEFAULT '12' COMMENT '种植时长',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态',
+  `total` float DEFAULT '0' COMMENT '菜地总收益',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='菜地信息表';
 
 /*Data for the table `field` */
 
-insert  into `field`(`id`,`area`,`username`,`start_time`,`time`,`status`) values 
-(1,100,'test','2018-06-01 23:52:29',4,1),
-(2,666,'change','2018-06-02 11:42:29',12,1),
-(3,666,'666','2018-06-12 00:53:15',12,1),
-(4,666,'test','2018-06-13 11:32:52',12,1),
-(5,666,'test','2018-06-16 17:12:06',12,1);
+insert  into `field`(`id`,`area`,`username`,`start_time`,`time`,`status`,`total`) values 
+(1,100,'test','2018-06-01 23:52:29',12,1,423.176),
+(2,666,'change','2018-06-02 11:42:29',12,1,2.3976),
+(3,666,'666','2018-06-12 00:53:15',12,1,7.9254),
+(4,666,'test','2018-06-13 11:32:52',12,1,1.665),
+(5,666,'test','2018-06-16 17:12:06',12,1,200.266);
 
 /*Table structure for table `items` */
 
@@ -136,7 +137,7 @@ CREATE TABLE `log` (
   `error_msg` varchar(255) DEFAULT NULL COMMENT '错误信息',
   `timestamp` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '时间记录',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=443 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=477 DEFAULT CHARSET=utf8;
 
 /*Data for the table `log` */
 
@@ -577,7 +578,41 @@ insert  into `log`(`id`,`classname`,`method`,`status_code`,`error_msg`,`timestam
 (439,'com.farm.web.FieldController','updateField',0,'','2018-06-16 22:03:11'),
 (440,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-16 22:03:12'),
 (441,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-16 22:03:16'),
-(442,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-16 22:03:26');
+(442,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-16 22:03:26'),
+(443,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-17 19:42:07'),
+(444,'com.farm.web.UserController','signOut',0,'','2018-06-17 19:48:43'),
+(445,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 11:11:39'),
+(446,'com.farm.web.FieldController','updateField',0,'','2018-06-21 11:11:48'),
+(447,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 11:11:49'),
+(448,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 13:15:12'),
+(449,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 13:15:20'),
+(450,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 13:15:51'),
+(451,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 14:43:20'),
+(452,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 14:43:24'),
+(453,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 14:43:29'),
+(454,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 14:43:37'),
+(455,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 14:43:43'),
+(456,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 14:44:27'),
+(457,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:44:55'),
+(458,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:44:56'),
+(459,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:44:57'),
+(460,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:47:34'),
+(461,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:47:48'),
+(462,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:47:55'),
+(463,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:48:02'),
+(464,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:48:03'),
+(465,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 14:48:27'),
+(466,'com.farm.web.PlantController','deletePlant',0,'','2018-06-21 15:01:22'),
+(467,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:01:34'),
+(468,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:04:20'),
+(469,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:05:01'),
+(470,'com.farm.web.AssignmentController','updateAssignment',0,'','2018-06-21 15:05:31'),
+(471,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 15:05:44'),
+(472,'com.farm.web.FieldController','recommendPlan',0,'','2018-06-21 15:05:46'),
+(473,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:06:00'),
+(474,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:06:05'),
+(475,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:06:10'),
+(476,'com.farm.web.PlantController','savaPlant',0,'','2018-06-21 15:06:16');
 
 /*Table structure for table `ordertable` */
 
@@ -615,15 +650,17 @@ CREATE TABLE `plant` (
   `time` int(3) DEFAULT NULL COMMENT '种植时长',
   `status` tinyint(1) DEFAULT '1' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Data for the table `plant` */
 
 insert  into `plant`(`id`,`fid`,`cname`,`cprofit`,`quantity`,`total`,`time`,`status`) values 
 (1,1,'玉米',0.3177,666,211.588,3,1),
-(2,1,'水稻',0.0036,666,2.3976,3,1),
-(3,1,'大豆',0.0119,666,7.9254,4,1),
-(4,4,'小麦',0.0025,6666,16.665,7,1);
+(2,1,'玉米',0.3177,666,211.588,3,1),
+(3,2,'水稻',0.0036,666,2.3976,3,1),
+(4,3,'大豆',0.0119,666,7.9254,4,1),
+(5,4,'小麦',0.0025,666,1.665,7,1),
+(6,5,'甘蔗',0.3007,666,200.266,4,1);
 
 /*Table structure for table `sellerinfo` */
 

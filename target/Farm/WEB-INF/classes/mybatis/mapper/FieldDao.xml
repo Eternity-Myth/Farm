@@ -8,6 +8,7 @@
         <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
         <result column="time" jdbcType="INTEGER" property="time"/>
         <result column="status" jdbcType="BIT" property="status"/>
+        <result column="total" jdbcType="REAL" property="total"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -70,7 +71,7 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    id, area, username, start_time, time, status
+    id, area, username, start_time, time, status, total
   </sql>
     <select id="selectByExample" parameterType="com.farm.entity.FieldExample" resultMap="BaseResultMap">
         select
@@ -104,11 +105,11 @@
     </delete>
     <insert id="insert" parameterType="com.farm.entity.Field">
     insert into field (id, area, username,
-      start_time, time, status
-      )
+      start_time, time, status,
+      total)
     values (#{id,jdbcType=INTEGER}, #{area,jdbcType=REAL}, #{username,jdbcType=VARCHAR},
-      #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=INTEGER}, #{status,jdbcType=BIT}
-      )
+      #{startTime,jdbcType=TIMESTAMP}, #{time,jdbcType=INTEGER}, #{status,jdbcType=BIT},
+      #{total,jdbcType=REAL})
   </insert>
     <insert id="insertSelective" parameterType="com.farm.entity.Field">
         insert into field
@@ -131,6 +132,9 @@
             <if test="status != null">
                 status,
             </if>
+            <if test="total != null">
+                total,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -150,6 +154,9 @@
             </if>
             <if test="status != null">
                 #{status,jdbcType=BIT},
+            </if>
+            <if test="total != null">
+                #{total,jdbcType=REAL},
             </if>
         </trim>
     </insert>
@@ -180,6 +187,9 @@
             <if test="record.status != null">
                 status = #{record.status,jdbcType=BIT},
             </if>
+            <if test="record.total != null">
+                total = #{record.total,jdbcType=REAL},
+            </if>
         </set>
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
@@ -192,7 +202,8 @@
         username = #{record.username,jdbcType=VARCHAR},
         start_time = #{record.startTime,jdbcType=TIMESTAMP},
         time = #{record.time,jdbcType=INTEGER},
-        status = #{record.status,jdbcType=BIT}
+        status = #{record.status,jdbcType=BIT},
+        total = #{record.total,jdbcType=REAL}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
@@ -215,6 +226,9 @@
             <if test="status != null">
                 status = #{status,jdbcType=BIT},
             </if>
+            <if test="total != null">
+                total = #{total,jdbcType=REAL},
+            </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
@@ -224,7 +238,12 @@
       username = #{username,jdbcType=VARCHAR},
       start_time = #{startTime,jdbcType=TIMESTAMP},
       time = #{time,jdbcType=INTEGER},
-      status = #{status,jdbcType=BIT}
+      status = #{status,jdbcType=BIT},
+      total = #{total,jdbcType=REAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <update id="synchronize" parameterType="map">
+        UPDATE FIELD
+        SET total=(SELECT SUM(total) FROM plant WHERE field.`id`=plant.`fid`)
+    </update>
 </mapper>

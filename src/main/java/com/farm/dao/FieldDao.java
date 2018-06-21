@@ -36,4 +36,6 @@ public interface FieldDao {
     int updateByPrimaryKeySelective(Field record);
 
     int updateByPrimaryKey(Field record);
+
+    void synchronize();
 }

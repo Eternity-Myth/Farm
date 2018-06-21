@@ -295,6 +295,7 @@
                                     <th style="text-align:center">起始时间</th>
                                     <th style="text-align:center">时长/月</th>
                                     <th style="text-align:center">状态</th>
+                                    <th style="text-align:center">收益（元）</th>
                                     <th style="text-align:center"><img src="../agro/UIpic/tools.png"
                                                                        style="height:15px">&nbsp;&nbsp;操&nbsp;&nbsp;作
                                     </th>
@@ -389,6 +390,7 @@
             var startTimeTd = $("<td></td>").append(startTime);
             var timeTd = $("<td></td>").append(item.time);
             var statusTd = $("<td></td>").append(item.status ? "正常" : "异常");
+            var totalTd = $("<td></td>").append(item.total);
             var recBtn = $("<button></button>").addClass("btn btn-primary btn-sm rec_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-asterisk")).append("推荐")
             recBtn.attr("rec-id", item.id);
@@ -409,6 +411,7 @@
                 .append(startTimeTd)
                 .append(timeTd)
                 .append(statusTd)
+                .append(totalTd)
                 .append(btnTd)
                 .appendTo("#field_table tbody");
         });

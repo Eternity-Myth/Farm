@@ -25,6 +25,7 @@ public class FieldServiceImpl implements FieleService {
     //查询所有菜地信息
     @Override
     public List<Field> getAll() {
+        fieldDao.synchronize();
         return fieldDao.selectByExample(null);
     }
 
