@@ -22,7 +22,7 @@
 
 IDE:JetBrains-Intellij Idea Ultimate
 
-基本开发环境：JDK 1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.21 Community Server
+基本开发环境：JDK 1.8.0_162、Apache-Tomcat-9.0.6、MySQL 5.7.22 Community Server
 
 数据库可视化操作工具：SQLYog Ultimate
 
@@ -32,12 +32,3 @@ IDE:JetBrains-Intellij Idea Ultimate
 
 
 中文乱码的解决：项目相关所有文件编码统一设置为UTF-8，数据库相关项统一设置为UTF-8
-
-
-2018.6.5：待修复/完成：
-
-功能3 4 5
-
-用户信息查看
-
-界面UI美化
