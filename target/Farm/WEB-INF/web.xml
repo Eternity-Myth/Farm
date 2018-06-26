@@ -11,7 +11,7 @@
         <servlet-name>ssm-dispatcher-servlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!-- 配置SpringMVC需要加载的配置文件
-            spring-dao，spring-service，spring-web
+            spring-dao，spring-service，spring-controller
             Mybatis -> Spring -> SpringMVC
         -->
         <init-param>

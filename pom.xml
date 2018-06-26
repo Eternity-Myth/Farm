@@ -67,7 +67,7 @@
         <!-- Spring依赖
             1:核心依赖
             2:DAO
-            3:web
+            3:controller
             4:test
          -->
         <spring.version>4.1.6.RELEASE</spring.version>
@@ -204,7 +204,7 @@
         <!-- Spring依赖
             1:核心依赖
             2:DAO
-            3:web
+            3:controller
             4:test
          -->
         <!-- Spring-核心依赖 -->

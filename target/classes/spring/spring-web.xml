@@ -29,7 +29,7 @@
     </bean>
 
     <!-- 4:扫描web相关的Bean -->
-    <context:component-scan base-package="com.farm.web"/>
+    <context:component-scan base-package="com.farm.controller"/>
 
     <!--SpringMVC的配置文件，包含网站跳转逻辑的控制，配置  -->
     <context:component-scan base-package="com.farm" use-default-filters="false">
