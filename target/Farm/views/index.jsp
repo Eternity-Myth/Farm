@@ -30,7 +30,7 @@ To change this template use File | Settings | File Templates.
             </p>
             <p class="col-md-4"
                style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
-                <img src="../agro/UIpic/management.png" style="height:25px"><a href="/views/management.jsp" style="color:#ffffff">&nbsp;&nbsp;&nbsp;MANAGEMENT</a>
+                <img src="../agro/UIpic/management.png" style="height:25px"><a href="/sign-in.jsp" style="color:#ffffff">&nbsp;&nbsp;&nbsp;MANAGEMENT</a>
             </p>
             <p1 class="col-md-4"
                 style="text-align:center;padding-top:15px;height:60px;color:#FFFFFF;font-size:20px;font-family:'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif">
