@@ -7,49 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e29725-cebb-48b6-9a1a-c4acd47ee26e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/互联网软件开发综合课程设计报告.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/答辩ppt.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/AssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/AssignmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/ConsumerInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/ConsumerInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/CropsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/CropsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/FieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/FieldController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/ItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/ItemsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/LogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/PlantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/PlantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/SellerInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/SellerInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/farm/web/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/farm/controller/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/PlantDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/PlantDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/sql/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/test.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/AssignmentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/ConsumerInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/CropsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/FieldController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/ItemsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/LogController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/PlantController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/SellerInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/com/farm/web/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/spring/spring-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/AssignmentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/ConsumerInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/CropsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/FieldController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/ItemsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/LogController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/PlantController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/SellerInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/farm/web/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/mybatis/mapper/PlantDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Farm/WEB-INF/classes/mybatis/mapper/PlantDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/PlantDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/PlantDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/互联网软件开发综合课程设计报告.docx" beforeDir="false" afterPath="$PROJECT_DIR$/互联网软件开发综合课程设计报告.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,7 +45,17 @@
     <favorites_list name="Farm" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="test.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/sql/test.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="727" column="39" lean-forward="true" selection-start-line="727" selection-start-column="39" selection-end-line="727" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -249,8 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -259,28 +230,12 @@
               <item name="Farm" type="b2602c69:ProjectViewProjectNode" />
               <item name="Farm" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Farm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Farm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Farm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Farm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Farm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Farm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,18 +252,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\css" />
-      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\views" />
-      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp/views" />
-      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp" />
-      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\WEB-INF\views" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.farm.service.impl" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.farm.web" />
       <recent name="com.farm.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -317,6 +261,17 @@
       <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\views" />
       <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\agro\UIpic" />
       <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.farm.web" />
+      <recent name="com.farm.service.impl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\css" />
+      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\views" />
+      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp/views" />
+      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp" />
+      <recent name="C:\Users\Eternity-Myth\Desktop\Farm\src\main\webapp\WEB-INF\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -582,6 +537,7 @@
       <workItem from="1529895143828" duration="6347000" />
       <workItem from="1529981053258" duration="16747000" />
       <workItem from="1530038776476" duration="112000" />
+      <workItem from="1530107526862" duration="645000" />
     </task>
     <servers />
   </component>
@@ -618,7 +574,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="650514000" />
+    <option name="totallyTimeSpent" value="651159000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,6 +587,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
@@ -645,6 +602,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3983471" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289256" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32396695" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289256" />
@@ -653,7 +611,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.44793388" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3289256" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289256" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4958217" visible="true" weight="0.33131617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4958217" visible="true" weight="0.33661118" />
       <window_info id="Web" order="6" sideWeight="0.5041783" side_tool="true" weight="0.27685326" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.5041783" side_tool="true" weight="0.27685326" />
@@ -661,7 +619,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.3289256" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32396695" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32561985" />
@@ -1055,8 +1012,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/sql/test.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23606">
-          <caret line="1073" selection-start-line="1073" selection-end-line="1073" />
+        <state relative-caret-position="345">
+          <caret line="727" column="39" lean-forward="true" selection-start-line="727" selection-start-column="39" selection-end-line="727" selection-end-column="39" />
         </state>
       </provider>
     </entry>

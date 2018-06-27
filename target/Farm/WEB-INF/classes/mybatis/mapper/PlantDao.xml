@@ -259,6 +259,7 @@
   </update>
     <update id="synchronize" parameterType="map">
         UPDATE plant INNER JOIN crops
-        SET cprofit=crops.`profit`,total=crops.`profit`*quantity,TIME=crops.`cropsTime` WHERE cname=crops.`cropsName`;
+        SET cprofit=crops.`profit`,total=crops.`profit`*quantity,TIME=crops.`cropsTime`
+        WHERE cname=crops.`cropsName`;
     </update>
 </mapper>
